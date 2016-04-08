@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  CashMaker
+//
+//  Created by 翁志方 on 16/1/27.
+//  Copyright © 2016年 wzf. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Tapjoy/TJPlacement.h>
+
+#import "GlobalVar.h"           // 全局变量
+
+#import "Macros.h"              // 宏
+#import "UIMacros.h"            // 宏UI
+
+#import "UIKitExtension.h"
+
+#import "MJExtension.h"
+
+#import "MJRefresh.h"
+
+
+#import "UIBaseViewController.h"        // UIViewController 基类
+
+
+#import "FSNetworkManager.h"            // 接口
+
+
+#endif /* PrefixHeader_pch */
