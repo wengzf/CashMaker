@@ -22,7 +22,25 @@
 
 - (void)updateCellWithModel:(TaskModel *)model
 {
+    NSString *hintStr;
+    NSString *titleStr;
+    if ([model.taskNameStr isEqualToString:@"signin"]) {
+        self.titleImageView.image = [UIImage imageNamed:@"icon_signin"];
+        
+    }else if ([model.taskNameStr isEqualToString:@"share"]) {
+        
+    }else if ([model.taskNameStr isEqualToString:@"signin"]) {
+        
+    }else if ([model.taskNameStr isEqualToString:@"signin"]) {
+        
+    }else if ([model.taskNameStr isEqualToString:@"signin"]) {
+        
+    }else if ([model.taskNameStr isEqualToString:@"signin"]) {
+        
+    }
     
+    self.titleLabel.text = model.titleStr;
+    self.contentLabel.text = model.hintStr;
 }
 
 @end
