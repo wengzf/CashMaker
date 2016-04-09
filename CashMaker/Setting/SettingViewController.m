@@ -93,7 +93,22 @@
         case 8:{
             
         } break;
+        case 9:{    // 退出登录
+            [self.view showLoading];
+            [FSNetworkManagerDefaultInstance logoutWithPhoneStr:Global.phone successBlock:^(long status, NSDictionary *dic) {
+                [self.view hideLoading];
+                
+                [Global clearUserInfo];
+                
+                // 跳到登录注册页面
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
+                UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLogin"];
+                [self.navigationController pushViewController:vc animated:NO];
+            }];
+        } break;
+        case 10:{   // 删除账户
             
+        } break;
     }
     
     
