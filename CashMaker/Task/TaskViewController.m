@@ -23,16 +23,26 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     taskTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     taskTableView.delegate = self;
     taskTableView.dataSource = self;
     [self.view addSubview:taskTableView];
+    
+}
+-  (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
 }
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
     
 }
-
 
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

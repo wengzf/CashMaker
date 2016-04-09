@@ -32,4 +32,9 @@
 #import "FSNetworkManager.h"            // 接口
 
 
+#import "UIBaseViewController.h"
+#import "UIBaseTableViewController.h"
+
+
+
 #endif /* PrefixHeader_pch */
