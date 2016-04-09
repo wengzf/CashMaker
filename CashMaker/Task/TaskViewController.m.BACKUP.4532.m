@@ -30,12 +30,39 @@
     taskTableView.dataSource = self;
     [self.view addSubview:taskTableView];
     
+<<<<<<< HEAD
+    
+    // 请求后台数据
+    {
+//        [FSNetworkManagerDefaultInstance ];
+        taskArr = [NSMutableArray array];
+        
+        [self addModelWithStr:@"signin"];
+        
+        [self addModelWithStr:@"share"];
+        
+        [self addModelWithStr:@"Channel A"];
+        
+        [self addModelWithStr:@"Channel B"];
+        
+        [self addModelWithStr:@"Channel C"];
+        
+        [self addModelWithStr:@"Channel D"];
+        
+        [self addModelWithStr:@"Channel E"];
+        
+        [self addModelWithStr:@"Channel F"];
+        
+        [taskTableView reloadData];
+    }
+=======
 }
 -  (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     
+>>>>>>> 5c3deaf3c5920cb61d1cf1bd7a7823c51f7974fe
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -44,6 +71,16 @@
     
 }
 
+<<<<<<< HEAD
+- (void)addModelWithStr:(NSString *)str
+{
+    TaskModel *model = [TaskModel new];
+    model.taskNameStr = str;
+    [taskArr addObject:model];
+}
+
+=======
+>>>>>>> 5c3deaf3c5920cb61d1cf1bd7a7823c51f7974fe
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

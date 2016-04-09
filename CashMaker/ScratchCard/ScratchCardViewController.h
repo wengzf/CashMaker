@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STScratchView.h"
 
-@interface ScratchCardViewController : UIViewController
+@interface ScratchCardViewController : UIBaseViewController
+
+
+
+@property (weak, nonatomic) IBOutlet STScratchView *scratchView;
+
+@property (weak, nonatomic) IBOutlet STScratchView *hiddenScratchView;
+
 
 @end

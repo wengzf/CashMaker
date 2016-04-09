@@ -67,14 +67,12 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    
-    NSArray *titleImgArr = @[@"icon_channel_a", @"icon_channel_b", @"icon_channel_c", @"icon_channel_d", @"icon_channel_e"];
-    cell.titleImageView.image = [UIImage imageNamed:titleImgArr[(indexPath.row + 3)%5 ]];
-    
     // cell配置
     TaskModel *model = taskArr[indexPath.row];
     [cell updateCellWithModel:model];
     
+    //    cell.layer.masksToBounds
+    //    cell.layer.cornerRadius
     return cell;
 }
 
@@ -89,49 +87,7 @@
     // 跳转到对应的兑换页面
     TaskModel *model = taskArr[indexPath.row];
     
-    if ([model.taskNameStr isEqualToString:@"signin"]) {
-        [FSNetworkManagerDefaultInstance signinWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
-            UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"签到" message:@"成功签到，获得10个金币" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
-            [alv show];
-        }];
-        
-    }else if ([model.taskNameStr isEqualToString:@"share"]) {
-        // 弹出分享菜单
-        
-        
-    }else{
-        [self showADWithControlStr:model.taskNameStr];
-    }
-    
-}
-
-- (void)showADWithControlStr:(NSString *)controlStr
-{
-    if ([controlStr isEqualToString:@"share"]) {
-        
-        
-    }else if ([controlStr isEqualToString:@"signin"]) {
-        
-        
-    }else if ([controlStr isEqualToString:@"signin"]) {
-        
-    }else if ([controlStr isEqualToString:@"signin"]) {
-        
-    }else if ([controlStr isEqualToString:@"signin"]) {
-        
-    }
 }
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-

@@ -23,25 +23,46 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
     taskTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     taskTableView.delegate = self;
     taskTableView.dataSource = self;
     [self.view addSubview:taskTableView];
     
-}
--  (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
-    
+    // 请求后台数据
+    {
+//        [FSNetworkManagerDefaultInstance ];
+        taskArr = [NSMutableArray array];
+        
+        [self addModelWithStr:@"signin"];
+        
+        [self addModelWithStr:@"share"];
+        
+        [self addModelWithStr:@"Channel A"];
+        
+        [self addModelWithStr:@"Channel B"];
+        
+        [self addModelWithStr:@"Channel C"];
+        
+        [self addModelWithStr:@"Channel D"];
+        
+        [self addModelWithStr:@"Channel E"];
+        
+        [self addModelWithStr:@"Channel F"];
+        
+        [taskTableView reloadData];
+    }
 }
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
     
-    
+}
+
+- (void)addModelWithStr:(NSString *)str
+{
+    TaskModel *model = [TaskModel new];
+    model.taskNameStr = str;
+    [taskArr addObject:model];
 }
 
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>

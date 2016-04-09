@@ -20,7 +20,6 @@
 		218024D11C942217000F4EC1 /* ExchangeRecordsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218024D01C942217000F4EC1 /* ExchangeRecordsTableViewController.m */; };
 		218024D41C94270B000F4EC1 /* ExchangeRecordsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218024D31C94270B000F4EC1 /* ExchangeRecordsTableViewCell.m */; };
 		218024D71C9427FC000F4EC1 /* ExchangeRecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218024D61C9427FC000F4EC1 /* ExchangeRecordsModel.m */; };
-		218024E41C968F22000F4EC1 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218024E31C968F22000F4EC1 /* UIBaseViewController.m */; };
 		218024E71C9693C9000F4EC1 /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218024E61C9693C9000F4EC1 /* TaskModel.m */; };
 		218138A11C8FC5DD00D75DBA /* FSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 218138A01C8FC5DD00D75DBA /* FSNetworkManager.m */; };
 		218138B61C8FCAA400D75DBA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 218138A41C8FCAA400D75DBA /* AFHTTPRequestOperation.m */; };
@@ -70,6 +69,10 @@
 		AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8DD5461CAD485400160B70 /* JavaScriptCore.framework */; };
 		AD8DD5491CAD486600160B70 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8DD5481CAD486600160B70 /* libstdc++.tbd */; };
 		AD8DD54C1CAD536B00160B70 /* RegisterThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8DD54B1CAD536B00160B70 /* RegisterThirdViewController.m */; };
+		ADB28B931CB89BE800601215 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B901CB89BE800601215 /* UIBaseTableViewController.m */; };
+		ADB28B941CB89BE800601215 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B921CB89BE800601215 /* UIBaseViewController.m */; };
+		ADB28B981CB8B20800601215 /* STScratchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B971CB8B20800601215 /* STScratchView.m */; };
+		ADB28B9B1CB8E0E100601215 /* HYScratchCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */; };
 		C213F91C6292F538623D1189 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7FB71354C05DDEC4E94E94 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -99,8 +102,6 @@
 		218024D31C94270B000F4EC1 /* ExchangeRecordsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRecordsTableViewCell.m; sourceTree = "<group>"; };
 		218024D51C9427FC000F4EC1 /* ExchangeRecordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeRecordsModel.h; sourceTree = "<group>"; };
 		218024D61C9427FC000F4EC1 /* ExchangeRecordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRecordsModel.m; sourceTree = "<group>"; };
-		218024E21C968F22000F4EC1 /* UIBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseViewController.h; sourceTree = "<group>"; };
-		218024E31C968F22000F4EC1 /* UIBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseViewController.m; sourceTree = "<group>"; };
 		218024E51C9693C9000F4EC1 /* TaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskModel.h; sourceTree = "<group>"; };
 		218024E61C9693C9000F4EC1 /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
 		2181389F1C8FC5DD00D75DBA /* FSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNetworkManager.h; sourceTree = "<group>"; };
@@ -196,6 +197,14 @@
 		AD8DD5481CAD486600160B70 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		AD8DD54A1CAD536B00160B70 /* RegisterThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterThirdViewController.h; sourceTree = "<group>"; };
 		AD8DD54B1CAD536B00160B70 /* RegisterThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterThirdViewController.m; sourceTree = "<group>"; };
+		ADB28B8F1CB89BE800601215 /* UIBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseTableViewController.h; sourceTree = "<group>"; };
+		ADB28B901CB89BE800601215 /* UIBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseTableViewController.m; sourceTree = "<group>"; };
+		ADB28B911CB89BE800601215 /* UIBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseViewController.h; sourceTree = "<group>"; };
+		ADB28B921CB89BE800601215 /* UIBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseViewController.m; sourceTree = "<group>"; };
+		ADB28B961CB8B20800601215 /* STScratchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STScratchView.h; sourceTree = "<group>"; };
+		ADB28B971CB8B20800601215 /* STScratchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STScratchView.m; sourceTree = "<group>"; };
+		ADB28B991CB8E0E100601215 /* HYScratchCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYScratchCardView.h; sourceTree = "<group>"; };
+		ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYScratchCardView.m; sourceTree = "<group>"; };
 		AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CC15806D5FDF218C0CFAF19F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CC7FB71354C05DDEC4E94E94 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,8 +264,6 @@
 				211520401C747A4300CE11DD /* ViewController.h */,
 				211520411C747A4300CE11DD /* ViewController.m */,
 				2115201B1C745DC400CE11DD /* Main.storyboard */,
-				218024E21C968F22000F4EC1 /* UIBaseViewController.h */,
-				218024E31C968F22000F4EC1 /* UIBaseViewController.m */,
 				2115201E1C745DC400CE11DD /* Assets.xcassets */,
 				211520201C745DC400CE11DD /* LaunchScreen.storyboard */,
 				211520231C745DC400CE11DD /* Info.plist */,
@@ -373,6 +380,7 @@
 		21890B0D1C7B081300E09CA4 /* FSFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				ADB28B951CB8B20800601215 /* STScratchView */,
 				21890B1A1C7B081300E09CA4 /* Task.h */,
 				21890B421C7B0A9C00E09CA4 /* MBProgressHUD */,
 				21890B1B1C7B081300E09CA4 /* UIKitExtionsion */,
@@ -382,6 +390,10 @@
 				21890B181C7B081300E09CA4 /* GlobalVar.m */,
 				21890B191C7B081300E09CA4 /* Macros.h */,
 				21890B321C7B081300E09CA4 /* UIMacros.h */,
+				ADB28B8F1CB89BE800601215 /* UIBaseTableViewController.h */,
+				ADB28B901CB89BE800601215 /* UIBaseTableViewController.m */,
+				ADB28B911CB89BE800601215 /* UIBaseViewController.h */,
+				ADB28B921CB89BE800601215 /* UIBaseViewController.m */,
 			);
 			path = FSFoundation;
 			sourceTree = "<group>";
@@ -489,6 +501,17 @@
 				AD8DD53D1CAD479700160B70 /* SMS_SDK.framework */,
 			);
 			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		ADB28B951CB8B20800601215 /* STScratchView */ = {
+			isa = PBXGroup;
+			children = (
+				ADB28B991CB8E0E100601215 /* HYScratchCardView.h */,
+				ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */,
+				ADB28B961CB8B20800601215 /* STScratchView.h */,
+				ADB28B971CB8B20800601215 /* STScratchView.m */,
+			);
+			path = STScratchView;
 			sourceTree = "<group>";
 		};
 		DACCB020F2BB4A33A91FEDB7 /* Frameworks */ = {
@@ -642,14 +665,16 @@
 				2115203B1C74661200CE11DD /* ScratchCardViewController.m in Sources */,
 				21890B3A1C7B081300E09CA4 /* UIImage+ResizeAndColor.m in Sources */,
 				AD59CB221CACC76200EFA1F3 /* ChangePasswordFirstViewController.m in Sources */,
-				218024E41C968F22000F4EC1 /* UIBaseViewController.m in Sources */,
 				21890B411C7B081300E09CA4 /* UIView+ImageShot.m in Sources */,
 				AD8C058A1CAC048900BC1D9A /* RegisterFirstViewController.m in Sources */,
+				ADB28B981CB8B20800601215 /* STScratchView.m in Sources */,
 				21890B3E1C7B081300E09CA4 /* UIView+Animation.m in Sources */,
 				21890B381C7B081300E09CA4 /* UIColor+Extension.m in Sources */,
 				218138B91C8FCAA400D75DBA /* AFNetworkReachabilityManager.m in Sources */,
+				ADB28B9B1CB8E0E100601215 /* HYScratchCardView.m in Sources */,
 				211520421C747A4300CE11DD /* ViewController.m in Sources */,
 				218138A11C8FC5DD00D75DBA /* FSNetworkManager.m in Sources */,
+				ADB28B931CB89BE800601215 /* UIBaseTableViewController.m in Sources */,
 				218138BE1C8FCAA400D75DBA /* AFURLSessionManager.m in Sources */,
 				211520141C745DC400CE11DD /* AppDelegate.m in Sources */,
 				218138D61C93CCE100D75DBA /* TaskTableViewCell.m in Sources */,
@@ -660,6 +685,7 @@
 				211520391C74661200CE11DD /* ExchangeViewController.m in Sources */,
 				21890B331C7B081300E09CA4 /* NSDate+ToString.m in Sources */,
 				21890B341C7B081300E09CA4 /* NSObject+NSJSONSerialization.m in Sources */,
+				ADB28B941CB89BE800601215 /* UIBaseViewController.m in Sources */,
 				AD8C057E1CABF78C00BC1D9A /* CALayer+Extension.m in Sources */,
 				21890B3B1C7B081300E09CA4 /* UIImageView+Extension.m in Sources */,
 				218024D71C9427FC000F4EC1 /* ExchangeRecordsModel.m in Sources */,

@@ -1,18 +1,18 @@
 //
-//  UIBaseViewController.m
+//  UIBaseTableViewController.m
 //  FireShadow
 //
-//  Created by 翁志方 on 15/8/11.
+//  Created by 翁志方 on 15/8/20.
 //  Copyright (c) 2015年 Yonglibao. All rights reserved.
 //
 
-#import "UIBaseViewController.h"
+#import "UIBaseTableViewController.h"
 
-@interface UIBaseViewController ()
+@interface UIBaseTableViewController ()
 
 @end
 
-@implementation UIBaseViewController
+@implementation UIBaseTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,8 +20,8 @@
     
     // 导航栏左侧
     {
-        UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 33)];
-        UIImageView *leftImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 9, 17)];
+        UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 71, 33)];
+        UIImageView *leftImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 9, 18)];
         leftImg.image = [UIImage imageNamed:@"icon_back"];
         [leftView addSubview:leftImg];
         
@@ -31,13 +31,6 @@
         UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftView];
         self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     }
-    
-//    // 导航栏右侧
-//    {
-//        UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 33)];
-//        UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
-//        self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,22 +40,18 @@
 
 - (void)leftBarButtonItemClked:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.navigationController && [self.navigationController.viewControllers firstObject]!=self) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+    
 }
 
 - (void)setNilLeftBar
 {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStyleBordered target:self action:@selector(nilItemAction)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStyleBordered target:nil action:NULL];
     self.navigationItem.leftBarButtonItem = item;
 }
-- (void)nilItemAction
-{
-    
-}
-
-
-
-
-
 
 @end
