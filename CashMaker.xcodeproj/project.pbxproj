@@ -72,6 +72,7 @@
 		ADB28B931CB89BE800601215 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B901CB89BE800601215 /* UIBaseTableViewController.m */; };
 		ADB28B941CB89BE800601215 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B921CB89BE800601215 /* UIBaseViewController.m */; };
 		ADB28B981CB8B20800601215 /* STScratchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B971CB8B20800601215 /* STScratchView.m */; };
+		ADB28B9B1CB8E0E100601215 /* HYScratchCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */; };
 		C213F91C6292F538623D1189 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7FB71354C05DDEC4E94E94 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +203,8 @@
 		ADB28B921CB89BE800601215 /* UIBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseViewController.m; sourceTree = "<group>"; };
 		ADB28B961CB8B20800601215 /* STScratchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STScratchView.h; sourceTree = "<group>"; };
 		ADB28B971CB8B20800601215 /* STScratchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STScratchView.m; sourceTree = "<group>"; };
+		ADB28B991CB8E0E100601215 /* HYScratchCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYScratchCardView.h; sourceTree = "<group>"; };
+		ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYScratchCardView.m; sourceTree = "<group>"; };
 		AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CC15806D5FDF218C0CFAF19F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CC7FB71354C05DDEC4E94E94 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -503,6 +506,8 @@
 		ADB28B951CB8B20800601215 /* STScratchView */ = {
 			isa = PBXGroup;
 			children = (
+				ADB28B991CB8E0E100601215 /* HYScratchCardView.h */,
+				ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */,
 				ADB28B961CB8B20800601215 /* STScratchView.h */,
 				ADB28B971CB8B20800601215 /* STScratchView.m */,
 			);
@@ -666,6 +671,7 @@
 				21890B3E1C7B081300E09CA4 /* UIView+Animation.m in Sources */,
 				21890B381C7B081300E09CA4 /* UIColor+Extension.m in Sources */,
 				218138B91C8FCAA400D75DBA /* AFNetworkReachabilityManager.m in Sources */,
+				ADB28B9B1CB8E0E100601215 /* HYScratchCardView.m in Sources */,
 				211520421C747A4300CE11DD /* ViewController.m in Sources */,
 				218138A11C8FC5DD00D75DBA /* FSNetworkManager.m in Sources */,
 				ADB28B931CB89BE800601215 /* UIBaseTableViewController.m in Sources */,

@@ -13,6 +13,9 @@
 
 
 
-@property (weak, nonatomic) IBOutlet UIView *scratchView;
+@property (weak, nonatomic) IBOutlet STScratchView *scratchView;
+
+@property (weak, nonatomic) IBOutlet STScratchView *hiddenScratchView;
+
 
 @end

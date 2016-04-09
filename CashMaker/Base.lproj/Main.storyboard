@@ -970,10 +970,22 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kn9-2Y-Tmi" userLabel="scratch View" customClass="STScratchView">
                                 <rect key="frame" x="85" y="161" width="207" height="94"/>
-                                <color key="backgroundColor" red="1" green="0.99607843137254903" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.49752035095944058" green="0.85446733252204377" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kn9-2Y-Tmi" secondAttribute="height" multiplier="207:94" id="W9I-4D-swq"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-Gn-owP" userLabel="hiddenscratch View" customClass="STScratchView">
+                                <rect key="frame" x="85" y="161" width="207" height="94"/>
+                                <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XC2-Gn-owP" secondAttribute="height" multiplier="207:94" id="NAW-PP-L3y"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NAW-PP-L3y"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZ8-ke-yDq">
                                 <rect key="frame" x="141" y="126" width="95" height="35"/>
@@ -991,12 +1003,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.64313725490196072" green="0.83921568627450982" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="XC2-Gn-owP" firstAttribute="leading" secondItem="kn9-2Y-Tmi" secondAttribute="leading" id="5Yx-J5-pQq"/>
                             <constraint firstItem="dZ8-ke-yDq" firstAttribute="centerX" secondItem="kn9-2Y-Tmi" secondAttribute="centerX" id="72a-3d-0HO"/>
                             <constraint firstItem="kn9-2Y-Tmi" firstAttribute="centerX" secondItem="bBC-qm-dV1" secondAttribute="centerX" constant="1" id="FFo-md-ZBy"/>
                             <constraint firstItem="kn9-2Y-Tmi" firstAttribute="top" secondItem="dZ8-ke-yDq" secondAttribute="bottom" id="Ibi-Qa-nlH"/>
+                            <constraint firstItem="XC2-Gn-owP" firstAttribute="height" secondItem="kn9-2Y-Tmi" secondAttribute="height" id="KxT-Qa-fU3"/>
+                            <constraint firstItem="XC2-Gn-owP" firstAttribute="width" secondItem="XC2-Gn-owP" secondAttribute="height" multiplier="207:94" id="QEM-7g-rRu"/>
+                            <constraint firstItem="XC2-Gn-owP" firstAttribute="top" secondItem="kn9-2Y-Tmi" secondAttribute="top" id="S3W-uD-n4C"/>
                             <constraint firstItem="bBC-qm-dV1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="A03-fB-jh8" secondAttribute="bottom" constant="30" id="V0h-N2-v6X"/>
                             <constraint firstItem="bBC-qm-dV1" firstAttribute="width" secondItem="dZ8-ke-yDq" secondAttribute="height" multiplier="313:35" id="Vyi-su-b37"/>
                             <constraint firstAttribute="width" secondItem="bBC-qm-dV1" secondAttribute="height" multiplier="75:83" id="bPA-s6-Rmc"/>
+                            <constraint firstItem="XC2-Gn-owP" firstAttribute="width" secondItem="kn9-2Y-Tmi" secondAttribute="width" id="hn0-Aq-r8b"/>
                             <constraint firstItem="dZ8-ke-yDq" firstAttribute="top" secondItem="bBC-qm-dV1" secondAttribute="top" id="ihv-ip-BZO"/>
                             <constraint firstItem="bBC-qm-dV1" firstAttribute="centerY" secondItem="qMN-RK-0kN" secondAttribute="centerY" priority="750" id="ljr-nF-eno"/>
                             <constraint firstItem="bBC-qm-dV1" firstAttribute="centerX" secondItem="qMN-RK-0kN" secondAttribute="centerX" id="lvv-6a-fqZ"/>
@@ -1006,13 +1023,15 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="tfH-8U-Qm7"/>
+                                <exclude reference="QEM-7g-rRu"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="ScratchCard" id="bcX-WT-cIa"/>
                     <navigationItem key="navigationItem" title="ScratchCard" id="uTi-ZM-F5Y"/>
                     <connections>
-                        <outlet property="scratchView" destination="kn9-2Y-Tmi" id="ZIe-Io-pcI"/>
+                        <outlet property="hiddenScratchView" destination="XC2-Gn-owP" id="Goz-qZ-Me2"/>
+                        <outlet property="scratchView" destination="kn9-2Y-Tmi" id="gKI-hD-K9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbk-Ll-SDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
