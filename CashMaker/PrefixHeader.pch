@@ -28,6 +28,7 @@
 
 #import "UIBaseViewController.h"        // UIViewController 基类
 
+#import "UIImageView+Webcache.h"
 
 #import "FSNetworkManager.h"            // 接口
 

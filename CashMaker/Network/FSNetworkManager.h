@@ -139,7 +139,7 @@ typedef void(^SuccessWithErrorBlock)(long status, NSString *err, NSDictionary *d
 
 #pragma mark - 兑换模块
 //兑换列表
-//POST /exchange/elist
+//POST /exchange/getlist
 - (void)elistWithUserID:(NSString *)userID
        last_exchange_id:(NSString *)last_exchange_id
            successBlock:(SuccessBlock)sBlock;

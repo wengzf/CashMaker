@@ -10,16 +10,23 @@
 #import "ExchangeModel.h"
 
 @interface ExchangeTableViewCell : UITableViewCell
+{
+    ExchangeModel *exchangeModel;
+}
 
-
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *coinBtn;
+@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *coinBtn;
+
+@property (strong, nonatomic) void(^exchangeBlock)(ExchangeModel *model);
 
 - (void)updateCellWithModel:(ExchangeModel *)model;
 
 
+- (IBAction)coinBtnClked:(id)sender;
 
 
 @end

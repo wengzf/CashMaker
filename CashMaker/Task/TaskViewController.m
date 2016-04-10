@@ -28,7 +28,10 @@
     
     // 获取任务列表
     {
+        [self.view showLoading];
         [FSNetworkManagerDefaultInstance taskListWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
+            [self.view hideLoading];
+            
             NSArray *arr = (NSArray *)dic;
             taskArr = [NSMutableArray array];
 //            taskArr = [NSMutableArray arrayWithArray:arr];

@@ -23,6 +23,38 @@
 - (void)updateCellWithModel:(ExchangeModel *)model
 {
     
+    exchangeModel = model;
+    
+
+    self.titleLabel.text = model.title;
+    [self.titleImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
+    
+    self.valueLabel.text = model.reward_amount;
+    switch ([model.reward_type intValue]) {
+        case 1:
+            self.unitLabel.text = @"元";
+            break;
+        case 2:
+            self.unitLabel.text = @"个";
+            break;
+        case 3:
+            self.unitLabel.text = @"元";
+            break;
+        case 4:
+            self.unitLabel.text = @"元";
+            break;
+            
+            
+        default:
+            break;
+    }
+    
+    [self.coinBtn setTitle:model.cost_coins];
+    
+}
+
+- (IBAction)coinBtnClked:(id)sender {
+    self.exchangeBlock(exchangeModel);
 }
 
 @end

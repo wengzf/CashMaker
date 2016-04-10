@@ -10,4 +10,24 @@
 
 @implementation ExchangeModel
 
+- (id)initWithDic:(NSDictionary *)dic
+{
+    self = [super init];
+    if (self) {
+        [self fillWithDic:dic];
+    }
+    return self;
+}
+
+- (void)fillWithDic:(NSDictionary *)dic
+{
+    self.exchangeID = dic[@"id"];
+    self.title = dic[@"title"];
+    self.img = dic[@"img"];
+    self.cost_coins = dic[@"cost_coins"];
+    self.reward_type = dic[@"reward_type"];
+    self.reward_amount = dic[@"reward_amount"];
+    
+}
+
 @end

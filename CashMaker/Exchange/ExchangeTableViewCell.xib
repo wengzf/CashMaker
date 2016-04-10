@@ -19,6 +19,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="59V-7L-qws">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="141.5"/>
+                                <color key="backgroundColor" red="0.49752035100000003" green="0.85446733249999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bat-Mh-Rw0">
                                 <rect key="frame" x="0.0" y="140" width="304" height="48.5"/>
@@ -29,8 +30,8 @@
                                         <color key="textColor" red="0.99215686274509807" green="0.39215686274509803" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ez4-oq-QxA">
-                                        <rect key="frame" x="66" y="18" width="27.5" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ez4-oq-QxA">
+                                        <rect key="frame" x="66" y="18" width="13" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.3921568627" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -47,6 +48,9 @@
                                         <state key="normal" title="100" backgroundImage="btn_coin_unsel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="coinBtnClked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9dO-jT-2HP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,14 +64,22 @@
                                     <constraint firstItem="Ez4-oq-QxA" firstAttribute="bottom" secondItem="fFp-QQ-P7q" secondAttribute="bottom" id="w7v-tq-ReQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6o-I1-dre">
+                                <rect key="frame" x="122" y="59" width="60" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.66764652729034424" green="0.87827879190444946" blue="0.92915326356887817" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bat-Mh-Rw0" firstAttribute="top" secondItem="59V-7L-qws" secondAttribute="bottom" constant="-1.5" id="Aeg-tT-FtG"/>
                             <constraint firstItem="59V-7L-qws" firstAttribute="top" secondItem="JBJ-LZ-A21" secondAttribute="top" id="EKJ-UD-Gik"/>
+                            <constraint firstItem="K6o-I1-dre" firstAttribute="centerX" secondItem="59V-7L-qws" secondAttribute="centerX" id="NCT-n2-iLl"/>
                             <constraint firstItem="59V-7L-qws" firstAttribute="leading" secondItem="JBJ-LZ-A21" secondAttribute="leading" id="O4u-ki-hNm"/>
                             <constraint firstAttribute="bottom" secondItem="Bat-Mh-Rw0" secondAttribute="bottom" id="SkO-Fy-xiE"/>
                             <constraint firstItem="Bat-Mh-Rw0" firstAttribute="leading" secondItem="JBJ-LZ-A21" secondAttribute="leading" id="Z3e-ns-eeh"/>
+                            <constraint firstItem="K6o-I1-dre" firstAttribute="centerY" secondItem="59V-7L-qws" secondAttribute="centerY" id="mDV-eR-iss"/>
                             <constraint firstAttribute="trailing" secondItem="Bat-Mh-Rw0" secondAttribute="trailing" id="rNN-Dl-dZX"/>
                             <constraint firstAttribute="trailing" secondItem="59V-7L-qws" secondAttribute="trailing" id="tYe-le-W7e"/>
                             <constraint firstAttribute="bottom" secondItem="59V-7L-qws" secondAttribute="bottom" constant="47" id="vp7-5a-1DX"/>
@@ -89,8 +101,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="coinBtn" destination="cpk-S6-LGh" id="rcA-ji-57T"/>
+                <outlet property="coinBtn" destination="My9-Kg-j9v" id="zE0-bF-Pz9"/>
                 <outlet property="titleImageView" destination="59V-7L-qws" id="ezt-bY-gAk"/>
+                <outlet property="titleLabel" destination="K6o-I1-dre" id="71L-CF-urC"/>
+                <outlet property="unitLabel" destination="Ez4-oq-QxA" id="zr1-6V-9BR"/>
                 <outlet property="valueLabel" destination="fFp-QQ-P7q" id="CYN-Sz-1LE"/>
             </connections>
             <point key="canvasLocation" x="233" y="191.5"/>

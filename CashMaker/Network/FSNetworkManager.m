@@ -431,12 +431,13 @@
 
 #pragma mark - 兑换模块
 //兑换列表
-//POST /exchange/elist
+//POST /exchange/getlist
 - (void)elistWithUserID:(NSString *)userID
        last_exchange_id:(NSString *)last_exchange_id
            successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"exchange/elist"];
+    
+    NSString *url = [FSNetworkManager packingURL:@"exchange/getlist"];
     NSDictionary *parameterDic  = @{@"userid" : userID,
                                     @"last_exchange_id" : last_exchange_id
                                     };
@@ -470,14 +471,8 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
-        NSDictionary *dic = responseObject;
-        if ([dic[@"code"] integerValue] == 1000) {
-            // 成功
-            sBlock(1000,dic[@"data"]);
-        }else{
-            // 显示错误信息
-        }
-        
+        sBlock(0,responseObject);
+    
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         
     }];
