@@ -19,7 +19,16 @@
 - (IBAction)experienceNowBtnClked:(id)sender
 {
     // 立即体验
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    if (self.navigationController && [self.navigationController.viewControllers firstObject]==self) {
+        
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }else{
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    
+    
 }
 
 

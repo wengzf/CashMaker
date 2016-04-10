@@ -20,14 +20,6 @@
     // 分割线一个像素设置
     [self.view resetDeviderLineToOnePixel];
     
-    // 隐藏导航栏
-    self.navigationController.navigationBarHidden = YES;
-    
-    // 进入登录注册页面
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
-//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLogin"];
-//    [self.navigationController pushViewController:vc animated:NO];
-    
     // 更新数据
     {
         if (Global.isLogin)
@@ -52,6 +44,18 @@
                 
             }];
         }
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (!Global.isLogin)
+    {
+        // 弹出登录注册页面
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLogin"];
+        [self presentViewController:vc animated:YES completion:NULL];
+        
     }
 }
 

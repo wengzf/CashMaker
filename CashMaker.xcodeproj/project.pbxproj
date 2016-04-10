@@ -380,8 +380,8 @@
 		21890B0D1C7B081300E09CA4 /* FSFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				ADB28B951CB8B20800601215 /* STScratchView */,
 				21890B1A1C7B081300E09CA4 /* Task.h */,
+				ADB28B951CB8B20800601215 /* STScratchView */,
 				21890B421C7B0A9C00E09CA4 /* MBProgressHUD */,
 				21890B1B1C7B081300E09CA4 /* UIKitExtionsion */,
 				21890B0E1C7B081300E09CA4 /* FoundationExtension */,

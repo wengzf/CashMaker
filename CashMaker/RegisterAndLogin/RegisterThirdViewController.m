@@ -60,7 +60,7 @@
             [Global saveUserInfo];
             
             // 登录成功，跳到首页
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:NULL];
         }
         
     }];

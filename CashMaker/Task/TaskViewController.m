@@ -12,7 +12,6 @@
 
 @interface TaskViewController()
 {
-    UITableView *taskTableView;
     NSMutableArray *taskArr;            // 兑换内容数组
 }
 
@@ -25,13 +24,29 @@
 {
     [super viewDidLoad];
     
-    taskTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    taskTableView.delegate = self;
-    taskTableView.dataSource = self;
-    [self.view addSubview:taskTableView];
+    [self.taskTableView registerNib:[UINib nibWithNibName:@"TaskTableViewCell" bundle:nil] forCellReuseIdentifier:@"TaskTableViewCell"];
+    
+    // 获取任务列表
+    {
+        [FSNetworkManagerDefaultInstance taskListWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
+            NSArray *arr = (NSArray *)dic;
+            taskArr = [NSMutableArray array];
+//            taskArr = [NSMutableArray arrayWithArray:arr];
+            
+            for (NSString *str in arr) {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = str;
+                model.titleStr = str;
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+            
+            [self.taskTableView reloadData];
+        }];
+    }
     
 }
--  (void)viewWillAppear:(BOOL)animated
+-  (void)viewWillAppear:(BOOL)animated                                        
 {
     [super viewWillAppear:animated];
     
@@ -51,10 +66,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat res = 205;
-    
-    // 根据屏幕适配尺寸
-    res = 205;
+    CGFloat res = 82;
     
     if (indexPath.row == (taskArr.count-1)) {
         res += 5;
@@ -81,7 +93,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    [cell resetDeviderLineToOnePixel];
+    [cell resetDeviderLineToOnePixel];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

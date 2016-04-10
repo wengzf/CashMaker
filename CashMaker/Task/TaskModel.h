@@ -12,7 +12,7 @@
 
 
 @property (nonatomic, strong) NSString *taskNameStr;
-@property (nonatomic, strong) NSString *titleStr;
+@property (nonatomic, strong) NSString *titleStr;              
 @property (nonatomic, strong) NSString *hintStr;
 
 @end

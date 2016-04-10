@@ -10,4 +10,7 @@
 
 @interface TaskViewController : UIBaseViewController<UITableViewDataSource, UITableViewDelegate>
 
+
+@property (weak, nonatomic) IBOutlet UITableView *taskTableView;
+
 @end

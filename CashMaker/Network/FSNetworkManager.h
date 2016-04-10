@@ -79,6 +79,11 @@ typedef void(^SuccessWithErrorBlock)(long status, NSString *err, NSDictionary *d
 
 #pragma mark - 任务模块
 
+// 获取任务列表
+//POST /task/getlist
+- (void)taskListWithUserID:(NSString *)userID
+              successBlock:(SuccessBlock)sBlock;
+
 // 签到
 //POST /task/signin
 - (void)signinWithUserID:(NSString *)userID

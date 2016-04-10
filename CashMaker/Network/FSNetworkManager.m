@@ -195,6 +195,29 @@
 }
 
 #pragma mark - 任务模块
+// 获取任务列表
+//POST /task/getlist
+- (void)taskListWithUserID:(NSString *)userID
+              successBlock:(SuccessBlock)sBlock
+{
+    NSString *url = [FSNetworkManager packingURL:@"task/getlist"];
+    NSDictionary *parameterDic  = @{@"userid" : userID
+                                    };
+    
+    [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSDictionary *dic = responseObject;
+        if ([dic[@"code"] integerValue] == 1000) {
+            // 成功
+            sBlock(1000,dic[@"data"]);
+        }else{
+            // 显示错误信息
+        }
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+    }];
+}
 
 // 签到
 //POST /task/signin

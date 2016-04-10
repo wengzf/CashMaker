@@ -70,6 +70,7 @@
     [self.view showLoading];
     [FSNetworkManagerDefaultInstance loginWithPhoneStr:self.accountTextField.text password:self.pwdTextField.text successBlock:^(long status, NSDictionary *dic) {
         
+        [self.view hideLoading];
         Global.isLogin = YES;
         Global.userID = [dic[@"userid"] stringValue];
         Global.token = dic[@"token"];
@@ -77,7 +78,7 @@
         [Global saveUserInfo];
         
         // 登录成功，跳到首页
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:NULL];
     }];
 }
 
