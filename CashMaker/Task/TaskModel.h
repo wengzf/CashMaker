@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TaskModel : NSObject
+@interface TaskModel : BaseModel
 
 
 @property (nonatomic, strong) NSString *taskNameStr;

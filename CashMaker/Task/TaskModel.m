@@ -10,4 +10,10 @@
 
 @implementation TaskModel
 
+
+- (void)fillWithDic:(NSDictionary *)dic
+{
+    
+}
+
 @end

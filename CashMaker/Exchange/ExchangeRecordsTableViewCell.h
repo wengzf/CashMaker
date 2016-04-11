@@ -12,6 +12,8 @@
 @interface ExchangeRecordsTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *accountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;

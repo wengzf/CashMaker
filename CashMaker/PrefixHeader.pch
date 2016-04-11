@@ -33,8 +33,12 @@
 #import "FSNetworkManager.h"            // 接口
 
 
+#pragma mark - 基类
 #import "UIBaseViewController.h"
 #import "UIBaseTableViewController.h"
+
+#import "BaseModel.h"
+#import "UIBaseTableViewCell.h"
 
 
 

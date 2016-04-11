@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ExchangeModel : NSObject
+@interface ExchangeModel : BaseModel
 
 @property (nonatomic, strong) NSString *exchangeID;     //兑换商品ID | integer,
 @property (nonatomic, strong) NSString *title;          // 标题 | string,
@@ -18,6 +18,5 @@
 @property (nonatomic, strong) NSString *reward_amount;  // 兑换数量 | integer
 
 
-- (id)initWithDic:(NSDictionary *)dic;
 
 @end

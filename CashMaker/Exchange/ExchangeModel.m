@@ -10,15 +10,9 @@
 
 @implementation ExchangeModel
 
-- (id)initWithDic:(NSDictionary *)dic
-{
-    self = [super init];
-    if (self) {
-        [self fillWithDic:dic];
-    }
-    return self;
-}
 
+
+// override
 - (void)fillWithDic:(NSDictionary *)dic
 {
     self.exchangeID = dic[@"id"];

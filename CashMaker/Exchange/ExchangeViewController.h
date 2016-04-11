@@ -11,7 +11,6 @@
 @interface ExchangeViewController : UIBaseViewController<UITableViewDataSource, UITableViewDelegate>
 
 
-
 @property (weak, nonatomic) IBOutlet UITableView *exchangeTableView;
 
 @end

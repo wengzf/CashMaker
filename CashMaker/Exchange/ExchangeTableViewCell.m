@@ -44,7 +44,6 @@
             self.unitLabel.text = @"元";
             break;
             
-            
         default:
             break;
     }
@@ -54,6 +53,12 @@
 }
 
 - (IBAction)coinBtnClked:(id)sender {
+    
+    // 弹出警告框输入兑换账号
+//    UIAlertView *alv
+    
+    
+    
     self.exchangeBlock(exchangeModel);
 }
 

@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 
 
@@ -18,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *restCoinsLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalCoinsLabel;
+
+@property (weak, nonatomic) IBOutlet UITableView *exchangeTableView;
 
 
 - (IBAction)viewAccountBtnClked:(id)sender;         // 查看账户
