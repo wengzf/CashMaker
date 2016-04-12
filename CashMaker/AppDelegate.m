@@ -28,11 +28,15 @@
     
     // 短信初始化
     {
-        NSString *appKey = @"11251bfa2495c";        // CashMaker
+        NSString *appKey = @"11251bfa2495c";                        // CashMaker
         NSString *appSecret = @"2ec864e58957d6f61bcc705b80324168";
         [SMSSDK registerApp:appKey withSecret:appSecret];
     }
 
+    // 对应广告平台初始化
+    {
+        
+    }
     return YES;
 }
 #pragma -导航栏风格初始化
