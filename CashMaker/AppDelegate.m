@@ -11,6 +11,10 @@
 
 
 #import "QumiConfigTool.h"      // 趣米
+//#import ""                    // 指盟
+
+#import "TBSpiritInstrument.h"      // 指盟
+#define ppuk @"43a09f6960add61c183eadb5efe5b42f"
 
 
 @interface AppDelegate ()
@@ -55,6 +59,22 @@
         //初始化连接失败的回调方法
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(qumiConnectFailed:) name:QUMI_CONNECT_FAILED object:nil];
     }
+    
+    [self initZhiMeng];
+    
+    [self initGuoMeng];
+    
+    [self initJuzhang];
+    
+    [self initKugao];
+    
+    [self initMidi];
+    
+    [self initZhijianhuyu];
+    
+    [self initYijifen];
+    
+    [self initWanpu];
 }
 //趣米广告初始化连接成功
 - (void)qumiConnectSuccess
@@ -68,6 +88,47 @@
     //用户获取积分的状态，是否获取成功
     NSString *isConnectFailed = [dic objectForKey:@"QUMI_CONNECT_FAILED"];
     NSLog(@"初始化连接失败的信息：%@",isConnectFailed);
+}
+
+// 指盟初始化
+- (void)initZhiMeng
+{
+    [TBSpiritInstrument launchFactoryd:@"0947715698a627bbae17ae3f85580ac8" ukrt:@"adusing"];
+}
+// 果盟
+- (void)initGuoMeng
+{
+    
+}
+// 巨掌
+- (void)initJuzhang
+{
+    
+}
+// 酷告
+- (void)initKugao
+{
+    
+}
+// 米迪
+- (void)initMidi
+{
+    
+}
+// 指间互娱(微信转发)
+- (void)initZhijianhuyu
+{
+    
+}
+// 易积分
+- (void)initYijifen
+{
+    
+}
+// 万普
+- (void)initWanpu
+{
+    
 }
 
 #pragma -导航栏风格初始化

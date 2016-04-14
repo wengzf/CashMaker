@@ -14,7 +14,7 @@
 #import "JOYConnect.h"          // 万普
 #import "QumiOperationApp.h"    // 趣米
 
-
+#import "TBDirectorCommand.h"   // 指盟
 
 @interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate>
 {
@@ -65,6 +65,15 @@
                 model.hintStr = @"免费获取积分";
                 [taskArr addObject:model];
             }
+            
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"zhimeng";
+                model.titleStr = @"指盟";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+            
 
             
             [self.taskTableView reloadData];
@@ -73,20 +82,20 @@
     
     [self initAD];
     
-    //创建积分墙广告 pointUserId可选，根据需要 开发者自己设置，设置PointUserId可以
-    //    实现在不同设备上同步该用户的积分。
-    _qumiViewController = [[QumiOperationApp alloc] initwithPointUserID:nil] ;
-    //设置代理
-    _qumiViewController.delegate = self;
-    
-    //是否隐藏状态栏，如果为YES就隐藏  NO是显示
-    _qumiViewController.isHiddenStatusBar = NO;
-    
-    //自动领取积分 开启自动领取积分功能填写YES 关闭填写NO
-    [_qumiViewController autoGetPoints:NO];
-    
-    
-    [_qumiViewController presentQmRecommendApp:self];
+//    //创建积分墙广告 pointUserId可选，根据需要 开发者自己设置，设置PointUserId可以
+//    //    实现在不同设备上同步该用户的积分。
+//    _qumiViewController = [[QumiOperationApp alloc] initwithPointUserID:nil] ;
+//    //设置代理
+//    _qumiViewController.delegate = self;
+//    
+//    //是否隐藏状态栏，如果为YES就隐藏  NO是显示
+//    _qumiViewController.isHiddenStatusBar = NO;
+//    
+//    //自动领取积分 开启自动领取积分功能填写YES 关闭填写NO
+//    [_qumiViewController autoGetPoints:NO];
+//    
+//    
+//    [_qumiViewController presentQmRecommendApp:self];
 
 }
 -  (void)viewWillAppear:(BOOL)animated
@@ -188,7 +197,13 @@
         TaskWallViewController *vc = [TaskWallViewController new];
         vc.controlStr = controlStr;
         [self.navigationController pushViewController:vc animated:YES];
+        
+    }else if ([controlStr isEqualToString:@"zhimeng"]) {
+        
+        [TBDirectorCommand driversrepeated:self correctViewPosition:YES];
     }
+    
+    
     
 }
 

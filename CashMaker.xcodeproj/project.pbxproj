@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2107443B1CBFEA4B0028646F /* TBAnalysis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 210744371CBFEA4B0028646F /* TBAnalysis.a */; };
+		2107443C1CBFEA4B0028646F /* ZJP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2107443A1CBFEA4B0028646F /* ZJP.bundle */; };
+		2107443E1CBFEBD10028646F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2107443D1CBFEBD10028646F /* ImageIO.framework */; };
+		210744421CBFEC0C0028646F /* hxwGMWBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2107443F1CBFEC0C0028646F /* hxwGMWBundle.bundle */; };
+		210744431CBFEC0C0028646F /* libhxwGMW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 210744411CBFEC0C0028646F /* libhxwGMW.a */; };
 		211520111C745DC400CE11DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 211520101C745DC400CE11DD /* main.m */; };
 		211520141C745DC400CE11DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 211520131C745DC400CE11DD /* AppDelegate.m */; };
 		2115201D1C745DC400CE11DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2115201B1C745DC400CE11DD /* Main.storyboard */; };
@@ -94,6 +99,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210744371CBFEA4B0028646F /* TBAnalysis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TBAnalysis.a; sourceTree = "<group>"; };
+		210744381CBFEA4B0028646F /* TBDirectorCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBDirectorCommand.h; sourceTree = "<group>"; };
+		210744391CBFEA4B0028646F /* TBSpiritInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSpiritInstrument.h; sourceTree = "<group>"; };
+		2107443A1CBFEA4B0028646F /* ZJP.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZJP.bundle; sourceTree = "<group>"; };
+		2107443D1CBFEBD10028646F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		2107443F1CBFEC0C0028646F /* hxwGMWBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = hxwGMWBundle.bundle; sourceTree = "<group>"; };
+		210744401CBFEC0C0028646F /* hxwGMWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hxwGMWViewController.h; sourceTree = "<group>"; };
+		210744411CBFEC0C0028646F /* libhxwGMW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhxwGMW.a; sourceTree = "<group>"; };
 		2115200C1C745DC400CE11DD /* CashMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		211520101C745DC400CE11DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		211520121C745DC400CE11DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -256,8 +269,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2107443E1CBFEBD10028646F /* ImageIO.framework in Frameworks */,
 				AD678E7E1CBF49C7000429BB /* AdSupport.framework in Frameworks */,
 				AD678E821CBF49D6000429BB /* CoreTelephony.framework in Frameworks */,
+				210744431CBFEC0C0028646F /* libhxwGMW.a in Frameworks */,
 				AD678E7C1CBF49BE000429BB /* CoreGraphics.framework in Frameworks */,
 				AD678E761CBF49A2000429BB /* Foundation.framework in Frameworks */,
 				AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */,
@@ -271,6 +286,7 @@
 				AD678E781CBF49AA000429BB /* UIKit.framework in Frameworks */,
 				AD678E8E1CBF79DA000429BB /* libQumiAdSDK.a in Frameworks */,
 				AD8DD5491CAD486600160B70 /* libstdc++.tbd in Frameworks */,
+				2107443B1CBFEA4B0028646F /* TBAnalysis.a in Frameworks */,
 				AD8DD5431CAD482F00160B70 /* libicucore.tbd in Frameworks */,
 				AD8DD5411CAD482000160B70 /* libz.tbd in Frameworks */,
 				AD678E941CBF7A7A000429BB /* libz.1.2.5.tbd in Frameworks */,
@@ -584,6 +600,10 @@
 		AD678E691CBF401D000429BB /* 指盟 */ = {
 			isa = PBXGroup;
 			children = (
+				210744371CBFEA4B0028646F /* TBAnalysis.a */,
+				210744381CBFEA4B0028646F /* TBDirectorCommand.h */,
+				210744391CBFEA4B0028646F /* TBSpiritInstrument.h */,
+				2107443A1CBFEA4B0028646F /* ZJP.bundle */,
 			);
 			path = "指盟";
 			sourceTree = "<group>";
@@ -605,6 +625,9 @@
 		AD678E6C1CBF401D000429BB /* 果盟 */ = {
 			isa = PBXGroup;
 			children = (
+				2107443F1CBFEC0C0028646F /* hxwGMWBundle.bundle */,
+				210744401CBFEC0C0028646F /* hxwGMWViewController.h */,
+				210744411CBFEC0C0028646F /* libhxwGMW.a */,
 			);
 			path = "果盟";
 			sourceTree = "<group>";
@@ -671,6 +694,7 @@
 		DACCB020F2BB4A33A91FEDB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2107443D1CBFEBD10028646F /* ImageIO.framework */,
 				AD678E931CBF7A7A000429BB /* libz.1.2.5.tbd */,
 				AD678E911CBF7A10000429BB /* StoreKit.framework */,
 				AD678E8F1CBF7A05000429BB /* Security.framework */,
@@ -755,8 +779,10 @@
 				AD3448831CABABA100048737 /* RegisterLogin.storyboard in Resources */,
 				AD1188771CBB8ADC00EFB378 /* ExchangeRecordsTableViewCell.xib in Resources */,
 				211520221C745DC400CE11DD /* LaunchScreen.storyboard in Resources */,
+				2107443C1CBFEA4B0028646F /* ZJP.bundle in Resources */,
 				2115201F1C745DC400CE11DD /* Assets.xcassets in Resources */,
 				AD678E8A1CBF4BD8000429BB /* TaskWallViewController.xib in Resources */,
+				210744421CBFEC0C0028646F /* hxwGMWBundle.bundle in Resources */,
 				2115201D1C745DC400CE11DD /* Main.storyboard in Resources */,
 				218138D71C93CCE100D75DBA /* TaskTableViewCell.xib in Resources */,
 			);
@@ -996,6 +1022,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CashMaker/Advertisement/万普",
 					"$(PROJECT_DIR)/CashMaker/Advertisement/趣米",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/指盟",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/果盟",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShaowCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1020,6 +1048,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CashMaker/Advertisement/万普",
 					"$(PROJECT_DIR)/CashMaker/Advertisement/趣米",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/指盟",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/果盟",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShaowCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
