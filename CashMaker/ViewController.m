@@ -99,7 +99,7 @@
     {
         // 弹出登录注册页面
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLogin"];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLoginViewControllerNav"];
         [self presentViewController:vc animated:YES completion:NULL];
         
     }

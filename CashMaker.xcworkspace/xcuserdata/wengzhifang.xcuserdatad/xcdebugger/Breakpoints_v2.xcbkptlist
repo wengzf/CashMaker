@@ -29,7 +29,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
+            landmarkName = "-nextBtnClked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -45,7 +45,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "-prepareForSegue:sender:"
+            landmarkName = "-nextBtnClked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -136,6 +136,22 @@
             startingLineNumber = "456"
             endingLineNumber = "456"
             landmarkName = "-elistWithUserID:last_exchange_id:successBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CashMaker/RegisterAndLogin/RegisterFirstViewController.m"
+            timestampString = "482292617.667544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-nextBtnClked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

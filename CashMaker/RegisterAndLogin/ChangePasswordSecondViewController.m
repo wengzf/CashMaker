@@ -58,6 +58,7 @@
 - (void)timerInit
 {
     if (timer == nil){
+        countdownNumber = 60;
         timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
         [timer fire];
     }
@@ -70,9 +71,12 @@
     if (countdownNumber == 0) {
         [self.countDownBtn setTitle:@"点击获取" forState:UIControlStateNormal];
         [self.countDownBtn setUserInteractionEnabled:YES];
-        countdownNumber = 61;
+        
         self.countDownBtn.userInteractionEnabled = YES;
+        
         [timer invalidate];
+        timer = nil;
+        
         return;
     }
 }

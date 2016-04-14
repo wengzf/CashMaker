@@ -69,8 +69,8 @@
         
         [self.view hideLoading];
         if (!error) {
-            NSLog(@"获取验证码成功");
             
+            [self.view hideLoading];
             // 进入登录注册页面
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
             RegisterSecondViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterSecondViewController"];

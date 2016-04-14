@@ -9,7 +9,7 @@
         <!--Navigation Controller-->
         <scene sceneID="qed-Ux-tFb">
             <objects>
-                <navigationController navigationBarHidden="YES" id="xMc-CP-pC9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RegisterLoginViewControllerNav" navigationBarHidden="YES" id="xMc-CP-pC9" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tEh-WS-9Qv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -26,7 +26,7 @@
         <!--Login View Controller-->
         <scene sceneID="ue1-1W-TLz">
             <objects>
-                <viewController id="4P5-XF-ByF" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="4P5-XF-ByF" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N8H-6m-3e3"/>
                         <viewControllerLayoutGuide type="bottom" id="aJX-xl-imZ"/>
@@ -82,7 +82,7 @@
                                             <constraint firstAttribute="height" constant="44" id="LPZ-JH-nmV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="LPZ-JH-nmV"/>
@@ -230,7 +230,7 @@
         <!--Register Login View Controller-->
         <scene sceneID="MjA-RB-AR7">
             <objects>
-                <viewController storyboardIdentifier="RegisterLogin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fGC-h5-Pz1" customClass="RegisterLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fGC-h5-Pz1" customClass="RegisterLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kf9-d2-OgZ"/>
                         <viewControllerLayoutGuide type="bottom" id="ui0-0n-PSP"/>
@@ -329,7 +329,7 @@
         <!--Register First View Controller-->
         <scene sceneID="mB8-Jj-LVV">
             <objects>
-                <viewController id="SSL-7N-yPL" customClass="RegisterFirstViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterFirstViewController" id="SSL-7N-yPL" customClass="RegisterFirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lzg-bM-DhI"/>
                         <viewControllerLayoutGuide type="bottom" id="djD-tq-bQc"/>
@@ -654,7 +654,7 @@
         <!--Change Password First View Controller-->
         <scene sceneID="Xux-l7-Z69">
             <objects>
-                <viewController id="Lff-oj-JQx" customClass="ChangePasswordFirstViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordFirstViewController" id="Lff-oj-JQx" customClass="ChangePasswordFirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gwi-u2-0I6"/>
                         <viewControllerLayoutGuide type="bottom" id="3Fs-oa-b09"/>
@@ -929,6 +929,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextBtnClked:" destination="wmX-GI-YEK" eventType="touchUpInside" id="zB3-FL-9Rl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 8 1 * * * * 5 8 8 9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3v-m6-u89">
                                 <rect key="frame" x="114.5" y="121" width="146.5" height="22.5"/>
@@ -1007,7 +1010,7 @@
                                             <constraint firstAttribute="height" constant="44" id="rel-TC-fkw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="rel-TC-fkw"/>
@@ -1204,7 +1207,7 @@
                                             <constraint firstAttribute="height" constant="44" id="YiN-0z-AFK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="YiN-0z-AFK"/>
