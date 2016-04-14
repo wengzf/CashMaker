@@ -10,6 +10,9 @@
 #import <SMS_SDK/SMSSDK.h>
 
 
+#import "QumiConfigTool.h"      // 趣米
+
+
 @interface AppDelegate ()
 
 @end
@@ -35,10 +38,38 @@
 
     // 对应广告平台初始化
     {
+        [self initAD];
         
     }
     return YES;
 }
+
+- (void)initAD
+{
+    // 趣米
+    {
+        [QumiConfigTool startWithAPPID:@"62cc05162c766a49" secretKey:@"69cdc500296f4963" appChannel:100055];
+        
+        //初始化连接成功的回调方法
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(qumiConnectSuccess) name:QUMI_CONNECT_SUCCESS object:nil];
+        //初始化连接失败的回调方法
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(qumiConnectFailed:) name:QUMI_CONNECT_FAILED object:nil];
+    }
+}
+//趣米广告初始化连接成功
+- (void)qumiConnectSuccess
+{
+    NSLog(@"初始化连接成功");
+}
+- (void)qumiConnectFailed:(NSNotification*)notification
+{
+    //通知传过来的值
+    NSDictionary *dic = [notification userInfo];
+    //用户获取积分的状态，是否获取成功
+    NSString *isConnectFailed = [dic objectForKey:@"QUMI_CONNECT_FAILED"];
+    NSLog(@"初始化连接失败的信息：%@",isConnectFailed);
+}
+
 #pragma -导航栏风格初始化
 - (void)navigationStyleInit {
     

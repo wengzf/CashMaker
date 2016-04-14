@@ -69,6 +69,10 @@
 		AD678E821CBF49D6000429BB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E811CBF49D6000429BB /* CoreTelephony.framework */; };
 		AD678E891CBF4BD8000429BB /* TaskWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD678E871CBF4BD8000429BB /* TaskWallViewController.m */; };
 		AD678E8A1CBF4BD8000429BB /* TaskWallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD678E881CBF4BD8000429BB /* TaskWallViewController.xib */; };
+		AD678E8E1CBF79DA000429BB /* libQumiAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E8B1CBF79DA000429BB /* libQumiAdSDK.a */; };
+		AD678E901CBF7A05000429BB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E8F1CBF7A05000429BB /* Security.framework */; };
+		AD678E921CBF7A10000429BB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E911CBF7A10000429BB /* StoreKit.framework */; };
+		AD678E941CBF7A7A000429BB /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E931CBF7A7A000429BB /* libz.1.2.5.tbd */; };
 		AD8C057E1CABF78C00BC1D9A /* CALayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C057D1CABF78C00BC1D9A /* CALayer+Extension.m */; };
 		AD8C05811CABF85E00BC1D9A /* RegisterLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C05801CABF85E00BC1D9A /* RegisterLoginViewController.m */; };
 		AD8C05841CABF86E00BC1D9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C05831CABF86E00BC1D9A /* LoginViewController.m */; };
@@ -209,6 +213,12 @@
 		AD678E861CBF4BD8000429BB /* TaskWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskWallViewController.h; sourceTree = "<group>"; };
 		AD678E871CBF4BD8000429BB /* TaskWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskWallViewController.m; sourceTree = "<group>"; };
 		AD678E881CBF4BD8000429BB /* TaskWallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskWallViewController.xib; sourceTree = "<group>"; };
+		AD678E8B1CBF79DA000429BB /* libQumiAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libQumiAdSDK.a; sourceTree = "<group>"; };
+		AD678E8C1CBF79DA000429BB /* QumiConfigTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QumiConfigTool.h; sourceTree = "<group>"; };
+		AD678E8D1CBF79DA000429BB /* QumiOperationApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QumiOperationApp.h; sourceTree = "<group>"; };
+		AD678E8F1CBF7A05000429BB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AD678E911CBF7A10000429BB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AD678E931CBF7A7A000429BB /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		AD8C057C1CABF78C00BC1D9A /* CALayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
 		AD8C057D1CABF78C00BC1D9A /* CALayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		AD8C057F1CABF85E00BC1D9A /* RegisterLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterLoginViewController.h; sourceTree = "<group>"; };
@@ -246,20 +256,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD678E821CBF49D6000429BB /* CoreTelephony.framework in Frameworks */,
-				AD678E801CBF49CF000429BB /* SystemConfiguration.framework in Frameworks */,
 				AD678E7E1CBF49C7000429BB /* AdSupport.framework in Frameworks */,
+				AD678E821CBF49D6000429BB /* CoreTelephony.framework in Frameworks */,
 				AD678E7C1CBF49BE000429BB /* CoreGraphics.framework in Frameworks */,
-				AD678E7A1CBF49B5000429BB /* QuartzCore.framework in Frameworks */,
-				AD678E781CBF49AA000429BB /* UIKit.framework in Frameworks */,
 				AD678E761CBF49A2000429BB /* Foundation.framework in Frameworks */,
-				AD8DD5491CAD486600160B70 /* libstdc++.tbd in Frameworks */,
 				AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */,
 				AD8DD5451CAD484300160B70 /* MessageUI.framework in Frameworks */,
+				AD8DD53E1CAD479700160B70 /* MOBFoundation.framework in Frameworks */,
+				AD678E7A1CBF49B5000429BB /* QuartzCore.framework in Frameworks */,
+				AD8DD53F1CAD479700160B70 /* SMS_SDK.framework in Frameworks */,
+				AD678E921CBF7A10000429BB /* StoreKit.framework in Frameworks */,
+				AD678E901CBF7A05000429BB /* Security.framework in Frameworks */,
+				AD678E801CBF49CF000429BB /* SystemConfiguration.framework in Frameworks */,
+				AD678E781CBF49AA000429BB /* UIKit.framework in Frameworks */,
+				AD678E8E1CBF79DA000429BB /* libQumiAdSDK.a in Frameworks */,
+				AD8DD5491CAD486600160B70 /* libstdc++.tbd in Frameworks */,
 				AD8DD5431CAD482F00160B70 /* libicucore.tbd in Frameworks */,
 				AD8DD5411CAD482000160B70 /* libz.tbd in Frameworks */,
-				AD8DD53F1CAD479700160B70 /* SMS_SDK.framework in Frameworks */,
-				AD8DD53E1CAD479700160B70 /* MOBFoundation.framework in Frameworks */,
+				AD678E941CBF7A7A000429BB /* libz.1.2.5.tbd in Frameworks */,
 				C213F91C6292F538623D1189 /* libPods.a in Frameworks */,
 				AD678E741CBF402E000429BB /* apilib.a in Frameworks */,
 			);
@@ -612,6 +626,9 @@
 		AD678E6F1CBF401D000429BB /* 趣米 */ = {
 			isa = PBXGroup;
 			children = (
+				AD678E8B1CBF79DA000429BB /* libQumiAdSDK.a */,
+				AD678E8C1CBF79DA000429BB /* QumiConfigTool.h */,
+				AD678E8D1CBF79DA000429BB /* QumiOperationApp.h */,
 			);
 			path = "趣米";
 			sourceTree = "<group>";
@@ -654,6 +671,9 @@
 		DACCB020F2BB4A33A91FEDB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD678E931CBF7A7A000429BB /* libz.1.2.5.tbd */,
+				AD678E911CBF7A10000429BB /* StoreKit.framework */,
+				AD678E8F1CBF7A05000429BB /* Security.framework */,
 				AD678E811CBF49D6000429BB /* CoreTelephony.framework */,
 				AD678E7F1CBF49CF000429BB /* SystemConfiguration.framework */,
 				AD678E7D1CBF49C7000429BB /* AdSupport.framework */,
@@ -975,6 +995,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CashMaker/Advertisement/万普",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/趣米",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShaowCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -998,6 +1019,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CashMaker/Advertisement/万普",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/趣米",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShaowCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";

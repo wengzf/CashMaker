@@ -12,13 +12,16 @@
 #import "TaskWallViewController.h"
 
 #import "JOYConnect.h"          // 万普
+#import "QumiOperationApp.h"    // 趣米
 
 
 
-@interface TaskViewController()<JOYConnectDelegate>
+@interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate>
 {
     NSMutableArray *taskArr;            // 兑换内容数组
 }
+
+@property(nonatomic,strong)QumiOperationApp *qumiViewController;        // 趣米
 
 @end
 
@@ -48,12 +51,21 @@
                 model.hintStr = @"免费获取积分";
                 [taskArr addObject:model];
             }
-            
-            TaskModel *model = [TaskModel new];
-            model.taskNameStr = @"wanpu";
-            model.titleStr = @"万普";
-            model.hintStr = @"免费获取积分";
-            [taskArr addObject:model];
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"wanpu";
+                model.titleStr = @"万普";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"qumi";
+                model.titleStr = @"趣米";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+
             
             [self.taskTableView reloadData];
         }];
@@ -61,8 +73,23 @@
     
     [self initAD];
     
+    //创建积分墙广告 pointUserId可选，根据需要 开发者自己设置，设置PointUserId可以
+    //    实现在不同设备上同步该用户的积分。
+    _qumiViewController = [[QumiOperationApp alloc] initwithPointUserID:nil] ;
+    //设置代理
+    _qumiViewController.delegate = self;
+    
+    //是否隐藏状态栏，如果为YES就隐藏  NO是显示
+    _qumiViewController.isHiddenStatusBar = NO;
+    
+    //自动领取积分 开启自动领取积分功能填写YES 关闭填写NO
+    [_qumiViewController autoGetPoints:NO];
+    
+    
+    [_qumiViewController presentQmRecommendApp:self];
+
 }
--  (void)viewWillAppear:(BOOL)animated                                        
+-  (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
@@ -72,7 +99,7 @@
 {
     [super viewDidAppear:animated];
     
-    
+
 }
 
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>
@@ -127,6 +154,19 @@
         // 弹出分享菜单
         
         
+    }else if ([model.taskNameStr isEqualToString:@"qumi"]){
+        
+        //创建积分墙广告 pointUserId可选，根据需要 开发者自己设置，设置PointUserId可以
+        //    实现在不同设备上同步该用户的积分。
+        _qumiViewController = [[QumiOperationApp alloc] initwithPointUserID:nil] ;
+        //设置代理
+        _qumiViewController.delegate = self;
+        
+        //是否隐藏状态栏，如果为YES就隐藏  NO是显示
+        _qumiViewController.isHiddenStatusBar = NO;
+        
+        //自动领取积分 开启自动领取积分功能填写YES 关闭填写NO
+        [_qumiViewController autoGetPoints:NO];
     }else{
         [self showADWithControlStr:model.taskNameStr];
     }
@@ -149,6 +189,7 @@
         vc.controlStr = controlStr;
         [self.navigationController pushViewController:vc animated:YES];
     }
+    
 }
 
 
@@ -169,6 +210,7 @@
     [JOYConnect getConnect:appID pid:pid userID:userID];
     [JOYConnect sharedJOYConnect].delegate=self;
 }
+#pragma mark - 万普 delegate
 - (void)onConnectSuccess{
     NSLog(@"连接成功");
 }
@@ -187,6 +229,20 @@
 
 - (void)onListClose;{
     NSLog(@"列表关闭");
+}
+
+#pragma mark - 趣米 delegate
+-(void)QMSuccessToLoaded:(QumiOperationApp *)qumiAdApp
+{
+    NSLog(@"积分墙加载成功回调");
+}
+-(void)QMFailToLoaded:(QumiOperationApp *)qumiAdApp withError:(NSError *)error
+{
+    NSLog(@"加载数据失败回调%@",error);
+}
+-(void)QMDismiss:(QumiOperationApp *)qumiAdApp
+{
+    NSLog(@"积分墙关闭");
 }
 @end
 
