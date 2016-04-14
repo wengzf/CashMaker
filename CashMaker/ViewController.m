@@ -57,13 +57,18 @@
         {
             [FSNetworkManagerDefaultInstance userInfoDetailWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
 
+//                for (NSString *key in [dic allKeys]) {
+//                    NSObject *obj = dic[key];
+//                    NSLog(@"%@ %@",key, [obj class]);
+//                }
+                
                 Global.userID   = dic[@"userid"];
                 
                 Global.name     = dic[@"name"];
                 Global.mail     = dic[@"email"];
                 Global.phone    = dic[@"phone"];
                 Global.conis    = dic[@"coins"];
-                Global.status   = [dic[@"status"] intValue];
+                Global.status   = dic[@"status"];
                 
                 Global.nation    = dic[@"nation"];
                 Global.app_name    = dic[@"app_name"];
@@ -84,7 +89,7 @@
                 
                 
                 // 设置对应UI
-                self.todayCoinsLabel.text = dic[@"today_coins"];
+                self.todayCoinsLabel.text = [dic[@"today_coins"] stringValue];
                 self.restCoinsLabel.text = dic[@"coins"];
                 self.totalCoinsLabel.text = dic[@"total_coins"];
                 

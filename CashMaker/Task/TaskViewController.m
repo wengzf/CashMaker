@@ -9,8 +9,13 @@
 #import "TaskViewController.h"
 #import "TaskTableViewCell.h"
 
+#import "TaskWallViewController.h"
 
-@interface TaskViewController()
+#import "JOYConnect.h"          // 万普
+
+
+
+@interface TaskViewController()<JOYConnectDelegate>
 {
     NSMutableArray *taskArr;            // 兑换内容数组
 }
@@ -44,9 +49,17 @@
                 [taskArr addObject:model];
             }
             
+            TaskModel *model = [TaskModel new];
+            model.taskNameStr = @"wanpu";
+            model.titleStr = @"万普";
+            model.hintStr = @"免费获取积分";
+            [taskArr addObject:model];
+            
             [self.taskTableView reloadData];
         }];
     }
+    
+    [self initAD];
     
 }
 -  (void)viewWillAppear:(BOOL)animated                                        
@@ -128,16 +141,53 @@
     }else if ([controlStr isEqualToString:@"signin"]) {
         
         
-    }else if ([controlStr isEqualToString:@"signin"]) {
+    }else if ([controlStr isEqualToString:@"wanpu"]) {
         
-    }else if ([controlStr isEqualToString:@"signin"]) {
-        
-    }else if ([controlStr isEqualToString:@"signin"]) {
-        
+//        [JOYConnect showList:nil];
+//        [JOYConnect showList:self];
+        TaskWallViewController *vc = [TaskWallViewController new];
+        vc.controlStr = controlStr;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
 
+- (void)initAD
+{
+    [self wanpu];
+}
+
+// 万普平台
+- (void)wanpu
+{
+    NSString * appID=[NSString stringWithFormat:@"%@",@"4ad1a43c27b83f89301d02974eb4cf90"];
+    NSDictionary * dic=@{@"pid":@"enterprise",@"userID":Global.userID};
+    NSString *pid=dic[@"pid"];
+    NSString * userID=dic[@"userID"];
+    
+    NSLog(@"appID=%@",appID);
+    [JOYConnect getConnect:appID pid:pid userID:userID];
+    [JOYConnect sharedJOYConnect].delegate=self;
+}
+- (void)onConnectSuccess{
+    NSLog(@"连接成功");
+}
+- (void)onConnectFailed:(NSString *)error
+{
+    NSLog(@"连接失败:%@",error);
+}
+
+- (void)onListOpen;{
+    NSLog(@"列表展示");
+}
+
+-(void)onListShowFailed:(NSString *)error;{
+    NSLog(@"列表展示失败:%@",error);
+}
+
+- (void)onListClose;{
+    NSLog(@"列表关闭");
+}
 @end
 
 

@@ -82,7 +82,7 @@ static GlobalVar *obj;
     self.phone    = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalPhone];
     self.conis    = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalCoins];
     
-    self.status   = [[[NSUserDefaults standardUserDefaults] valueForKey:kGlobalStatus] intValue];
+    self.status   = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalStatus];
     
     self.nation    = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalNation];
     self.app_name    = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalApp_name];
@@ -102,7 +102,7 @@ static GlobalVar *obj;
     [[NSUserDefaults standardUserDefaults] setObject:self.phone forKey:kGlobalPhone];
     [[NSUserDefaults standardUserDefaults] setObject:self.conis forKey:kGlobalCoins];
     
-    [[NSUserDefaults standardUserDefaults] setValue:@(self.status) forKey:kGlobalStatus];
+    [[NSUserDefaults standardUserDefaults] setObject:self.status forKey:kGlobalStatus];
     
     [[NSUserDefaults standardUserDefaults] setObject:self.nation forKey:kGlobalNation];
     [[NSUserDefaults standardUserDefaults] setObject:self.app_name forKey:kGlobalApp_name];

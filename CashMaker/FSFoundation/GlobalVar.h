@@ -53,7 +53,7 @@
 @property (strong, nonatomic) NSString *phone;
 @property (strong, nonatomic) NSString *conis;
 
-@property (assign, nonatomic) int status;
+@property (strong, nonatomic) NSString *status;
 
 @property (strong, nonatomic) NSString *nation;
 @property (strong, nonatomic) NSString *app_name;

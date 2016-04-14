@@ -430,9 +430,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDp-67-dRY">
-                                                <rect key="frame" x="277" y="189" width="60" height="33"/>
+                                                <rect key="frame" x="307" y="189" width="30" height="33"/>
                                                 <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="15"/>
-                                                <state key="normal" title="账户查询"/>
+                                                <state key="normal" title="账户"/>
                                                 <connections>
                                                     <action selector="viewAccountBtnClked:" destination="g8L-xd-RPO" eventType="touchUpInside" id="3ha-ju-vEw"/>
                                                 </connections>

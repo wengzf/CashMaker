@@ -59,6 +59,16 @@
 		AD59CB221CACC76200EFA1F3 /* ChangePasswordFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD59CB211CACC76200EFA1F3 /* ChangePasswordFirstViewController.m */; };
 		AD59CB251CACC77600EFA1F3 /* ChangePasswordSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD59CB241CACC77600EFA1F3 /* ChangePasswordSecondViewController.m */; };
 		AD59CB281CACC78200EFA1F3 /* ChangePasswordThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD59CB271CACC78200EFA1F3 /* ChangePasswordThirdViewController.m */; };
+		AD678E741CBF402E000429BB /* apilib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E711CBF402E000429BB /* apilib.a */; };
+		AD678E761CBF49A2000429BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E751CBF49A2000429BB /* Foundation.framework */; };
+		AD678E781CBF49AA000429BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E771CBF49AA000429BB /* UIKit.framework */; };
+		AD678E7A1CBF49B5000429BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E791CBF49B5000429BB /* QuartzCore.framework */; };
+		AD678E7C1CBF49BE000429BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E7B1CBF49BE000429BB /* CoreGraphics.framework */; };
+		AD678E7E1CBF49C7000429BB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E7D1CBF49C7000429BB /* AdSupport.framework */; };
+		AD678E801CBF49CF000429BB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E7F1CBF49CF000429BB /* SystemConfiguration.framework */; };
+		AD678E821CBF49D6000429BB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E811CBF49D6000429BB /* CoreTelephony.framework */; };
+		AD678E891CBF4BD8000429BB /* TaskWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD678E871CBF4BD8000429BB /* TaskWallViewController.m */; };
+		AD678E8A1CBF4BD8000429BB /* TaskWallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD678E881CBF4BD8000429BB /* TaskWallViewController.xib */; };
 		AD8C057E1CABF78C00BC1D9A /* CALayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C057D1CABF78C00BC1D9A /* CALayer+Extension.m */; };
 		AD8C05811CABF85E00BC1D9A /* RegisterLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C05801CABF85E00BC1D9A /* RegisterLoginViewController.m */; };
 		AD8C05841CABF86E00BC1D9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C05831CABF86E00BC1D9A /* LoginViewController.m */; };
@@ -186,6 +196,19 @@
 		AD59CB241CACC77600EFA1F3 /* ChangePasswordSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordSecondViewController.m; sourceTree = "<group>"; };
 		AD59CB261CACC78200EFA1F3 /* ChangePasswordThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordThirdViewController.h; sourceTree = "<group>"; };
 		AD59CB271CACC78200EFA1F3 /* ChangePasswordThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordThirdViewController.m; sourceTree = "<group>"; };
+		AD678E711CBF402E000429BB /* apilib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = apilib.a; sourceTree = "<group>"; };
+		AD678E721CBF402E000429BB /* JOYConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYConnect.h; sourceTree = "<group>"; };
+		AD678E731CBF402E000429BB /* JOYListCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYListCustom.h; sourceTree = "<group>"; };
+		AD678E751CBF49A2000429BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AD678E771CBF49AA000429BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AD678E791CBF49B5000429BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD678E7B1CBF49BE000429BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AD678E7D1CBF49C7000429BB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		AD678E7F1CBF49CF000429BB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AD678E811CBF49D6000429BB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		AD678E861CBF4BD8000429BB /* TaskWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskWallViewController.h; sourceTree = "<group>"; };
+		AD678E871CBF4BD8000429BB /* TaskWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskWallViewController.m; sourceTree = "<group>"; };
+		AD678E881CBF4BD8000429BB /* TaskWallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskWallViewController.xib; sourceTree = "<group>"; };
 		AD8C057C1CABF78C00BC1D9A /* CALayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
 		AD8C057D1CABF78C00BC1D9A /* CALayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		AD8C057F1CABF85E00BC1D9A /* RegisterLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterLoginViewController.h; sourceTree = "<group>"; };
@@ -223,6 +246,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD678E821CBF49D6000429BB /* CoreTelephony.framework in Frameworks */,
+				AD678E801CBF49CF000429BB /* SystemConfiguration.framework in Frameworks */,
+				AD678E7E1CBF49C7000429BB /* AdSupport.framework in Frameworks */,
+				AD678E7C1CBF49BE000429BB /* CoreGraphics.framework in Frameworks */,
+				AD678E7A1CBF49B5000429BB /* QuartzCore.framework in Frameworks */,
+				AD678E781CBF49AA000429BB /* UIKit.framework in Frameworks */,
+				AD678E761CBF49A2000429BB /* Foundation.framework in Frameworks */,
 				AD8DD5491CAD486600160B70 /* libstdc++.tbd in Frameworks */,
 				AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */,
 				AD8DD5451CAD484300160B70 /* MessageUI.framework in Frameworks */,
@@ -231,6 +261,7 @@
 				AD8DD53F1CAD479700160B70 /* SMS_SDK.framework in Frameworks */,
 				AD8DD53E1CAD479700160B70 /* MOBFoundation.framework in Frameworks */,
 				C213F91C6292F538623D1189 /* libPods.a in Frameworks */,
+				AD678E741CBF402E000429BB /* apilib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,10 +289,10 @@
 		2115200E1C745DC400CE11DD /* CashMaker */ = {
 			isa = PBXGroup;
 			children = (
+				AD678E651CBF401D000429BB /* Advertisement */,
 				AD8DD53A1CAD479700160B70 /* ThirdParty */,
 				21890B0D1C7B081300E09CA4 /* FSFoundation */,
 				2181389E1C8FC5DD00D75DBA /* Network */,
-				211520291C74661200CE11DD /* Advertisement */,
 				AD3448651CABA71200048737 /* RegisterAndLogin */,
 				211520361C74661200CE11DD /* Task */,
 				2115202A1C74661200CE11DD /* Exchange */,
@@ -287,14 +318,6 @@
 				211520101C745DC400CE11DD /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		211520291C74661200CE11DD /* Advertisement */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Advertisement;
-			path = AD;
 			sourceTree = "<group>";
 		};
 		2115202A1C74661200CE11DD /* Exchange */ = {
@@ -346,6 +369,9 @@
 				218138D51C93CCE100D75DBA /* TaskTableViewCell.xib */,
 				211520371C74661200CE11DD /* TaskViewController.h */,
 				211520381C74661200CE11DD /* TaskViewController.m */,
+				AD678E861CBF4BD8000429BB /* TaskWallViewController.h */,
+				AD678E871CBF4BD8000429BB /* TaskWallViewController.m */,
+				AD678E881CBF4BD8000429BB /* TaskWallViewController.xib */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -499,6 +525,104 @@
 			path = RegisterAndLogin;
 			sourceTree = "<group>";
 		};
+		AD678E651CBF401D000429BB /* Advertisement */ = {
+			isa = PBXGroup;
+			children = (
+				AD678E661CBF401D000429BB /* 万普 */,
+				AD678E671CBF401D000429BB /* 多盟 */,
+				AD678E681CBF401D000429BB /* 巨掌 */,
+				AD678E691CBF401D000429BB /* 指盟 */,
+				AD678E6A1CBF401D000429BB /* 指间互娱(微信转发) */,
+				AD678E6B1CBF401D000429BB /* 易积分 */,
+				AD678E6C1CBF401D000429BB /* 果盟 */,
+				AD678E6D1CBF401D000429BB /* 米迪 */,
+				AD678E6E1CBF401D000429BB /* 艾德思齐(不对外开放) */,
+				AD678E6F1CBF401D000429BB /* 趣米 */,
+				AD678E701CBF401D000429BB /* 酷告 */,
+			);
+			path = Advertisement;
+			sourceTree = "<group>";
+		};
+		AD678E661CBF401D000429BB /* 万普 */ = {
+			isa = PBXGroup;
+			children = (
+				AD678E711CBF402E000429BB /* apilib.a */,
+				AD678E721CBF402E000429BB /* JOYConnect.h */,
+				AD678E731CBF402E000429BB /* JOYListCustom.h */,
+			);
+			path = "万普";
+			sourceTree = "<group>";
+		};
+		AD678E671CBF401D000429BB /* 多盟 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "多盟";
+			sourceTree = "<group>";
+		};
+		AD678E681CBF401D000429BB /* 巨掌 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "巨掌";
+			sourceTree = "<group>";
+		};
+		AD678E691CBF401D000429BB /* 指盟 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "指盟";
+			sourceTree = "<group>";
+		};
+		AD678E6A1CBF401D000429BB /* 指间互娱(微信转发) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "指间互娱(微信转发)";
+			sourceTree = "<group>";
+		};
+		AD678E6B1CBF401D000429BB /* 易积分 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "易积分";
+			sourceTree = "<group>";
+		};
+		AD678E6C1CBF401D000429BB /* 果盟 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "果盟";
+			sourceTree = "<group>";
+		};
+		AD678E6D1CBF401D000429BB /* 米迪 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "米迪";
+			sourceTree = "<group>";
+		};
+		AD678E6E1CBF401D000429BB /* 艾德思齐(不对外开放) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "艾德思齐(不对外开放)";
+			sourceTree = "<group>";
+		};
+		AD678E6F1CBF401D000429BB /* 趣米 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "趣米";
+			sourceTree = "<group>";
+		};
+		AD678E701CBF401D000429BB /* 酷告 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "酷告";
+			sourceTree = "<group>";
+		};
 		AD8DD53A1CAD479700160B70 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +654,13 @@
 		DACCB020F2BB4A33A91FEDB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD678E811CBF49D6000429BB /* CoreTelephony.framework */,
+				AD678E7F1CBF49CF000429BB /* SystemConfiguration.framework */,
+				AD678E7D1CBF49C7000429BB /* AdSupport.framework */,
+				AD678E7B1CBF49BE000429BB /* CoreGraphics.framework */,
+				AD678E791CBF49B5000429BB /* QuartzCore.framework */,
+				AD678E771CBF49AA000429BB /* UIKit.framework */,
+				AD678E751CBF49A2000429BB /* Foundation.framework */,
 				AD8DD5481CAD486600160B70 /* libstdc++.tbd */,
 				AD8DD5461CAD485400160B70 /* JavaScriptCore.framework */,
 				AD8DD5441CAD484300160B70 /* MessageUI.framework */,
@@ -605,6 +736,7 @@
 				AD1188771CBB8ADC00EFB378 /* ExchangeRecordsTableViewCell.xib in Resources */,
 				211520221C745DC400CE11DD /* LaunchScreen.storyboard in Resources */,
 				2115201F1C745DC400CE11DD /* Assets.xcassets in Resources */,
+				AD678E8A1CBF4BD8000429BB /* TaskWallViewController.xib in Resources */,
 				2115201D1C745DC400CE11DD /* Main.storyboard in Resources */,
 				218138D71C93CCE100D75DBA /* TaskTableViewCell.xib in Resources */,
 			);
@@ -718,6 +850,7 @@
 				21890B371C7B081300E09CA4 /* UIButton+Extension.m in Sources */,
 				218138B61C8FCAA400D75DBA /* AFHTTPRequestOperation.m in Sources */,
 				21890B3D1C7B081300E09CA4 /* UINavigationBar+Extension.m in Sources */,
+				AD678E891CBF4BD8000429BB /* TaskWallViewController.m in Sources */,
 				218138BD1C8FCAA400D75DBA /* AFURLResponseSerialization.m in Sources */,
 				2115203C1C74661200CE11DD /* SettingViewController.m in Sources */,
 			);
@@ -839,6 +972,10 @@
 				INFOPLIST_FILE = CashMaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/万普",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShaowCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -858,6 +995,10 @@
 				INFOPLIST_FILE = CashMaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CashMaker/Advertisement/万普",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShaowCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
