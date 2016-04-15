@@ -11,10 +11,7 @@
 
 
 #import "QumiConfigTool.h"      // 趣米
-//#import ""                    // 指盟
-
 #import "TBSpiritInstrument.h"      // 指盟
-#define ppuk @"43a09f6960add61c183eadb5efe5b42f"
 
 
 @interface AppDelegate ()
@@ -98,6 +95,8 @@
 // 果盟
 - (void)initGuoMeng
 {
+    //    11548
+    
     
 }
 // 巨掌

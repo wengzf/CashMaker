@@ -13,12 +13,14 @@
 
 #import "JOYConnect.h"          // 万普
 #import "QumiOperationApp.h"    // 趣米
-
 #import "TBDirectorCommand.h"   // 指盟
+#import "hxwGMWViewController.h"    // 果盟
 
-@interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate>
+@interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate, hxwGMWDelegate>
 {
     NSMutableArray *taskArr;            // 兑换内容数组
+    
+    hxwGMWViewController *guoguoTree_vc;    // 果盟
 }
 
 @property(nonatomic,strong)QumiOperationApp *qumiViewController;        // 趣米
@@ -70,6 +72,13 @@
                 TaskModel *model = [TaskModel new];
                 model.taskNameStr = @"zhimeng";
                 model.titleStr = @"指盟";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"guomeng";
+                model.titleStr = @"果盟";
                 model.hintStr = @"免费获取积分";
                 [taskArr addObject:model];
             }
@@ -201,16 +210,21 @@
     }else if ([controlStr isEqualToString:@"zhimeng"]) {
         
         [TBDirectorCommand driversrepeated:self correctViewPosition:YES];
+    }else if ([controlStr isEqualToString:@"guomeng"]) {
+        
+        [guoguoTree_vc pushhxwGMW:YES Hscreen:NO];
     }
+    
     
     
     
 }
 
-
+#pragma mark - 广告初始化
 - (void)initAD
 {
     [self wanpu];
+    [self guomeng];
 }
 
 // 万普平台
@@ -224,6 +238,23 @@
     NSLog(@"appID=%@",appID);
     [JOYConnect getConnect:appID pid:pid userID:userID];
     [JOYConnect sharedJOYConnect].delegate=self;
+}
+- (void)guomeng
+{
+    //用果果家密钥初始化果果树
+    guoguoTree_vc=[[hxwGMWViewController alloc] initWithId:@"6wris13xnue8736"];
+    //设置代理
+    guoguoTree_vc.delegate=self;
+    //设置自动刷新果果的时间间隔
+    //******注:不设置该参数的话,SDK默认为20秒,自动刷新时间最小值为15******
+    //******设置为0为不自动刷新,开发者自己去控制刷新******
+    guoguoTree_vc.updatetime=0;
+    
+    //设置果果树是否显示状态栏 默认隐藏
+    guoguoTree_vc.isStatusBarHidden=NO;
+    
+    //如果果果服务器回调, 需要用户标识的话, 可以设置UserID参数 如:
+    guoguoTree_vc.OtherID = Global.userID;
 }
 #pragma mark - 万普 delegate
 - (void)onConnectSuccess{
@@ -258,6 +289,13 @@
 -(void)QMDismiss:(QumiOperationApp *)qumiAdApp
 {
     NSLog(@"积分墙关闭");
+}
+
+#pragma mark - 果盟 delegate
+//加载回调 返回参数YES表示加载成功 NO表示失败
+- (void)loadGMAdSuccess:(BOOL)success
+{
+    NSLog(@"loadGMAdSuccess = %d",success);
 }
 @end
 
