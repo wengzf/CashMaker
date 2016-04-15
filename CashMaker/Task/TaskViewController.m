@@ -19,11 +19,17 @@
 #import "MiidiObfuscation.h"        // 米迪
 #import "MyOfferAPI.h"
 
-@interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate, hxwGMWDelegate, MyOfferAPIDelegate>
+#import "CoolAdOnlineConfig.h"      // 酷告
+#import "CoolAdWall.h"
+
+@interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate, hxwGMWDelegate, MyOfferAPIDelegate
+,CoolAdOnlineConfigDelegate,CoolAdWallDelegate>
 {
     NSMutableArray *taskArr;            // 兑换内容数组
     
     hxwGMWViewController *guoguoTree_vc;    // 果盟
+    
+    CoolAdWall * coolAdWall;        // 酷告
 }
 
 @property(nonatomic,strong)QumiOperationApp *qumiViewController;        // 趣米
@@ -92,7 +98,13 @@
                 model.hintStr = @"免费获取积分";
                 [taskArr addObject:model];
             }
-            
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"kugao";
+                model.titleStr = @"酷告";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
             
 
             
@@ -227,6 +239,18 @@
     }else if ([controlStr isEqualToString:@"midi"]) {
         
         [MyOfferAPI showMiidiAppOffers:self withMiidiDelegate:self];
+    }else if ([controlStr isEqualToString:@"kugao"]) {
+        
+        [coolAdWall showCoolAdWallWithController:self];
+    }else if ([controlStr isEqualToString:@"midi"]) {
+        
+        
+    }else if ([controlStr isEqualToString:@"midi"]) {
+        
+        
+    }else if ([controlStr isEqualToString:@"midi"]) {
+        
+        
     }
     
     
@@ -237,11 +261,16 @@
 #pragma mark - 广告初始化
 - (void)initAD
 {
+    
+    
+    [self kugao];
+    
     [self wanpu];
   
     [self guomeng];
     
     [self midi];
+
 }
 
 // 万普平台
@@ -284,6 +313,32 @@
     // 开发者自定义参数， 可以传开发者的User_id
     //[MyOfferAPI setUserParam:<#开发者参数_可以是UserID#>];
 }
+- (void)kugao
+{
+#define CoolAdWall_SDKKEY @"RTB20141927070222qwej3y24ogr3zka"
+#define CoolAdWall_SECRETKEY @"z9p7dqzodcf3nj1"
+    
+    //广告墙主体
+//    coolAdWall = [[CoolAdWall alloc] initWithAppID:@"RTB20161325010329qv8ox092fwh1a4s" secretKey:@"9rucq8q180kmwr1u" andDelegate:self];
+    @try {
+        //广告墙主体
+        coolAdWall = [[CoolAdWall alloc] initWithAppID:CoolAdWall_SDKKEY secretKey:CoolAdWall_SECRETKEY andDelegate:self];
+        [coolAdWall setCoolAdWallColor:CoolAdWallThemeColor_White];
+        
+        //在线参数
+        [CoolAdOnlineConfig shareCoolAdOnlineConfigWithAppID:CoolAdWall_SDKKEY andSecretKey:CoolAdWall_SECRETKEY delegate:self];
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+    
+//    
+
+    
+    
+}
+
 #pragma mark - 万普 delegate
 - (void)onConnectSuccess{
     NSLog(@"连接成功");
@@ -395,6 +450,100 @@
 - (void)didMiidiFailToReceiveOffers:(NSError *)error
 {
     NSLog(@"米迪积分墙数据获取失败!");
+}
+
+
+
+#pragma mark - CoolAdWall deleage
+
+- (BOOL)testMode
+{
+    return NO;
+}
+
+- (BOOL)logMode
+{
+    return YES;
+}
+
+// 查询积分回调 参数1.adArray存储的数据位获得积分的广告信息，该数组元素内容为NSDictionary类型，包括广告名字和积分数，key值分别为name和point；参数2.pointData转换为为用户的剩余总积分数，--使用CoolAdWallGetPoint（void *pointData）方法将参数转换为int类型积分数据
+- (void)didReceiveResultGetScore:(void *)pointData withAdInfo:(NSArray*)adArray
+{
+    int point = CoolAdWallGetPoint(pointData);
+    NSLog(@"get point--------->%d", point);
+    NSString *infoStr = @"";
+    if (adArray && [adArray count] > 0)
+    {
+        // orderId lotNo lotName betCode batchCode prizeState orderPrize orderTime winCode betCode
+        for (NSDictionary *dict in adArray)
+        {
+            NSString *name = [dict objectForKey:@"name"];
+            int point = [[dict objectForKey:@"point"] intValue];
+            infoStr = [infoStr stringByAppendingString:[NSString stringWithFormat:@"完成【%@】任务获得%d积分\n",name,point]];
+        }
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"通知" message:infoStr delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"积分查询"
+                                                         message:@"未获得积分"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+        [alert show];
+        
+    }
+}
+
+// 消费积分回调 --使用CoolAdWallGetPoint（void *pointData）方法将参数转换为int类型积分数据，remainPointData参数转换为消费后剩余的总积分数，spendPointData阐述转换为消费的积分数。
+- (void)didSpendScoreSuccessAndResidualScore:(void*)remainPointData andSpendScore:(void*)spendPointData
+{
+    int point = CoolAdWallGetPoint(remainPointData);
+    int spendScore = CoolAdWallGetPoint(spendPointData);
+    
+    NSString * str = [NSString stringWithFormat:@"消费积分:%d,消费后剩余总积分:%d。",point,spendScore];
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"积分消费"
+                                                     message:str
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    [alert show];
+
+}
+
+// 消费积分失败
+- (void)didFailedSpendScoreWithError:(NSError*)error
+{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"积分消费"
+                                                     message:error.domain
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+#pragma mark - CoolAdOnlineConfig delegate
+
+//异步获取在线参数成功回调
+- (void)didFinishGetParameters:(NSDictionary*)parameters
+{
+    NSMutableString *str = [[NSMutableString alloc] init];
+    for (NSString *key in [parameters allKeys])
+    {
+        [str appendString:[NSString stringWithFormat:@"%@:%@\n",key,[parameters objectForKey:key]]];
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"在线参数" message:str delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+
+}
+//异步获取在线参数失败回调
+- (void)didFailGetParameters:(NSError*)error
+{
+    NSLog(@"%@",error.domain);
 }
 
 

@@ -23,6 +23,15 @@
 - (void)viewDidLoad
 {
     [self.exchangeTableView registerNib:[UINib nibWithNibName:@"ExchangeRecordsTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExchangeRecordsTableViewCell"];
+    
+    if (!Global.isLogin)
+    {
+        // 弹出登录注册页面
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLoginViewControllerNav"];
+        [self presentViewController:vc animated:YES completion:NULL];
+        
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,14 +109,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if (!Global.isLogin)
-    {
-        // 弹出登录注册页面
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLoginViewControllerNav"];
-        [self presentViewController:vc animated:YES completion:NULL];
-        
-    }
+
 }
 
 - (IBAction)viewAccountBtnClked:(id)sender {
