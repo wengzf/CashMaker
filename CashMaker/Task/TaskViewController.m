@@ -16,7 +16,10 @@
 #import "TBDirectorCommand.h"   // 指盟
 #import "hxwGMWViewController.h"    // 果盟
 
-@interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate, hxwGMWDelegate>
+#import "MiidiObfuscation.h"        // 米迪
+#import "MyOfferAPI.h"
+
+@interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate, hxwGMWDelegate, MyOfferAPIDelegate>
 {
     NSMutableArray *taskArr;            // 兑换内容数组
     
@@ -82,6 +85,14 @@
                 model.hintStr = @"免费获取积分";
                 [taskArr addObject:model];
             }
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"midi";
+                model.titleStr = @"米迪";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+            
             
 
             
@@ -185,6 +196,8 @@
         
         //自动领取积分 开启自动领取积分功能填写YES 关闭填写NO
         [_qumiViewController autoGetPoints:NO];
+        
+        [_qumiViewController presentQmRecommendApp:self];
     }else{
         [self showADWithControlStr:model.taskNameStr];
     }
@@ -201,8 +214,6 @@
         
     }else if ([controlStr isEqualToString:@"wanpu"]) {
         
-//        [JOYConnect showList:nil];
-//        [JOYConnect showList:self];
         TaskWallViewController *vc = [TaskWallViewController new];
         vc.controlStr = controlStr;
         [self.navigationController pushViewController:vc animated:YES];
@@ -213,6 +224,9 @@
     }else if ([controlStr isEqualToString:@"guomeng"]) {
         
         [guoguoTree_vc pushhxwGMW:YES Hscreen:NO];
+    }else if ([controlStr isEqualToString:@"midi"]) {
+        
+        [MyOfferAPI showMiidiAppOffers:self withMiidiDelegate:self];
     }
     
     
@@ -224,7 +238,10 @@
 - (void)initAD
 {
     [self wanpu];
+  
     [self guomeng];
+    
+    [self midi];
 }
 
 // 万普平台
@@ -255,6 +272,17 @@
     
     //如果果果服务器回调, 需要用户标识的话, 可以设置UserID参数 如:
     guoguoTree_vc.OtherID = Global.userID;
+}
+- (void)midi
+{
+    // Override point for customization after application launch.
+    // !!!: Miidi SDK 初始化
+    // 设置发布应用的应用id, 应用密码信息,必须在应用启动的时候呼叫
+    // 参数 appID		:开发者应用ID ;     开发者到 www.miidi.net 上提交应用时候,获取id和密码
+    // 参数 appPassword	:开发者的安全密钥 ;  开发者到 www.miidi.net 上提交应用时候,获取id和密码
+    [MyOfferAPI setMiidiAppPublisher:@"5"  withMiidiAppSecret:@"5555555555555555"];
+    // 开发者自定义参数， 可以传开发者的User_id
+    //[MyOfferAPI setUserParam:<#开发者参数_可以是UserID#>];
 }
 #pragma mark - 万普 delegate
 - (void)onConnectSuccess{
@@ -297,6 +325,79 @@
 {
     NSLog(@"loadGMAdSuccess = %d",success);
 }
+
+
+#pragma mark - Miidi SDK Delegate
+// !!!: Miidi SDK 打开、关闭 回调
+- (void)didMiidiShowWallView
+{
+    NSLog(@"米迪积分墙打开!");
+}
+
+- (void)didMiidiDismissWallView
+{
+    NSLog(@"米迪积分墙关闭!");
+}
+
+// !!!: Miidi SDK 积分墙、推荐墙 展示相关回调  UI定制
+- (void)myMiidiOfferViewWillAppear:(UIViewController *)viewController {
+    
+    // 0 换成 1 看sdk原始效果
+    // 可更换返回按钮图片修改返回按钮样式,保证命名一致即可
+#if 0
+    
+    //NavigationBar bj
+    if ([viewController.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
+        // iOS5 and Later
+        [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbj.png"] forBarMetrics:UIBarMetricsDefault];
+        
+    }
+    
+    // Navigationbar Title Color
+    if ([viewController.navigationController.navigationBar respondsToSelector:@selector(setTitleTextAttributes:)]) {
+        
+        // iOS5 and Later
+        UIColor * diyColor = [UIColor blueColor];
+        [viewController.navigationController.navigationBar
+         setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                 diyColor, UITextAttributeTextColor,
+                                 diyColor, UITextAttributeTextShadowColor,
+                                 nil]];
+        
+        // itme color
+        if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
+        {
+            // iOS7 and Later
+            viewController.navigationController.navigationBar.barTintColor = diyColor;
+        }
+        
+        viewController.navigationController.navigationBar.tintColor = diyColor;
+        
+    }
+    
+    
+    
+#endif
+    
+}
+
+- (void)myMiidiOfferViewDidAppear:(UIViewController *)viewController {
+    
+}
+
+// !!!: Miidi SDK 积分墙数据展示成功、失败相关回调
+- (void)didMiidiReceiveOffers
+{
+    NSLog(@"米迪积分墙数据获取成功!");
+}
+
+
+- (void)didMiidiFailToReceiveOffers:(NSError *)error
+{
+    NSLog(@"米迪积分墙数据获取失败!");
+}
+
+
 @end
 
 
