@@ -34,13 +34,13 @@
         
   }
     
-    label = [[UILabel alloc] initWithFrame:self.scratchContentView.bounds];
-    label.font = [UIFont systemFontOfSize:20];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor blueColor];
-    label.backgroundColor = [UIColor whiteColor];
-    label.text = @"你中大家了";
-    [self.view addSubview:label];
+//    label = [[UILabel alloc] initWithFrame:self.scratchContentView.bounds];
+//    label.font = [UIFont systemFontOfSize:20];
+//    label.textAlignment = NSTextAlignmentCenter;
+//    label.textColor = [UIColor blueColor];
+//    label.backgroundColor = [UIColor whiteColor];
+//    label.text = @"你中大家了";
+//    [self.view addSubview:label];
     
 
     
@@ -50,7 +50,7 @@
 {
     [super viewWillAppear:animated];
     
-        [self.view sendSubviewToBack:label];
+//        [self.view sendSubviewToBack:label];
     // 呱呱卡页面初始化
     {
         self.scratchCardView = [[HYScratchCardView alloc] initWithFrame:self.scratchContentView.bounds];
@@ -70,25 +70,17 @@
     
     [self requestLottery];
     
-    img = label.imageSnapshot;
-    
-    UIImageView *imgview =  [[UIImageView alloc] initWithImage:img] ;
-    imgview.center = self.view.center;
-    [self.view addSubview:imgview];
+//    img = label.imageSnapshot;
+//    
+//    UIImageView *imgview =  [[UIImageView alloc] initWithImage:img] ;
+//    imgview.center = self.view.center;
+//    [self.view addSubview:imgview];
 }
 - (void)requestLottery
 {
     // 请求刮奖的数据并充值呱呱卡
     {
         
-
-        UILabel *label = [[UILabel alloc] initWithFrame:self.scratchContentView.bounds];
-        label.font = [UIFont systemFontOfSize:20];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor blueColor];
-        label.backgroundColor = [UIColor whiteColor];
-        label.text = @"你中大家了";
-
         
         [self.scratchCardView setImage:img];
 //        [self.scratchCardView setImage:label.imageSnapshot];

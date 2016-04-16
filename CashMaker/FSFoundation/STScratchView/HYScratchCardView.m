@@ -104,7 +104,7 @@
 - (void)setImage:(UIImage *)image
 {
     _image = image;
-    self.imageLayer.contents = (id)[self imageByColor:[UIColor clearColor]].CGImage;
+    self.imageLayer.contents = (id)[self imageByColor:[UIColor whiteColor]].CGImage;
 //    self.imageLayer.contents = (id)image.CGImage;
 }
 - (void)setContentView:(UIView *)contentView
