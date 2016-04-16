@@ -25,6 +25,12 @@
         self.navigationController.navigationBar.tintColor = [UIColor blueColor];
         self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
     }
+    
+    // 页面初始化
+    {
+        self.userIDLabel.text = Global.userID;
+        self.phoneLabel.text = Global.phone;
+    }
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -121,4 +127,6 @@
 }
 
 
+- (IBAction)switchValueChanged:(id)sender {
+}
 @end

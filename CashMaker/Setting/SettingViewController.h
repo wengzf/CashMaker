@@ -10,4 +10,12 @@
 
 @interface SettingViewController : UIBaseTableViewController
 
+
+@property (weak, nonatomic) IBOutlet UILabel *userIDLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
+@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
+
+- (IBAction)switchValueChanged:(id)sender;
+
 @end

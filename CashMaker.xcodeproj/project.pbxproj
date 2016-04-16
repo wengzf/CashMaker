@@ -558,7 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				21890B1A1C7B081300E09CA4 /* Task.h */,
-				ADB28B951CB8B20800601215 /* STScratchView */,
+				ADB28B951CB8B20800601215 /* ScratchView */,
 				21890B421C7B0A9C00E09CA4 /* MBProgressHUD */,
 				21890B1B1C7B081300E09CA4 /* UIKitExtionsion */,
 				21890B0E1C7B081300E09CA4 /* FoundationExtension */,
@@ -799,7 +799,7 @@
 			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
-		ADB28B951CB8B20800601215 /* STScratchView */ = {
+		ADB28B951CB8B20800601215 /* ScratchView */ = {
 			isa = PBXGroup;
 			children = (
 				ADB28B991CB8E0E100601215 /* HYScratchCardView.h */,
@@ -807,6 +807,7 @@
 				ADB28B961CB8B20800601215 /* STScratchView.h */,
 				ADB28B971CB8B20800601215 /* STScratchView.m */,
 			);
+			name = ScratchView;
 			path = STScratchView;
 			sourceTree = "<group>";
 		};
@@ -1306,7 +1307,7 @@
 			baseConfigurationReference = AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1338,8 +1339,8 @@
 			baseConfigurationReference = CC15806D5FDF218C0CFAF19F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

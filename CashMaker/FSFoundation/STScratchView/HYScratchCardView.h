@@ -17,6 +17,7 @@ typedef void(^scratchCompletion)(id userInfo);
  */
 @property (nonatomic, strong) UIImage *image;
 
+@property (nonatomic, strong) UIView *contentView;
 /**
  涂层图片.
  */

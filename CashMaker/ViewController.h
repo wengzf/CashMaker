@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *exchangeTableView;
 
+@property (weak, nonatomic) IBOutlet UIButton *vieweAccountBtn;
 
 - (IBAction)viewAccountBtnClked:(id)sender;         // 查看账户
 

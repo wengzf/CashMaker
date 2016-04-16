@@ -36,7 +36,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.surfaceImageView = [[UIImageView alloc]initWithFrame:self.bounds];
-        self.surfaceImageView.image = [self imageByColor:[UIColor darkGrayColor]];
+        self.surfaceImageView.image = [self imageByColor:RGB(255, 255, 187)];
         [self addSubview:self.surfaceImageView];
         
         self.imageLayer = [CALayer layer];
@@ -104,7 +104,12 @@
 - (void)setImage:(UIImage *)image
 {
     _image = image;
-    self.imageLayer.contents = (id)image.CGImage;
+    self.imageLayer.contents = (id)[self imageByColor:[UIColor clearColor]].CGImage;
+//    self.imageLayer.contents = (id)image.CGImage;
+}
+- (void)setContentView:(UIView *)contentView
+{
+    [self.imageLayer addSublayer:contentView.layer];
 }
 
 - (void)setSurfaceImage:(UIImage *)surfaceImage

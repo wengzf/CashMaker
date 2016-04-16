@@ -17,6 +17,11 @@
  */
 + (instancetype)autolayoutView;
 
+
+- (void)removeAllSublayer;      // 移除所有sublayer
+
+- (void)removeAllSubView;       // 移除所有subviews
+
 /**
  *  功能:显示loading
  */

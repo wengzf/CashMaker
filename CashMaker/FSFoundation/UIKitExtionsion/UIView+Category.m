@@ -19,6 +19,30 @@
     return view;
 }
 
+- (void)removeAllSublayer
+{
+    while (self.layer.sublayers.count > 0) {
+        [[self.layer.sublayers firstObject] removeFromSuperlayer];
+    }
+}
+- (void)removeAllSubView
+{
+    while (self.subviews.count > 0) {
+        [[self.subviews firstObject] removeFromSuperview];
+    }
+}
+
+// 快照
+//- (UIImage*)imageSnapshot{
+//    CGRect rect = self.frame;
+//    UIGraphicsBeginImageContext(rect.size);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [self.layer renderInContext:context];
+//    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return img;
+//}
+
 - (void)showLoading
 {
     [self showLoadingWithMessage:nil];
