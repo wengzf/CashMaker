@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HYScratchCardView.h"
-
+#import "STScratchView.h"
 
 @interface ScratchCardViewController : UIBaseViewController
 

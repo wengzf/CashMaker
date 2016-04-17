@@ -8,6 +8,14 @@
 
 #import "STScratchView.h"
 
+
+@interface STScratchView()
+
+@property (nonatomic, assign, getter = isOpen) BOOL open;
+
+@end
+
+
 @implementation STScratchView
 
 - (id)initWithFrame:(CGRect)frame
@@ -16,7 +24,7 @@
     if (self) {
         [self setOpaque:NO];
         
-        _sizeBrush = 10.0;
+        _sizeBrush = 30.0;
     }
     return self;
 }
@@ -37,8 +45,8 @@
 - (void)setHideView:(UIView *)hideView
 {
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceGray();
-	int bitmapByteCount;
-	int bitmapBytesPerRow;
+	long bitmapByteCount;
+	long bitmapBytesPerRow;
 
     float scale = [UIScreen mainScreen].scale;
     
@@ -54,8 +62,16 @@
 	bitmapBytesPerRow = (imageWidth * 4);
 	bitmapByteCount = (bitmapBytesPerRow * imageHeight);
     
+    printf("%ld %ld",bitmapBytesPerRow, bitmapByteCount);
+    
     CFMutableDataRef pixels = CFDataCreateMutable(NULL, imageWidth * imageHeight);
     contextMask = CGBitmapContextCreate(CFDataGetMutableBytePtr(pixels), imageWidth, imageHeight , 8, imageWidth, colorspace, kCGImageAlphaNone);
+    
+    if (contextMask == NULL)
+    {
+        UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"刮刮卡" message:@"确定话费10 coins来抽奖" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alv show];
+    }
     CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData(pixels);
     
     CGContextSetFillColorWithColor(contextMask, [UIColor blackColor].CGColor);
@@ -92,6 +108,11 @@
     
     UITouch *touch = [[event touchesForView:self] anyObject];
     currentTouchLocation = [touch locationInView:self];
+ 
+    if (pointArr==nil) {
+        
+        pointArr = [NSMutableArray array];
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -103,6 +124,8 @@
     if (!CGPointEqualToPoint(previousTouchLocation, CGPointZero))
     {
         currentTouchLocation = [touch locationInView:self];
+        
+        [pointArr addObject:[NSValue valueWithCGPoint: currentTouchLocation]];
     }
     
     previousTouchLocation = [touch previousLocationInView:self];
@@ -121,9 +144,46 @@
         previousTouchLocation = [touch previousLocationInView:self];
         [self scratchTheViewFrom:previousTouchLocation to:currentTouchLocation];
     }
+    
+    [self checkForOpen];
 }
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)checkForOpen
+{
+    CGSize size = self.bounds.size;
+    
+    CGFloat left, right, up, down;
+    left = size.width * 0.25;
+    right = size.width * 0.75;
+    up = size.height * 0.25;
+    down = size.height * 0.75;
+    
+    BOOL leftFlag = NO, rightFlag = NO, upFlag = NO, downFlag = NO;
+
+    for (NSValue *val in pointArr) {
+        CGPoint pos = [val CGPointValue];
+        if (pos.x < left) {
+            leftFlag = YES;
+        }
+        if (pos.x > right) {
+            rightFlag = YES;
+        }
+        if (pos.y < up) {
+            upFlag = YES;
+        }
+        if (pos.y < down) {
+            downFlag = YES;
+        }
+    }
+    
+    if (leftFlag && rightFlag && upFlag && downFlag && !self.open) {
+        self.open = YES;
+        if (self.completion) {
+            self.completion();
+        }
+    }
+
+}- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesCancelled:touches withEvent:event];
 }
@@ -132,6 +192,18 @@
 {
     currentTouchLocation = CGPointZero;
     previousTouchLocation = CGPointZero;
+}
+
+
+- (UIImage *)imageByColor:(UIColor *)color
+{
+    CGSize imageSize = CGSizeMake(1, 1);
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
+    [color set];
+    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 @end

@@ -310,12 +310,8 @@
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         NSDictionary *dic = responseObject;
-        if ([dic[@"code"] integerValue] == 1000) {
-            // 成功
-            sBlock(1000,dic[@"data"]);
-        }else{
-            // 显示错误信息
-        }
+
+        sBlock([dic[@"code"] integerValue],dic);
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         

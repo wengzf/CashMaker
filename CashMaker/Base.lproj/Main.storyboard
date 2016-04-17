@@ -983,7 +983,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kn9-2Y-Tmi" userLabel="scratch View" customClass="STScratchView">
                                 <rect key="frame" x="85" y="161" width="207" height="94"/>
-                                <color key="backgroundColor" red="0.49752035095944058" green="0.85446733252204377" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kn9-2Y-Tmi" secondAttribute="height" multiplier="207:94" id="W9I-4D-swq"/>
                                 </constraints>
