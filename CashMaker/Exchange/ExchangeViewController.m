@@ -9,9 +9,18 @@
 #import "ExchangeViewController.h"
 #import "ExchangeTableViewCell.h"
 
-@interface ExchangeViewController()
+@interface ExchangeViewController()<UIAlertViewDelegate>
 {
     NSMutableArray *exchangeArr;            // 兑换内容数组
+    
+    NSString *accountStr;
+    
+    // state
+    int state;                  // 1=确认兑换   2=输入账号  3= 调用接口
+    ExchangeModel *curModel;
+    
+    UITextField *accountTextField1;
+    UITextField *accountTextField2;
 }
 @end
 
@@ -37,13 +46,11 @@
         [self.exchangeTableView.mj_header beginRefreshing];
     }
 }
--  (void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBarHidden=NO;
 }
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.navigationController.navigationBarHidden=NO;
 }
 
 
@@ -105,21 +112,15 @@
     // cell配置
     cell.exchangeBlock = ^(ExchangeModel *model){
         
-        // 调用兑换接口
-        [self.view showLoading];
-        [FSNetworkManagerDefaultInstance dopostWithUserID:Global.userID exchangeid:model.exchangeID exchange_account:@"1" successBlock:^(long status, NSDictionary *dic) {
-            
-            
-            [self.view hideLoading];
-            
-            
-            status = [dic[@"code"] intValue];
-            if (status == 1000) {
-                [self.view showLoadingWithMessage:@"兑换成功" hideAfter:2];
-            }else{
-                [self.view showLoadingWithMessage:dic[@"message"] hideAfter:2];
-            }
-        }];
+        curModel = model;
+        // 弹出确认兑换信息
+        NSString *msg = [NSString stringWithFormat:@"确认使用%@个coins兑换%@%@%@",model.cost_coins,model.title,model.reward_amount, [model.reward_type intValue]==2 ?@"个":@"元"];
+        
+        UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"兑换" message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alv show];
+        state = 1;
+        
+
     };
     
     ExchangeModel *model = exchangeArr[indexPath.row];
@@ -139,5 +140,66 @@
     
 }
 
+#pragma mark - UIAlertView Delegate
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        // 请输入您的账号
+        if (state == 1) {
+            state = 2;
+            
+            UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"您的账号" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    
+            [alv setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
+            
+            accountTextField1 = [alv textFieldAtIndex:0];
+            accountTextField1.placeholder = @"请输入您的账号";
+            
+            accountTextField2 = [alv textFieldAtIndex:1];
+            [accountTextField2 setSecureTextEntry:NO];
+            accountTextField2.placeholder = @"再次确认您的账号";
+            
+            if (Global.account && ![Global.account isEqualToString:@""]) {
+                accountTextField1.text = Global.account;
+                accountTextField2.text = Global.account;
+            }
+            
+            [alv show];
+            
+        }else if (state == 2) {
+
+            // 调用兑换接口
+            if ([accountTextField1.text isEqualToString:accountTextField2.text]) {
+                
+                Global.account = accountTextField1.text;
+                [Global saveUserInfo];
+                
+                [self.view showLoading];
+                [FSNetworkManagerDefaultInstance dopostWithUserID:Global.userID exchangeid:curModel.exchangeID exchange_account:accountTextField1.text successBlock:^(long status, NSDictionary *dic) {
+                    
+                    [self.view hideLoading];
+                
+                    if (status == 911) {
+                        [self.view showLoadingWithMessage:@"兑换失败" hideAfter:2];
+                        
+                    }else{
+                        status = [dic[@"code"] intValue];
+                        if (status == 1000) {
+                            [self.view showLoadingWithMessage:@"兑换成功" hideAfter:2];
+                        }else{
+                            [self.view showLoadingWithMessage:dic[@"message"] hideAfter:2];
+                        }
+                    }
+                    
+
+                }];
+            }else{
+                [self.view showLoadingWithMessage:@"您的账号前后输入不匹配" hideAfter:2];
+            }
+
+            
+        }
+    }
+}
 @end

@@ -462,7 +462,8 @@
 {
     NSString *url = [FSNetworkManager packingURL:@"exchange/dopost"];
     NSDictionary *parameterDic  = @{@"userid" : userID,
-                                    @"exchangeid" : exchangeid
+                                    @"exchangeid" : exchangeid,
+                                    @"exchange_account": exchange_account
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -470,7 +471,7 @@
         sBlock(0,responseObject);
     
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        
+        sBlock(911,nil);
     }];
 }
 
