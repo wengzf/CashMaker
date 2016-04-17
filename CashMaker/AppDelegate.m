@@ -13,6 +13,11 @@
 #import "QumiConfigTool.h"      // 趣米
 #import "TBSpiritInstrument.h"      // 指盟
 
+#import <ShareSDK/ShareSDK.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "WeiboSDK.h"
+#import "WXApi.h"
 
 @interface AppDelegate ()
 
@@ -41,6 +46,34 @@
     {
         [self initAD];
         
+    }
+    // 分享初始化
+    {
+        // 分享
+        [ShareSDK registerApp:@"88ff9736d7c0"];
+        
+        
+        // 新浪微博
+        [ShareSDK connectSinaWeiboWithAppKey:@"3524989141"
+                                   appSecret:@"0868259f41b5e6531cee1a466995cd13"
+                                 redirectUri:@"http://www.yonglibao.com"];
+        
+        
+        //添加微信应用 注册网址 http://open.weixin.qq.com   (朋友圈)
+        [ShareSDK connectWeChatWithAppId:@"wxddf95861f48eae84"
+                               appSecret:@"bfeac33db5399b1e0097103b3db26548"
+                               wechatCls:[WXApi class]];
+        
+        //添加QQ应用  注册网址  http://mobile.qq.com/api/
+        [ShareSDK connectQQWithQZoneAppKey:@"1104757736"
+                         qqApiInterfaceCls:[QQApiInterface class]
+                           tencentOAuthCls:[TencentOAuth class]];
+        
+        //        //添加QQ空间应用  注册网址  http://connect.qq.com/intro/login/
+        //        [ShareSDK connectQZoneWithAppKey:@"1104757736"
+        //                               appSecret:@"Zn4rTJZMkj84bb2y"
+        //                       qqApiInterfaceCls:[QQApiInterface class]
+        //                         tencentOAuthCls:[TencentOAuth class]];
     }
     return YES;
 }
@@ -180,6 +213,25 @@
 
 #pragma mark - 广告平台集成
 
+
+#pragma mark - 分享代理
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
+}
 
 
 @end

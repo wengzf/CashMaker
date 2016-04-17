@@ -162,7 +162,7 @@
             sBlock(1000,dic[@"data"]);
         }else{
             // 显示错误信息
-            
+            sBlock(911,nil);
         }
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {

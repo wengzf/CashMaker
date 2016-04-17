@@ -53,7 +53,7 @@
     static NSInteger count = 0;
     NSLog(@"%ld",count++);
     
-    return 11;
+    return 10;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -70,6 +70,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [cell resetDeviderLineToOnePixel];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,12 +110,17 @@
             [FSNetworkManagerDefaultInstance logoutWithPhoneStr:Global.phone successBlock:^(long status, NSDictionary *dic) {
                 [self.view hideLoading];
                 
-                [Global clearUserInfo];
-                
-                // 跳到登录注册页面
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
-                UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLogin"];
-                [self.navigationController pushViewController:vc animated:NO];
+                if (status == 911) {
+                    [self.view showLoadingWithMessage:@"退出失败" hideAfter:2.0];
+                    
+                }else{
+                    [Global clearUserInfo];
+                    
+                    // 跳到登录注册页面
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
+                    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLogin"];
+                    [self.navigationController pushViewController:vc animated:NO];
+                }
             }];
         } break;
         case 10:{   // 删除账户

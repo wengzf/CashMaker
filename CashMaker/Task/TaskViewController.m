@@ -9,6 +9,10 @@
 #import "TaskViewController.h"
 #import "TaskTableViewCell.h"
 
+#import <ShareSDK/ShareSDK.h>          // 分享
+#import "WXApi.h"
+#import <TencentOpenAPI/QQApi.h>
+
 #import "TaskWallViewController.h"
 
 #import "JOYConnect.h"          // 万普
@@ -193,7 +197,22 @@
         
     }else if ([model.taskNameStr isEqualToString:@"share"]) {
         // 弹出分享菜单
+        // 分享内容
+        id<ISSContent> publishContent = [ShareSDK content:@"CashMaker Test "
+                                           defaultContent:@" "
+                                                    image:nil
+                                                    title:@""
+                                                      url:@""
+                                              description:@""
+                                                mediaType:SSPublishContentMediaTypeNews];
         
+        
+        // 分享方式
+        
+        [ShareSDK showShareActionSheet:nil shareList:nil content:publishContent statusBarTips:NO authOptions:nil shareOptions:nil result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+            
+        }];
+
         
     }else if ([model.taskNameStr isEqualToString:@"qumi"]){
         

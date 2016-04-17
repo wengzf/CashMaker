@@ -175,12 +175,22 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    UIViewController *vc = segue.destinationViewController;
-    vc.navigationController.navigationBar.hidden = NO;
+//    UIViewController *vc = segue.destinationViewController;
+//    vc.navigationController.navigationBar.hidden = NO;
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+    if (!Global.isLogin)
+    {
+        // 弹出登录注册页面
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLoginViewControllerNav"];
+        [self presentViewController:vc animated:YES completion:NULL];
+        
+        return NO;
+    }
+    
     return YES;
 }
 

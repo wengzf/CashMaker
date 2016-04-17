@@ -109,6 +109,7 @@
 		ADAE615D1CC3938200612A47 /* ShareSDKFlatShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADAE614B1CC3938200612A47 /* ShareSDKFlatShareViewUI.bundle */; };
 		ADAE615E1CC3938200612A47 /* ShareSDKFlatShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAE614C1CC3938200612A47 /* ShareSDKFlatShareViewUI.framework */; };
 		ADAE615F1CC3938200612A47 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAE614D1CC3938200612A47 /* ShareSDKShareActionSheet.framework */; };
+		ADAE61611CC3945200612A47 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAE61601CC3945200612A47 /* libsqlite3.tbd */; };
 		ADB28B931CB89BE800601215 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B901CB89BE800601215 /* UIBaseTableViewController.m */; };
 		ADB28B941CB89BE800601215 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B921CB89BE800601215 /* UIBaseViewController.m */; };
 		ADB28B981CB8B20800601215 /* STScratchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B971CB8B20800601215 /* STScratchView.m */; };
@@ -345,6 +346,7 @@
 		ADAE614B1CC3938200612A47 /* ShareSDKFlatShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKFlatShareViewUI.bundle; sourceTree = "<group>"; };
 		ADAE614C1CC3938200612A47 /* ShareSDKFlatShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKFlatShareViewUI.framework; sourceTree = "<group>"; };
 		ADAE614D1CC3938200612A47 /* ShareSDKShareActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKShareActionSheet.framework; sourceTree = "<group>"; };
+		ADAE61601CC3945200612A47 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		ADB28B8F1CB89BE800601215 /* UIBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseTableViewController.h; sourceTree = "<group>"; };
 		ADB28B901CB89BE800601215 /* UIBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseTableViewController.m; sourceTree = "<group>"; };
 		ADB28B911CB89BE800601215 /* UIBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseViewController.h; sourceTree = "<group>"; };
@@ -424,6 +426,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADAE61611CC3945200612A47 /* libsqlite3.tbd in Frameworks */,
+				AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */,
+				AD8DD5411CAD482000160B70 /* libz.tbd in Frameworks */,
+				AD8DD5431CAD482F00160B70 /* libicucore.tbd in Frameworks */,
 				ADC924881CC0C2C500AC765B /* AVFoundation.framework in Frameworks */,
 				ADC924861CC0C2B600AC765B /* AudioToolbox.framework in Frameworks */,
 				ADC924C11CC0C36E00AC765B /* libCoolAdOnlineConfig.a in Frameworks */,
@@ -444,7 +450,6 @@
 				ADAE615B1CC3938200612A47 /* libWeChatSDK.a in Frameworks */,
 				ADAE61561CC3938200612A47 /* ShareSDKCoreService.framework in Frameworks */,
 				ADAE615C1CC3938200612A47 /* ShareSDK.framework in Frameworks */,
-				AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */,
 				AD8DD5451CAD484300160B70 /* MessageUI.framework in Frameworks */,
 				AD8DD53E1CAD479700160B70 /* MOBFoundation.framework in Frameworks */,
 				AD678E7A1CBF49B5000429BB /* QuartzCore.framework in Frameworks */,
@@ -460,8 +465,6 @@
 				ADAE61541CC3938200612A47 /* MOBFoundation.framework in Frameworks */,
 				AD8DD5491CAD486600160B70 /* libstdc++.tbd in Frameworks */,
 				2107443B1CBFEA4B0028646F /* TBAnalysis.a in Frameworks */,
-				AD8DD5431CAD482F00160B70 /* libicucore.tbd in Frameworks */,
-				AD8DD5411CAD482000160B70 /* libz.tbd in Frameworks */,
 				AD678E941CBF7A7A000429BB /* libz.1.2.5.tbd in Frameworks */,
 				ADAE615F1CC3938200612A47 /* ShareSDKShareActionSheet.framework in Frameworks */,
 				C213F91C6292F538623D1189 /* libPods.a in Frameworks */,
@@ -1101,6 +1104,7 @@
 		DACCB020F2BB4A33A91FEDB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADAE61601CC3945200612A47 /* libsqlite3.tbd */,
 				ADC924871CC0C2C500AC765B /* AVFoundation.framework */,
 				ADC924851CC0C2B600AC765B /* AudioToolbox.framework */,
 				ADC924831CC0C2A600AC765B /* CoreText.framework */,
@@ -1159,7 +1163,7 @@
 				TargetAttributes = {
 					2115200B1C745DC400CE11DD = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 4JVDCH8EHZ;
+						DevelopmentTeam = 3HUUWY9C4G;
 					};
 				};
 			};
@@ -1478,7 +1482,7 @@
 			baseConfigurationReference = AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1506,9 +1510,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
+				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
 			};
 			name = Debug;
 		};
@@ -1517,7 +1521,7 @@
 			baseConfigurationReference = CC15806D5FDF218C0CFAF19F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1546,9 +1550,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
+				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
 			};
 			name = Release;
 		};
