@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface SettingViewController : UIBaseTableViewController
+@interface SettingViewController : UIBaseTableViewController<MFMailComposeViewControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UILabel *userIDLabel;

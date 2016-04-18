@@ -138,6 +138,11 @@
 {
     [super viewWillAppear:animated];
     
+    //
+    {
+//        self.navigationController.navigationBar.translucent = NO;
+        self.navigationController.navigationBar.barTintColor = RGB(24, 150, 252);
+    }
     
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -145,6 +150,18 @@
     [super viewDidAppear:animated];
     
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+//    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    
+    
+    UIImage *img = [UIImage imageNamed:@"nav_bg"];
+    img = [img stretchableImageWithLeftCapWidth:2 topCapHeight:2];
+    [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
 }
 
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>

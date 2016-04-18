@@ -8,6 +8,9 @@
 
 #import "SettingViewController.h"
 
+#import "ViewController.h"
+
+
 @implementation SettingViewController
 
 - (void)viewDidLoad
@@ -90,7 +93,19 @@
         case 3:{
             
         } break;
-        case 4:{
+        case 4:{        // 发送邮件
+            
+            if ([MFMailComposeViewController canSendMail])
+            {
+                MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+                controller.mailComposeDelegate = self;
+                [controller setSubject:@"改进手机赚"];
+                [controller setToRecipients:@[@"shoujizhuan8888@163.com"]];
+                [self presentViewController:controller animated:YES completion:NULL];
+            }else{
+                [self.view showLoadingWithMessage:@"您尚未配置系统邮件账号" hideAfter:2.0];
+            }
+
             
         } break;
         case 5:{
@@ -106,22 +121,25 @@
             
         } break;
         case 9:{    // 退出登录
-            [self.view showLoading];
-            [FSNetworkManagerDefaultInstance logoutWithPhoneStr:Global.phone successBlock:^(long status, NSDictionary *dic) {
-                [self.view hideLoading];
-                
-                if (status == 911) {
-                    [self.view showLoadingWithMessage:@"退出失败" hideAfter:2.0];
-                    
-                }else{
-                    [Global clearUserInfo];
-                    
-                    // 跳到登录注册页面
-                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
-                    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLogin"];
-                    [self.navigationController pushViewController:vc animated:NO];
-                }
-            }];
+            
+            [Global clearUserInfo];
+            [self dismissViewControllerAnimated:NO completion:NULL];
+            [HomeVC showLogin];
+            
+        
+//            [self.view showLoading];
+//            [FSNetworkManagerDefaultInstance logoutWithPhoneStr:Global.phone successBlock:^(long status, NSDictionary *dic) {
+//                [self.view hideLoading];
+//                
+//                if (status == 911) {
+//                    [self.view showLoadingWithMessage:@"退出失败" hideAfter:2.0];
+//                    
+//                }else{
+//                    [Global clearUserInfo];
+//                    
+//                    [HomeVC showLogin];
+//                }
+//            }];
         } break;
         case 10:{   // 删除账户
             
@@ -134,5 +152,16 @@
 
 
 - (IBAction)switchValueChanged:(id)sender {
+}
+
+#pragma mark - mail delegate
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 @end

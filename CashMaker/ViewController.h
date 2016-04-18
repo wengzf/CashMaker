@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+#define HomeVC [ViewController shareInstance]
+
+
 @interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-
++ (id)shareInstance;
 
 @property (weak, nonatomic) IBOutlet UILabel *todayCoinsLabel;
 
@@ -29,5 +34,7 @@
 - (IBAction)exchangeBtnClked:(id)sender;
 - (IBAction)guaguaBtnClked:(id)sender;
 - (IBAction)settingBtnClked:(id)sender;
+
+- (void)showLogin;
 
 @end

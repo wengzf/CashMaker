@@ -114,6 +114,9 @@
 		ADB28B941CB89BE800601215 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B921CB89BE800601215 /* UIBaseViewController.m */; };
 		ADB28B981CB8B20800601215 /* STScratchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B971CB8B20800601215 /* STScratchView.m */; };
 		ADB28B9B1CB8E0E100601215 /* HYScratchCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */; };
+		ADB7C6EE1CC4C4D4000D9FE1 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB7C6ED1CC4C4D4000D9FE1 /* AccountViewController.m */; };
+		ADB7C6F21CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB7C6F01CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m */; };
+		ADB7C6F31CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB7C6F11CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib */; };
 		ADC9247C1CC098F700AC765B /* MiiLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924711CC098F700AC765B /* MiiLogo.png */; };
 		ADC9247D1CC098F700AC765B /* MiiLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924721CC098F700AC765B /* MiiLogo@2x.png */; };
 		ADC9247E1CC098F700AC765B /* MiiReturnButtonDw.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924731CC098F700AC765B /* MiiReturnButtonDw.png */; };
@@ -355,6 +358,11 @@
 		ADB28B971CB8B20800601215 /* STScratchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STScratchView.m; sourceTree = "<group>"; };
 		ADB28B991CB8E0E100601215 /* HYScratchCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYScratchCardView.h; sourceTree = "<group>"; };
 		ADB28B9A1CB8E0E100601215 /* HYScratchCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYScratchCardView.m; sourceTree = "<group>"; };
+		ADB7C6EC1CC4C4D4000D9FE1 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		ADB7C6ED1CC4C4D4000D9FE1 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		ADB7C6EF1CC4C9E9000D9FE1 /* TaskRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskRecordTableViewCell.h; sourceTree = "<group>"; };
+		ADB7C6F01CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskRecordTableViewCell.m; sourceTree = "<group>"; };
+		ADB7C6F11CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskRecordTableViewCell.xib; sourceTree = "<group>"; };
 		ADC924711CC098F700AC765B /* MiiLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiLogo.png; sourceTree = "<group>"; };
 		ADC924721CC098F700AC765B /* MiiLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiLogo@2x.png"; sourceTree = "<group>"; };
 		ADC924731CC098F700AC765B /* MiiReturnButtonDw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonDw.png; sourceTree = "<group>"; };
@@ -426,6 +434,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8DD5451CAD484300160B70 /* MessageUI.framework in Frameworks */,
 				ADAE61611CC3945200612A47 /* libsqlite3.tbd in Frameworks */,
 				AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */,
 				AD8DD5411CAD482000160B70 /* libz.tbd in Frameworks */,
@@ -450,7 +459,6 @@
 				ADAE615B1CC3938200612A47 /* libWeChatSDK.a in Frameworks */,
 				ADAE61561CC3938200612A47 /* ShareSDKCoreService.framework in Frameworks */,
 				ADAE615C1CC3938200612A47 /* ShareSDK.framework in Frameworks */,
-				AD8DD5451CAD484300160B70 /* MessageUI.framework in Frameworks */,
 				AD8DD53E1CAD479700160B70 /* MOBFoundation.framework in Frameworks */,
 				AD678E7A1CBF49B5000429BB /* QuartzCore.framework in Frameworks */,
 				AD8DD53F1CAD479700160B70 /* SMS_SDK.framework in Frameworks */,
@@ -509,6 +517,11 @@
 				211520131C745DC400CE11DD /* AppDelegate.m */,
 				211520401C747A4300CE11DD /* ViewController.h */,
 				211520411C747A4300CE11DD /* ViewController.m */,
+				ADB7C6EC1CC4C4D4000D9FE1 /* AccountViewController.h */,
+				ADB7C6ED1CC4C4D4000D9FE1 /* AccountViewController.m */,
+				ADB7C6EF1CC4C9E9000D9FE1 /* TaskRecordTableViewCell.h */,
+				ADB7C6F01CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m */,
+				ADB7C6F11CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib */,
 				2115201B1C745DC400CE11DD /* Main.storyboard */,
 				2115201E1C745DC400CE11DD /* Assets.xcassets */,
 				211520201C745DC400CE11DD /* LaunchScreen.storyboard */,
@@ -1163,7 +1176,7 @@
 				TargetAttributes = {
 					2115200B1C745DC400CE11DD = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 3HUUWY9C4G;
+						DevelopmentTeam = 4JVDCH8EHZ;
 					};
 				};
 			};
@@ -1199,6 +1212,7 @@
 				AD1188771CBB8ADC00EFB378 /* ExchangeRecordsTableViewCell.xib in Resources */,
 				ADC924D31CC0C36E00AC765B /* CoolAdWall_download_white@2x.png in Resources */,
 				ADC924D11CC0C36E00AC765B /* CoolAdWall_download_red.png in Resources */,
+				ADB7C6F31CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib in Resources */,
 				ADC924E11CC0C36E00AC765B /* yes_icon_orange.png in Resources */,
 				ADC924DC1CC0C36E00AC765B /* CoolAdWall_right.png in Resources */,
 				ADAE615A1CC3938200612A47 /* WeiboSDK.bundle in Resources */,
@@ -1334,6 +1348,7 @@
 				AD11887D1CBB8E6000EFB378 /* UIBaseTableViewCell.m in Sources */,
 				ADB28B941CB89BE800601215 /* UIBaseViewController.m in Sources */,
 				AD8C057E1CABF78C00BC1D9A /* CALayer+Extension.m in Sources */,
+				ADB7C6F21CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m in Sources */,
 				21890B3B1C7B081300E09CA4 /* UIImageView+Extension.m in Sources */,
 				218024D71C9427FC000F4EC1 /* ExchangeRecordsModel.m in Sources */,
 				21890B391C7B081300E09CA4 /* UIImage+ImageEffects.m in Sources */,
@@ -1351,6 +1366,7 @@
 				211520111C745DC400CE11DD /* main.m in Sources */,
 				ADC924C51CC0C36E00AC765B /* CJSONDeserializer_BlocksExtensions.m in Sources */,
 				ADC924C91CC0C36E00AC765B /* NSDictionary_JSONExtensions.m in Sources */,
+				ADB7C6EE1CC4C4D4000D9FE1 /* AccountViewController.m in Sources */,
 				21890B371C7B081300E09CA4 /* UIButton+Extension.m in Sources */,
 				ADC924C61CC0C36E00AC765B /* CJSONSerialization.m in Sources */,
 				ADC924CB1CC0C36E00AC765B /* CJSONScanner.m in Sources */,
@@ -1482,7 +1498,7 @@
 			baseConfigurationReference = AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1510,9 +1526,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
+				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
 			};
 			name = Debug;
 		};
@@ -1521,8 +1537,8 @@
 			baseConfigurationReference = CC15806D5FDF218C0CFAF19F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1550,9 +1566,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
+				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
 			};
 			name = Release;
 		};

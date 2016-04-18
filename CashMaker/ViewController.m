@@ -20,14 +20,34 @@
 
 @implementation ViewController
 
+
+static ViewController *sObj;
+
++ (id)shareInstance
+{
+    return sObj;
+}
+
+- (void)showLogin
+{
+    // 弹出登录注册页面
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLoginViewControllerNav"];
+    [self presentViewController:vc animated:YES completion:NULL];
+    
+}
+
 - (void)viewDidLoad
 {
+    self.title = @"手机赚";
+    
     [self.exchangeTableView registerNib:[UINib nibWithNibName:@"ExchangeRecordsTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExchangeRecordsTableViewCell"];
     
     if (ScreenWidth <= 320) {
         self.vieweAccountBtn.hidden = YES;
     }
-
+    
+    sObj = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -109,14 +129,14 @@
     dispatch_once(&onceToken, ^{
         if (!Global.isLogin)
         {
-            // 弹出登录注册页面
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegisterLogin" bundle:nil];
-            UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterLoginViewControllerNav"];
-            [self presentViewController:vc animated:YES completion:NULL];
-            
+            [self showLogin];
         }
     });
 
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
 }
 
 - (IBAction)viewAccountBtnClked:(id)sender {
