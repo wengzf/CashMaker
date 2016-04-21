@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;
 
 
-- (IBAction)segmentControlValueChanged:(id)sender;
 
+- (IBAction)segmentControlValueChanged:(UISegmentedControl *)sender;
 
 @end

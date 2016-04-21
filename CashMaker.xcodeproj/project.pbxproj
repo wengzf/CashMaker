@@ -78,6 +78,7 @@
 		AD678E901CBF7A05000429BB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E8F1CBF7A05000429BB /* Security.framework */; };
 		AD678E921CBF7A10000429BB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E911CBF7A10000429BB /* StoreKit.framework */; };
 		AD678E941CBF7A7A000429BB /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AD678E931CBF7A7A000429BB /* libz.1.2.5.tbd */; };
+		AD87E5781CC8C1FB004FC0D6 /* TaskRecordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD87E5771CC8C1FB004FC0D6 /* TaskRecordsModel.m */; };
 		AD8C057E1CABF78C00BC1D9A /* CALayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C057D1CABF78C00BC1D9A /* CALayer+Extension.m */; };
 		AD8C05811CABF85E00BC1D9A /* RegisterLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C05801CABF85E00BC1D9A /* RegisterLoginViewController.m */; };
 		AD8C05841CABF86E00BC1D9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C05831CABF86E00BC1D9A /* LoginViewController.m */; };
@@ -299,6 +300,8 @@
 		AD678E8F1CBF7A05000429BB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AD678E911CBF7A10000429BB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD678E931CBF7A7A000429BB /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		AD87E5761CC8C1FB004FC0D6 /* TaskRecordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskRecordsModel.h; sourceTree = "<group>"; };
+		AD87E5771CC8C1FB004FC0D6 /* TaskRecordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskRecordsModel.m; sourceTree = "<group>"; };
 		AD8C057C1CABF78C00BC1D9A /* CALayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
 		AD8C057D1CABF78C00BC1D9A /* CALayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		AD8C057F1CABF85E00BC1D9A /* RegisterLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterLoginViewController.h; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 				211520411C747A4300CE11DD /* ViewController.m */,
 				ADB7C6EC1CC4C4D4000D9FE1 /* AccountViewController.h */,
 				ADB7C6ED1CC4C4D4000D9FE1 /* AccountViewController.m */,
+				AD87E5761CC8C1FB004FC0D6 /* TaskRecordsModel.h */,
+				AD87E5771CC8C1FB004FC0D6 /* TaskRecordsModel.m */,
 				ADB7C6EF1CC4C9E9000D9FE1 /* TaskRecordTableViewCell.h */,
 				ADB7C6F01CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m */,
 				ADB7C6F11CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib */,
@@ -1367,6 +1372,7 @@
 				ADC924C51CC0C36E00AC765B /* CJSONDeserializer_BlocksExtensions.m in Sources */,
 				ADC924C91CC0C36E00AC765B /* NSDictionary_JSONExtensions.m in Sources */,
 				ADB7C6EE1CC4C4D4000D9FE1 /* AccountViewController.m in Sources */,
+				AD87E5781CC8C1FB004FC0D6 /* TaskRecordsModel.m in Sources */,
 				21890B371C7B081300E09CA4 /* UIButton+Extension.m in Sources */,
 				ADC924C61CC0C36E00AC765B /* CJSONSerialization.m in Sources */,
 				ADC924CB1CC0C36E00AC765B /* CJSONScanner.m in Sources */,

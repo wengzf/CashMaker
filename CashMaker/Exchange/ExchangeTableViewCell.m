@@ -27,18 +27,21 @@
     
 
     self.titleLabel.text = model.title;
-    [self.titleImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
+//    [self.titleImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
     
     self.valueLabel.text = model.reward_amount;
     switch ([model.reward_type intValue]) {
         case 1:
             self.unitLabel.text = @"元";
+            self.titleImageView.image = [UIImage imageNamed:@"pic_zhifubao"];
             break;
         case 2:
             self.unitLabel.text = @"个";
+            self.titleImageView.image = [UIImage imageNamed:@"pic_qbi"];
             break;
         case 3:
             self.unitLabel.text = @"元";
+            self.titleImageView.image = [UIImage imageNamed:@"pic_huafei"];
             break;
         case 4:
             self.unitLabel.text = @"元";

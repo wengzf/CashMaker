@@ -21,4 +21,12 @@
     // Configure the view for the selected state
 }
 
+- (void)updateCellWithModel:(TaskRecordsModel *)model;
+{
+    self.titleLabel.text = model.source_name;
+    self.coninsLabel.text = model.change_coins;
+    self.timeLabel.text = model.created_at;
+    
+}
+
 @end

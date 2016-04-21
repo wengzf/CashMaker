@@ -28,10 +28,19 @@
     
     {
         [self.contentTableView registerNib:[UINib nibWithNibName:@"ExchangeTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExchangeTableViewCell"];
+        [self.contentTableView registerNib:[UINib nibWithNibName:@"TaskRecordTableViewCell" bundle:nil] forCellReuseIdentifier:@"TaskRecordTableViewCell"];
         
         // 注册上下拉刷新
-        self.contentTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestExchangeData)];
-        self.contentTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestIncrementExchangeData)];
+        self.contentTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
+        self.contentTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestIncrementData)];
+        
+        // 数据源初始化
+        taskRecordsArr = [NSMutableArray array];
+        exchangeRecordsArr = [NSMutableArray array];
+        
+        selectedIndex = 0;
+        
+        [self.contentTableView.mj_header beginRefreshing];
     }
 }
 
@@ -40,45 +49,81 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)requstTaskHistory
-{
-    
-}
-- (void)requstExchangeHistory
-{
-    
-}
 - (void)requestData
 {
-    [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:@"0" successBlock:^(long status, NSDictionary *dic) {
+    //
+    if (selectedIndex == 0) {
+        // 兑换记录
         
-        // 数据源初始化
-        exchangeRecordsArr = [NSMutableArray array];
-        NSArray *arr = (NSArray *)dic;
-        for (NSDictionary *tmpDic in arr) {
-            ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
-            [exchangeRecordsArr addObject:model];
-        }
-        [self.contentTableView reloadData];
-        
-        [self.contentTableView.mj_header endRefreshing];
-    }];
+        [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:@"0" successBlock:^(long status, NSDictionary *dic) {
+            
+            // 数据源初始化
+            exchangeRecordsArr = [NSMutableArray array];
+            NSArray *arr = (NSArray *)dic;
+            for (NSDictionary *tmpDic in arr) {
+                ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
+                [exchangeRecordsArr addObject:model];
+            }
+            [self.contentTableView reloadData];
+            
+            [self.contentTableView.mj_header endRefreshing];
+            [self.contentTableView.mj_footer endRefreshing];
+        }];
+    }else{
+        // 我的任务获取金币记录
+
+        [FSNetworkManagerDefaultInstance myrecordsWithUserID:Global.userID last_coins_record_id:@"0" successBlock:^(long status, NSDictionary *dic) {
+            
+            // 数据源初始化
+            taskRecordsArr = [NSMutableArray array];
+            NSArray *arr = (NSArray *)dic;
+            for (NSDictionary *tmpDic in arr) {
+                ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
+                [taskRecordsArr addObject:model];
+            }
+            [self.contentTableView reloadData];
+            
+            [self.contentTableView.mj_header endRefreshing];
+            [self.contentTableView.mj_footer endRefreshing];
+        }];
+    }
 }
 - (void)requestIncrementData
 {
-    ExchangeRecordsModel *model = [exchangeRecordsArr lastObject];
-    [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:model.exchangeID successBlock:^(long status, NSDictionary *dic) {
+    if (selectedIndex == 0) {
+        // 兑换记录
+        ExchangeRecordsModel *model = [exchangeRecordsArr lastObject];
+        [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:model.exchangeID successBlock:^(long status, NSDictionary *dic) {
+            
+            NSArray *arr = (NSArray *)dic;
+            for (NSDictionary *tmpDic in arr) {
+                ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
+                [exchangeRecordsArr addObject:model];
+            }
+            [self.contentTableView reloadData];
+            
+            [self.contentTableView.mj_header endRefreshing];
+            [self.contentTableView.mj_footer endRefreshing];
+        }];
+    }else{
+        // 我的任务获取金币记录
+        TaskRecordsModel *model = [taskRecordsArr lastObject];
         
-        NSArray *arr = (NSArray *)dic;
-        for (NSDictionary *tmpDic in arr) {
-            ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
-            [exchangeRecordsArr addObject:model];
-        }
-        [self.contentTableView reloadData];
-    }];
+        [FSNetworkManagerDefaultInstance myrecordsWithUserID:Global.userID last_coins_record_id:model.taskRecordsID successBlock:^(long status, NSDictionary *dic) {
+            
+            NSArray *arr = (NSArray *)dic;
+            for (NSDictionary *tmpDic in arr) {
+                TaskRecordsModel *model = [[TaskRecordsModel alloc] initWithDic:tmpDic];
+                [taskRecordsArr addObject:model];
+            }
+            [self.contentTableView reloadData];
+            
+            [self.contentTableView.mj_header endRefreshing];
+            [self.contentTableView.mj_footer endRefreshing];
+        }];
+    }
+
 }
-
-
 
 
 #pragma mark - Table view data source
@@ -98,24 +143,30 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 88;
+    if (selectedIndex == 0) {
+        return 88;
+    }
+    return 65;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *resCell;
-    if (selectedIndex == 1) {
+    if (selectedIndex == 0) {
         
         ExchangeRecordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExchangeRecordsTableViewCell" forIndexPath:indexPath];
         
         [cell updateCellWithModel:taskRecordsArr[indexPath.row]];
+        
+        resCell = cell;
         
     }else{
         
-        ExchangeRecordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExchangeRecordsTableViewCell" forIndexPath:indexPath];
+        TaskRecordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskRecordTableViewCell" forIndexPath:indexPath];
         
         [cell updateCellWithModel:taskRecordsArr[indexPath.row]];
         
+        resCell = cell;
     }
     return resCell;
 }
@@ -127,6 +178,9 @@
 
 #pragma mark - Event
 
-- (IBAction)segmentControlValueChanged:(id)sender {
+- (IBAction)segmentControlValueChanged:(UISegmentedControl *)sender {
+    selectedIndex = sender.selectedSegmentIndex;
+    
+    [self.contentTableView reloadData];
 }
 @end

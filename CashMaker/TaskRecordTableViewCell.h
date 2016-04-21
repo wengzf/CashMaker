@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskRecordsModel.h"
 
 @interface TaskRecordTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *coninsLabel;
+
+- (void)updateCellWithModel:(TaskRecordsModel *)model;
 
 @end

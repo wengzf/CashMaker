@@ -85,6 +85,7 @@
                 <outlet property="unitLabel" destination="yGz-jp-Om6" id="QSC-o1-SBY"/>
                 <outlet property="valueLabel" destination="gbC-WO-Zjw" id="B2x-4k-mG1"/>
             </connections>
+            <point key="canvasLocation" x="351" y="663"/>
         </tableViewCell>
     </objects>
 </document>
