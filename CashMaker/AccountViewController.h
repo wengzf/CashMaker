@@ -10,4 +10,11 @@
 
 @interface AccountViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UITableView *contentTableView;
+
+
+- (IBAction)segmentControlValueChanged:(id)sender;
+
+
 @end

@@ -1176,7 +1176,7 @@
 				TargetAttributes = {
 					2115200B1C745DC400CE11DD = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 4JVDCH8EHZ;
+						DevelopmentTeam = 3HUUWY9C4G;
 					};
 				};
 			};
@@ -1426,7 +1426,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1449,7 +1449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
+				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1471,7 +1471,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1487,7 +1487,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
+				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1498,7 +1498,7 @@
 			baseConfigurationReference = AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1526,9 +1526,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
+				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
 			};
 			name = Debug;
 		};
@@ -1537,7 +1537,7 @@
 			baseConfigurationReference = CC15806D5FDF218C0CFAF19F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1566,9 +1566,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
+				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
 			};
 			name = Release;
 		};

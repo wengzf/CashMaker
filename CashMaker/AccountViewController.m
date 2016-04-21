@@ -25,6 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    {
+        [self.contentTableView registerNib:[UINib nibWithNibName:@"ExchangeTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExchangeTableViewCell"];
+        
+        // 注册上下拉刷新
+        self.contentTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestExchangeData)];
+        self.contentTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestIncrementExchangeData)];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +48,35 @@
 {
     
 }
-
+- (void)requestData
+{
+    [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:@"0" successBlock:^(long status, NSDictionary *dic) {
+        
+        // 数据源初始化
+        exchangeRecordsArr = [NSMutableArray array];
+        NSArray *arr = (NSArray *)dic;
+        for (NSDictionary *tmpDic in arr) {
+            ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
+            [exchangeRecordsArr addObject:model];
+        }
+        [self.contentTableView reloadData];
+        
+        [self.contentTableView.mj_header endRefreshing];
+    }];
+}
+- (void)requestIncrementData
+{
+    ExchangeRecordsModel *model = [exchangeRecordsArr lastObject];
+    [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:model.exchangeID successBlock:^(long status, NSDictionary *dic) {
+        
+        NSArray *arr = (NSArray *)dic;
+        for (NSDictionary *tmpDic in arr) {
+            ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
+            [exchangeRecordsArr addObject:model];
+        }
+        [self.contentTableView reloadData];
+    }];
+}
 
 
 
@@ -89,5 +125,8 @@
     [cell resetDeviderLineToOnePixel];
 }
 
+#pragma mark - Event
 
+- (IBAction)segmentControlValueChanged:(id)sender {
+}
 @end
