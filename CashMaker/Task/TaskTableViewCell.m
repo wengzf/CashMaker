@@ -26,6 +26,7 @@
         self.titleImageView.image = [UIImage imageNamed:@"icon_checkin"];
         
     }else if ([model.taskNameStr isEqualToString:@"share"]) {
+        self.titleImageView.image = [UIImage imageNamed:@"icon_share"];
         
     }else if ([model.taskNameStr isEqualToString:@"signin"]) {
         

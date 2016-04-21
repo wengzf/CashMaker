@@ -1181,7 +1181,6 @@
 				TargetAttributes = {
 					2115200B1C745DC400CE11DD = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 3HUUWY9C4G;
 					};
 				};
 			};
@@ -1534,7 +1533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
+				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
 			};
 			name = Debug;
 		};
@@ -1574,7 +1573,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
+				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
 			};
 			name = Release;
 		};

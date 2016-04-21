@@ -17,7 +17,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-LZ-A21">
                         <rect key="frame" x="8" y="8" width="304" height="188.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="59V-7L-qws">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="59V-7L-qws">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="141.5"/>
                                 <color key="backgroundColor" red="0.49752035100000003" green="0.85446733249999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -64,7 +64,7 @@
                                     <constraint firstItem="Ez4-oq-QxA" firstAttribute="bottom" secondItem="fFp-QQ-P7q" secondAttribute="bottom" id="w7v-tq-ReQ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6o-I1-dre">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6o-I1-dre">
                                 <rect key="frame" x="122" y="59" width="60" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

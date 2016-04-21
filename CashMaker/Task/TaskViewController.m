@@ -185,8 +185,8 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
-    NSArray *titleImgArr = @[@"icon_channel_a", @"icon_channel_b", @"icon_channel_c", @"icon_channel_d", @"icon_channel_e"];
-    cell.titleImageView.image = [UIImage imageNamed:titleImgArr[(indexPath.row + 3)%5 ]];
+    NSArray *titleImgArr = @[@"icon_channel_a", @"icon_channel_b", @"icon_channel_c", @"icon_channel_d", @"icon_channel_e", @"icon_channel_f", @"icon_channel_g"];
+    cell.titleImageView.image = [UIImage imageNamed:titleImgArr[(indexPath.row + 2)%7 ]];
     
     // cell配置
     TaskModel *model = taskArr[indexPath.row];
