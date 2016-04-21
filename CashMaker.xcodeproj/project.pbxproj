@@ -61,6 +61,13 @@
 		AD11887A1CBB8D3600EFB378 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1188791CBB8D3600EFB378 /* BaseModel.m */; };
 		AD11887D1CBB8E6000EFB378 /* UIBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD11887C1CBB8E6000EFB378 /* UIBaseTableViewCell.m */; };
 		AD3448831CABABA100048737 /* RegisterLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3448821CABABA100048737 /* RegisterLogin.storyboard */; };
+		AD452E681CC8ECEF007D8308 /* MiiLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = AD452E5D1CC8ECEF007D8308 /* MiiLogo.png */; };
+		AD452E691CC8ECEF007D8308 /* MiiLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD452E5E1CC8ECEF007D8308 /* MiiLogo@2x.png */; };
+		AD452E6A1CC8ECEF007D8308 /* MiiReturnButtonDw.png in Resources */ = {isa = PBXBuildFile; fileRef = AD452E5F1CC8ECEF007D8308 /* MiiReturnButtonDw.png */; };
+		AD452E6B1CC8ECEF007D8308 /* MiiReturnButtonDw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD452E601CC8ECEF007D8308 /* MiiReturnButtonDw@2x.png */; };
+		AD452E6C1CC8ECEF007D8308 /* MiiReturnButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AD452E611CC8ECEF007D8308 /* MiiReturnButtonUp.png */; };
+		AD452E6D1CC8ECEF007D8308 /* MiiReturnButtonUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD452E621CC8ECEF007D8308 /* MiiReturnButtonUp@2x.png */; };
+		AD452E6E1CC8ECEF007D8308 /* libMiidiMobAc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD452E671CC8ECEF007D8308 /* libMiidiMobAc.a */; };
 		AD59CB221CACC76200EFA1F3 /* ChangePasswordFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD59CB211CACC76200EFA1F3 /* ChangePasswordFirstViewController.m */; };
 		AD59CB251CACC77600EFA1F3 /* ChangePasswordSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD59CB241CACC77600EFA1F3 /* ChangePasswordSecondViewController.m */; };
 		AD59CB281CACC78200EFA1F3 /* ChangePasswordThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD59CB271CACC78200EFA1F3 /* ChangePasswordThirdViewController.m */; };
@@ -118,13 +125,6 @@
 		ADB7C6EE1CC4C4D4000D9FE1 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB7C6ED1CC4C4D4000D9FE1 /* AccountViewController.m */; };
 		ADB7C6F21CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB7C6F01CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m */; };
 		ADB7C6F31CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB7C6F11CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib */; };
-		ADC9247C1CC098F700AC765B /* MiiLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924711CC098F700AC765B /* MiiLogo.png */; };
-		ADC9247D1CC098F700AC765B /* MiiLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924721CC098F700AC765B /* MiiLogo@2x.png */; };
-		ADC9247E1CC098F700AC765B /* MiiReturnButtonDw.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924731CC098F700AC765B /* MiiReturnButtonDw.png */; };
-		ADC9247F1CC098F700AC765B /* MiiReturnButtonDw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924741CC098F700AC765B /* MiiReturnButtonDw@2x.png */; };
-		ADC924801CC098F700AC765B /* MiiReturnButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924751CC098F700AC765B /* MiiReturnButtonUp.png */; };
-		ADC924811CC098F700AC765B /* MiiReturnButtonUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC924761CC098F700AC765B /* MiiReturnButtonUp@2x.png */; };
-		ADC924821CC098F700AC765B /* libMSecOfferLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC9247B1CC098F700AC765B /* libMSecOfferLib.a */; };
 		ADC924841CC0C2A600AC765B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC924831CC0C2A600AC765B /* CoreText.framework */; };
 		ADC924861CC0C2B600AC765B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC924851CC0C2B600AC765B /* AudioToolbox.framework */; };
 		ADC924881CC0C2C500AC765B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC924871CC0C2C500AC765B /* AVFoundation.framework */; };
@@ -275,6 +275,16 @@
 		AD11887B1CBB8E6000EFB378 /* UIBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseTableViewCell.h; sourceTree = "<group>"; };
 		AD11887C1CBB8E6000EFB378 /* UIBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseTableViewCell.m; sourceTree = "<group>"; };
 		AD3448821CABABA100048737 /* RegisterLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegisterLogin.storyboard; sourceTree = "<group>"; };
+		AD452E5D1CC8ECEF007D8308 /* MiiLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiLogo.png; sourceTree = "<group>"; };
+		AD452E5E1CC8ECEF007D8308 /* MiiLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiLogo@2x.png"; sourceTree = "<group>"; };
+		AD452E5F1CC8ECEF007D8308 /* MiiReturnButtonDw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonDw.png; sourceTree = "<group>"; };
+		AD452E601CC8ECEF007D8308 /* MiiReturnButtonDw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonDw@2x.png"; sourceTree = "<group>"; };
+		AD452E611CC8ECEF007D8308 /* MiiReturnButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonUp.png; sourceTree = "<group>"; };
+		AD452E621CC8ECEF007D8308 /* MiiReturnButtonUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonUp@2x.png"; sourceTree = "<group>"; };
+		AD452E641CC8ECEF007D8308 /* MiidiMobAc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiMobAc.h; sourceTree = "<group>"; };
+		AD452E651CC8ECEF007D8308 /* MiidiMobAcApiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiMobAcApiConfig.h; sourceTree = "<group>"; };
+		AD452E661CC8ECEF007D8308 /* MiidiMobAcPubHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiMobAcPubHeader.h; sourceTree = "<group>"; };
+		AD452E671CC8ECEF007D8308 /* libMiidiMobAc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMiidiMobAc.a; sourceTree = "<group>"; };
 		AD59CB201CACC76200EFA1F3 /* ChangePasswordFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordFirstViewController.h; sourceTree = "<group>"; };
 		AD59CB211CACC76200EFA1F3 /* ChangePasswordFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordFirstViewController.m; sourceTree = "<group>"; };
 		AD59CB231CACC77600EFA1F3 /* ChangePasswordSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordSecondViewController.h; sourceTree = "<group>"; };
@@ -366,16 +376,6 @@
 		ADB7C6EF1CC4C9E9000D9FE1 /* TaskRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskRecordTableViewCell.h; sourceTree = "<group>"; };
 		ADB7C6F01CC4C9E9000D9FE1 /* TaskRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskRecordTableViewCell.m; sourceTree = "<group>"; };
 		ADB7C6F11CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskRecordTableViewCell.xib; sourceTree = "<group>"; };
-		ADC924711CC098F700AC765B /* MiiLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiLogo.png; sourceTree = "<group>"; };
-		ADC924721CC098F700AC765B /* MiiLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiLogo@2x.png"; sourceTree = "<group>"; };
-		ADC924731CC098F700AC765B /* MiiReturnButtonDw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonDw.png; sourceTree = "<group>"; };
-		ADC924741CC098F700AC765B /* MiiReturnButtonDw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonDw@2x.png"; sourceTree = "<group>"; };
-		ADC924751CC098F700AC765B /* MiiReturnButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonUp.png; sourceTree = "<group>"; };
-		ADC924761CC098F700AC765B /* MiiReturnButtonUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonUp@2x.png"; sourceTree = "<group>"; };
-		ADC924781CC098F700AC765B /* MiidiObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiObfuscation.h; sourceTree = "<group>"; };
-		ADC924791CC098F700AC765B /* MyOfferAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOfferAPI.h; sourceTree = "<group>"; };
-		ADC9247A1CC098F700AC765B /* MyOfferAPIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOfferAPIDelegate.h; sourceTree = "<group>"; };
-		ADC9247B1CC098F700AC765B /* libMSecOfferLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMSecOfferLib.a; sourceTree = "<group>"; };
 		ADC924831CC0C2A600AC765B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		ADC924851CC0C2B600AC765B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		ADC924871CC0C2C500AC765B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -447,8 +447,8 @@
 				ADC924C11CC0C36E00AC765B /* libCoolAdOnlineConfig.a in Frameworks */,
 				ADAE61571CC3938200612A47 /* TencentOpenAPI.framework in Frameworks */,
 				ADC924841CC0C2A600AC765B /* CoreText.framework in Frameworks */,
-				ADC924821CC098F700AC765B /* libMSecOfferLib.a in Frameworks */,
 				2107443E1CBFEBD10028646F /* ImageIO.framework in Frameworks */,
+				AD452E6E1CC8ECEF007D8308 /* libMiidiMobAc.a in Frameworks */,
 				AD678E7E1CBF49C7000429BB /* AdSupport.framework in Frameworks */,
 				ADAE614F1CC3938200612A47 /* QZoneConnection.framework in Frameworks */,
 				AD678E821CBF49D6000429BB /* CoreTelephony.framework in Frameworks */,
@@ -750,6 +750,29 @@
 			path = RegisterAndLogin;
 			sourceTree = "<group>";
 		};
+		AD452E5C1CC8ECEF007D8308 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AD452E5D1CC8ECEF007D8308 /* MiiLogo.png */,
+				AD452E5E1CC8ECEF007D8308 /* MiiLogo@2x.png */,
+				AD452E5F1CC8ECEF007D8308 /* MiiReturnButtonDw.png */,
+				AD452E601CC8ECEF007D8308 /* MiiReturnButtonDw@2x.png */,
+				AD452E611CC8ECEF007D8308 /* MiiReturnButtonUp.png */,
+				AD452E621CC8ECEF007D8308 /* MiiReturnButtonUp@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		AD452E631CC8ECEF007D8308 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				AD452E641CC8ECEF007D8308 /* MiidiMobAc.h */,
+				AD452E651CC8ECEF007D8308 /* MiidiMobAcApiConfig.h */,
+				AD452E661CC8ECEF007D8308 /* MiidiMobAcPubHeader.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		AD678E651CBF401D000429BB /* Advertisement */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,9 +853,9 @@
 		AD678E6D1CBF401D000429BB /* 米迪 */ = {
 			isa = PBXGroup;
 			children = (
-				ADC924701CC098F700AC765B /* images */,
-				ADC924771CC098F700AC765B /* include */,
-				ADC9247B1CC098F700AC765B /* libMSecOfferLib.a */,
+				AD452E5C1CC8ECEF007D8308 /* images */,
+				AD452E631CC8ECEF007D8308 /* include */,
+				AD452E671CC8ECEF007D8308 /* libMiidiMobAc.a */,
 			);
 			path = "米迪";
 			sourceTree = "<group>";
@@ -986,29 +1009,6 @@
 			);
 			name = ScratchView;
 			path = STScratchView;
-			sourceTree = "<group>";
-		};
-		ADC924701CC098F700AC765B /* images */ = {
-			isa = PBXGroup;
-			children = (
-				ADC924711CC098F700AC765B /* MiiLogo.png */,
-				ADC924721CC098F700AC765B /* MiiLogo@2x.png */,
-				ADC924731CC098F700AC765B /* MiiReturnButtonDw.png */,
-				ADC924741CC098F700AC765B /* MiiReturnButtonDw@2x.png */,
-				ADC924751CC098F700AC765B /* MiiReturnButtonUp.png */,
-				ADC924761CC098F700AC765B /* MiiReturnButtonUp@2x.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		ADC924771CC098F700AC765B /* include */ = {
-			isa = PBXGroup;
-			children = (
-				ADC924781CC098F700AC765B /* MiidiObfuscation.h */,
-				ADC924791CC098F700AC765B /* MyOfferAPI.h */,
-				ADC9247A1CC098F700AC765B /* MyOfferAPIDelegate.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		ADC924891CC0C36E00AC765B /* CoolAdOnlineSDK */ = {
@@ -1181,6 +1181,7 @@
 				TargetAttributes = {
 					2115200B1C745DC400CE11DD = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = DRJ42M455V;
 					};
 				};
 			};
@@ -1212,6 +1213,7 @@
 				ADC924CD1CC0C36E00AC765B /* CoolAdWall_back_red.png in Resources */,
 				ADAE61531CC3938200612A47 /* ShareSDKLocalizable.strings in Resources */,
 				AD3448831CABABA100048737 /* RegisterLogin.storyboard in Resources */,
+				AD452E6A1CC8ECEF007D8308 /* MiiReturnButtonDw.png in Resources */,
 				ADC924DD1CC0C36E00AC765B /* CoolAdWall_right_roll.png in Resources */,
 				AD1188771CBB8ADC00EFB378 /* ExchangeRecordsTableViewCell.xib in Resources */,
 				ADC924D31CC0C36E00AC765B /* CoolAdWall_download_white@2x.png in Resources */,
@@ -1219,9 +1221,11 @@
 				ADB7C6F31CC4C9E9000D9FE1 /* TaskRecordTableViewCell.xib in Resources */,
 				ADC924E11CC0C36E00AC765B /* yes_icon_orange.png in Resources */,
 				ADC924DC1CC0C36E00AC765B /* CoolAdWall_right.png in Resources */,
+				AD452E691CC8ECEF007D8308 /* MiiLogo@2x.png in Resources */,
 				ADAE615A1CC3938200612A47 /* WeiboSDK.bundle in Resources */,
 				ADC924D71CC0C36E00AC765B /* no_icon.png in Resources */,
 				211520221C745DC400CE11DD /* LaunchScreen.storyboard in Resources */,
+				AD452E6B1CC8ECEF007D8308 /* MiiReturnButtonDw@2x.png in Resources */,
 				ADC924DF1CC0C36E00AC765B /* yes_icon_blue.png in Resources */,
 				ADC924E21CC0C36E00AC765B /* yes_icon_red.png in Resources */,
 				ADC924DA1CC0C36E00AC765B /* CoolAdWall_left.png in Resources */,
@@ -1231,17 +1235,16 @@
 				ADAE61581CC3938200612A47 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				ADC924DE1CC0C36E00AC765B /* yes_icon.png in Resources */,
 				ADC924E31CC0C36E00AC765B /* yes_icon_white.png in Resources */,
-				ADC924811CC098F700AC765B /* MiiReturnButtonUp@2x.png in Resources */,
 				2115201F1C745DC400CE11DD /* Assets.xcassets in Resources */,
+				AD452E6D1CC8ECEF007D8308 /* MiiReturnButtonUp@2x.png in Resources */,
 				ADC924E01CC0C36E00AC765B /* yes_icon_green.png in Resources */,
 				ADC924D81CC0C36E00AC765B /* CoolAdWall_coin.png in Resources */,
 				ADAE615D1CC3938200612A47 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				ADC924D91CC0C36E00AC765B /* CoolAdWall_gold.png in Resources */,
 				AD678E8A1CBF4BD8000429BB /* TaskWallViewController.xib in Resources */,
-				ADC9247D1CC098F700AC765B /* MiiLogo@2x.png in Resources */,
+				AD452E6C1CC8ECEF007D8308 /* MiiReturnButtonUp.png in Resources */,
 				210744421CBFEC0C0028646F /* hxwGMWBundle.bundle in Resources */,
-				ADC9247F1CC098F700AC765B /* MiiReturnButtonDw@2x.png in Resources */,
-				ADC9247E1CC098F700AC765B /* MiiReturnButtonDw.png in Resources */,
+				AD452E681CC8ECEF007D8308 /* MiiLogo.png in Resources */,
 				ADC924D01CC0C36E00AC765B /* CoolAdWall_dotted_line.png in Resources */,
 				ADC924D21CC0C36E00AC765B /* CoolAdWall_download_white.png in Resources */,
 				ADC924D41CC0C36E00AC765B /* CoolAdWall_icon_wait.png in Resources */,
@@ -1250,8 +1253,6 @@
 				ADAE61551CC3938200612A47 /* Resource.bundle in Resources */,
 				ADC924D51CC0C36E00AC765B /* feedback_icon.png in Resources */,
 				ADC924CF1CC0C36E00AC765B /* CoolAdWall_close_btn.png in Resources */,
-				ADC9247C1CC098F700AC765B /* MiiLogo.png in Resources */,
-				ADC924801CC098F700AC765B /* MiiReturnButtonUp.png in Resources */,
 				218138D71C93CCE100D75DBA /* TaskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1454,7 +1455,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
+				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1492,7 +1493,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "7daf45f0-89ae-4fd9-9b62-c9a2d4e74b51";
+				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1503,7 +1504,7 @@
 			baseConfigurationReference = AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1531,9 +1532,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
+				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
 			};
 			name = Debug;
 		};
@@ -1542,7 +1543,7 @@
 			baseConfigurationReference = CC15806D5FDF218C0CFAF19F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1571,9 +1572,9 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibaoEnterprise.FireShadow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce96aeda-188f-41c2-8a13-bb17647b762a";
+				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
 			};
 			name = Release;
 		};
