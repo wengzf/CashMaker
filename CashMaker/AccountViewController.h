@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountViewController : UIViewController
+@interface AccountViewController : UIBaseViewController
 
 
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;

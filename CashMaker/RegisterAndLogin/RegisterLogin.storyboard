@@ -1201,7 +1201,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20y-SE-3fo" userLabel="View 密码">
                                 <rect key="frame" x="16" y="98" width="343" height="44"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LNS-Z8-ANi">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LNS-Z8-ANi">
                                         <rect key="frame" x="8" y="0.0" width="295" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="YiN-0z-AFK"/>
@@ -1214,7 +1214,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pe-y8-RD2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pe-y8-RD2">
                                         <rect key="frame" x="300" y="5" width="35" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="6gW-hM-yjv"/>
@@ -1237,6 +1237,7 @@
                                     <constraint firstAttribute="trailing" secondItem="LNS-Z8-ANi" secondAttribute="trailing" constant="40" id="DSi-wi-yaY"/>
                                     <constraint firstAttribute="height" constant="44" id="R9F-XZ-lNY"/>
                                     <constraint firstAttribute="bottom" secondItem="LNS-Z8-ANi" secondAttribute="bottom" id="STW-36-jSs"/>
+                                    <constraint firstItem="LNS-Z8-ANi" firstAttribute="centerY" secondItem="20y-SE-3fo" secondAttribute="centerY" id="o2U-g0-C87"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">

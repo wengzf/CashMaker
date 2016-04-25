@@ -57,59 +57,14 @@
             
             NSArray *arr = (NSArray *)dic;
             taskArr = [NSMutableArray array];
-//            taskArr = [NSMutableArray arrayWithArray:arr];
-            
-            for (NSString *str in arr) {
+    
+            for (NSDictionary *tmpDic in arr) {
                 TaskModel *model = [TaskModel new];
-                model.taskNameStr = str;
-                model.titleStr = str;
-                model.hintStr = @"免费获取积分";
+                model.taskNameStr = tmpDic[@"name"];
+                model.titleStr = tmpDic[@"title"];;
+                model.hintStr = tmpDic[@"desc"];;
                 [taskArr addObject:model];
             }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"wanpu";
-                model.titleStr = @"万普";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"qumi";
-                model.titleStr = @"趣米";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"zhimeng";
-                model.titleStr = @"指盟";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"guomeng";
-                model.titleStr = @"果盟";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"midi";
-                model.titleStr = @"米迪";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"kugao";
-                model.titleStr = @"酷告";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            
 
             
             [self.taskTableView reloadData];
@@ -236,6 +191,8 @@
         //创建积分墙广告 pointUserId可选，根据需要 开发者自己设置，设置PointUserId可以
         //    实现在不同设备上同步该用户的积分。
         _qumiViewController = [[QumiOperationApp alloc] initwithPointUserID:nil] ;
+        
+        [_qumiViewController initwithPointUserID:Global.userID];
         //设置代理
         _qumiViewController.delegate = self;
         

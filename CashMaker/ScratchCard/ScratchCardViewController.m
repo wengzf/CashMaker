@@ -130,7 +130,7 @@
 
 - (void)scratchCardViewTaped
 {
-    UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"刮刮卡" message:@"确定话费10 coins来抽奖" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"刮刮卡" message:@"确定花费10 coins来抽奖" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alv show];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

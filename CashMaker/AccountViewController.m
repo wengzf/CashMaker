@@ -40,6 +40,7 @@
         
         selectedIndex = 0;
         
+        // 开始刷新数据
         [self.contentTableView.mj_header beginRefreshing];
     }
 }
@@ -55,8 +56,7 @@
     if (selectedIndex == 0) {
         // 兑换记录
         
-        [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:@"0" successBlock:^(long status, NSDictionary *dic) {
-            
+        [FSNetworkManagerDefaultInstance myrecordsWithUserID:Global.userID exchange_record_id:@"0" successBlock:^(long status, NSDictionary *dic) {
             // 数据源初始化
             exchangeRecordsArr = [NSMutableArray array];
             NSArray *arr = (NSArray *)dic;
@@ -78,7 +78,7 @@
             taskRecordsArr = [NSMutableArray array];
             NSArray *arr = (NSArray *)dic;
             for (NSDictionary *tmpDic in arr) {
-                ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
+                TaskRecordsModel *model = [[TaskRecordsModel alloc] initWithDic:tmpDic];
                 [taskRecordsArr addObject:model];
             }
             [self.contentTableView reloadData];
@@ -93,7 +93,7 @@
     if (selectedIndex == 0) {
         // 兑换记录
         ExchangeRecordsModel *model = [exchangeRecordsArr lastObject];
-        [FSNetworkManagerDefaultInstance elistWithUserID:Global.userID last_exchange_id:model.exchangeID successBlock:^(long status, NSDictionary *dic) {
+        [FSNetworkManagerDefaultInstance myrecordsWithUserID:Global.userID exchange_record_id:model.exchangeID successBlock:^(long status, NSDictionary *dic) {
             
             NSArray *arr = (NSArray *)dic;
             for (NSDictionary *tmpDic in arr) {
@@ -156,7 +156,7 @@
         
         ExchangeRecordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExchangeRecordsTableViewCell" forIndexPath:indexPath];
         
-        [cell updateCellWithModel:taskRecordsArr[indexPath.row]];
+        [cell updateCellWithModel:exchangeRecordsArr[indexPath.row]];
         
         resCell = cell;
         
@@ -181,6 +181,21 @@
 - (IBAction)segmentControlValueChanged:(UISegmentedControl *)sender {
     selectedIndex = sender.selectedSegmentIndex;
     
-    [self.contentTableView reloadData];
+    if (selectedIndex == 0) {
+        if ([exchangeRecordsArr count] == 0) {
+            // 开始刷新数据
+            [self.contentTableView.mj_header beginRefreshing];
+        }else{
+            [self.contentTableView reloadData];
+        }
+    }else{
+        if ([taskRecordsArr count] == 0) {
+            // 开始刷新数据
+            [self.contentTableView.mj_header beginRefreshing];
+        }else{
+            [self.contentTableView reloadData];
+        }
+    }
+
 }
 @end

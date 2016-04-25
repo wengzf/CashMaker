@@ -14,6 +14,7 @@
 {
     self.taskRecordsID = dic[@"id"];
     self.source_type = dic[@"source_type"];
+    self.source_title = dic[@"source_title"];
     self.change_coins = dic[@"change_coins"];
 
     self.created_at = dic[@"created_at"];
