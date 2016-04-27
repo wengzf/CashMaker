@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -302,7 +303,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_app" translatesAutoresizingMaskIntoConstraints="NO" id="Bfs-zZ-eqp">
-                                <rect key="frame" x="129" y="175" width="117" height="117"/>
+                                <rect key="frame" x="129" y="196.5" width="117" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="vbI-5o-Qcw"/>
                                     <constraint firstAttribute="height" constant="117" id="yRF-D0-4yt"/>
@@ -317,7 +318,7 @@
                             <constraint firstItem="3Rk-KV-HDB" firstAttribute="centerX" secondItem="zUF-Vm-E7X" secondAttribute="centerX" id="S71-pu-AbA"/>
                             <constraint firstItem="eUt-nJ-dem" firstAttribute="leading" secondItem="zUF-Vm-E7X" secondAttribute="leading" id="XpN-5E-mhL"/>
                             <constraint firstItem="dtz-aT-Mhe" firstAttribute="top" secondItem="3Rk-KV-HDB" secondAttribute="bottom" constant="58" id="uJV-6x-9Nf"/>
-                            <constraint firstItem="Bfs-zZ-eqp" firstAttribute="centerY" secondItem="zUF-Vm-E7X" secondAttribute="centerY" constant="-100" id="xgF-Wx-NwM"/>
+                            <constraint firstItem="Bfs-zZ-eqp" firstAttribute="centerY" secondItem="zUF-Vm-E7X" secondAttribute="centerY" multiplier="0.764" id="xgF-Wx-NwM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hVB-dT-yup"/>

@@ -68,7 +68,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/Network/FSNetworkManager.m"
-                  timestampString = "483180484.428983"
+                  timestampString = "483271499.282373"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -83,7 +83,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/Network/FSNetworkManager.m"
-                  timestampString = "483180484.429095"
+                  timestampString = "483271499.282504"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -147,14 +147,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CashMaker/Exchange/ExchangeRecordsModel.m"
-            timestampString = "483091506.307272"
+            filePath = "CashMaker/AccountViewController.m"
+            timestampString = "483271549.185441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "-fillWithDic:"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-requestIncrementData"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AccountViewController requestIncrementData]"
+                  moduleName = "CashMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/AccountViewController.m"
+                  timestampString = "483271549.200163"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "564">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[AccountViewController requestIncrementData]_block_invoke.76"
+                  moduleName = "CashMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/AccountViewController.m"
+                  timestampString = "483271549.200294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

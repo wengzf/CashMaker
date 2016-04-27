@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view.
     
     {
-        [self.contentTableView registerNib:[UINib nibWithNibName:@"ExchangeTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExchangeTableViewCell"];
+        [self.contentTableView registerNib:[UINib nibWithNibName:@"ExchangeRecordsTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExchangeRecordsTableViewCell"];
         [self.contentTableView registerNib:[UINib nibWithNibName:@"TaskRecordTableViewCell" bundle:nil] forCellReuseIdentifier:@"TaskRecordTableViewCell"];
         
         // 注册上下拉刷新
@@ -180,6 +180,8 @@
 
 - (IBAction)segmentControlValueChanged:(UISegmentedControl *)sender {
     selectedIndex = sender.selectedSegmentIndex;
+    
+    [self.contentTableView reloadData];
     
     if (selectedIndex == 0) {
         if ([exchangeRecordsArr count] == 0) {

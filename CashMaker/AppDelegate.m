@@ -43,8 +43,10 @@
 
     // 对应广告平台初始化
     {
-        [self initAD];
-        
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self initAD];
+        });
+
     }
     // 分享初始化
     {

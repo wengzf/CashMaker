@@ -15,26 +15,47 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机赚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3z-yx-Kwc">
-                                <rect key="frame" x="250.5" y="217" width="99" height="46.5"/>
-                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="33"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-y1-Wai">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="3bp-jE-OVn"/>
+                                    <constraint firstAttribute="width" constant="117" id="iZG-AZ-r0Z"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3bp-jE-OVn"/>
+                                        <exclude reference="iZG-AZ-r0Z"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z3z-yx-Kwc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.8" id="Zug-jz-Ham"/>
-                            <constraint firstItem="Z3z-yx-Kwc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="idj-xO-f6S"/>
+                            <constraint firstItem="UJX-y1-Wai" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="1By-Yf-jEg"/>
+                            <constraint firstItem="UJX-y1-Wai" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Dns-Kl-KHD"/>
+                            <constraint firstItem="UJX-y1-Wai" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.764" id="Tcv-iy-LQ7"/>
+                            <constraint firstAttribute="trailing" secondItem="UJX-y1-Wai" secondAttribute="trailing" id="fbs-Ol-fAU"/>
+                            <constraint firstItem="UJX-y1-Wai" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hkp-8e-fdZ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UJX-y1-Wai" secondAttribute="bottom" id="rop-DG-ych"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Tcv-iy-LQ7"/>
+                                <exclude reference="hkp-8e-fdZ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408" y="417"/>
+            <point key="canvasLocation" x="384" y="429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash" width="341" height="736"/>
+    </resources>
 </document>
