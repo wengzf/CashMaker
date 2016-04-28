@@ -59,10 +59,8 @@
             taskArr = [NSMutableArray array];
     
             for (NSDictionary *tmpDic in arr) {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = tmpDic[@"name"];
-                model.titleStr = tmpDic[@"title"];;
-                model.hintStr = tmpDic[@"desc"];;
+                TaskModel *model = [[TaskModel alloc] initWithDic:tmpDic];
+                
                 [taskArr addObject:model];
             }
 
@@ -162,9 +160,16 @@
     TaskModel *model = taskArr[indexPath.row];
     
     if ([model.taskNameStr isEqualToString:@"signin"]) {
+        [self.view showLoading];
         [FSNetworkManagerDefaultInstance signinWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
+            [self.view hideLoading];
+//            [self.view showLoadingWithMessage:@"成功签到，获得10个金币" hideAfter:2.0];
             UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"签到" message:@"成功签到，获得10个金币" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alv show];
+            
+            // 对应签到条变成灰色
+            model.isSignIn = @"1";
+            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         }];
         
     }else if ([model.taskNameStr isEqualToString:@"share"]) {
@@ -538,6 +543,8 @@
 {
     NSLog(@"%@",error.domain);
 }
+
+
 
 
 @end

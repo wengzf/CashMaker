@@ -1165,8 +1165,8 @@
                                             <action selector="backBtnClked:" destination="dYz-Fy-WaY" eventType="touchUpInside" id="TKh-or-QNW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oy-ev-QQw">
-                                        <rect key="frame" x="145" y="27" width="85" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oy-ev-QQw">
+                                        <rect key="frame" x="148.5" y="27" width="78.5" height="26"/>
                                         <attributedString key="attributedText">
                                             <fragment content="注册">
                                                 <attributes>
@@ -1174,7 +1174,7 @@
                                                     <font key="NSFont" size="18" name="PingFangSC-Light"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="（3/3">
+                                            <fragment content="（3/3)">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <font key="NSFont" size="14" name="PingFangSC-Light"/>

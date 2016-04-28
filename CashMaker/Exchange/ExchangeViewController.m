@@ -181,12 +181,12 @@
                     [self.view hideLoading];
                 
                     if (status == 911) {
-                        [self.view showLoadingWithMessage:@"兑换失败" hideAfter:2];
+                        [self.view showLoadingWithMessage:@"网络异常" hideAfter:2];
                         
                     }else{
                         status = [dic[@"code"] intValue];
                         if (status == 1000) {
-                            [self.view showLoadingWithMessage:@"兑换成功" hideAfter:2];
+                            [self.view showLoadingWithMessage:@"兑换申请已提交" hideAfter:2];
                         }else{
                             [self.view showLoadingWithMessage:dic[@"message"] hideAfter:2];
                         }

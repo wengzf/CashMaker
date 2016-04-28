@@ -1503,7 +1503,7 @@
 			baseConfigurationReference = AEF4678A6DF2C3FBAEBDAB5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Yonglibao Financial Information Service Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1533,7 +1533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadowTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "60230705-1de0-419a-82a3-a2b47d379a82";
+				PROVISIONING_PROFILE = "cfe62395-ce5b-4950-82f5-ec7a1b76cb12";
 			};
 			name = Debug;
 		};

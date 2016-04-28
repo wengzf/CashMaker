@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSString *titleStr;              
 @property (nonatomic, strong) NSString *hintStr;
 
+@property (strong, nonatomic) NSString *isSignIn;
+
 @end

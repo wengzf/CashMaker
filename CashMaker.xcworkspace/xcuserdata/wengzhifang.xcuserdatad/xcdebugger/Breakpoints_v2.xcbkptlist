@@ -68,7 +68,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/Network/FSNetworkManager.m"
-                  timestampString = "483271499.282373"
+                  timestampString = "483422553.307897"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -83,7 +83,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/Network/FSNetworkManager.m"
-                  timestampString = "483271499.282504"
+                  timestampString = "483422553.308014"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -164,7 +164,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/AccountViewController.m"
-                  timestampString = "483271549.200163"
+                  timestampString = "483422553.310165"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "112"
@@ -179,7 +179,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wengzhifang/Desktop/CashMaker/CashMaker/AccountViewController.m"
-                  timestampString = "483271549.200294"
+                  timestampString = "483422553.310281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -187,6 +187,38 @@
                   offsetFromSymbolStart = "56">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CashMaker/Network/FSNetworkManager.m"
+            timestampString = "483422293.096834"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "-signinWithUserID:successBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CashMaker/Network/FSNetworkManager.m"
+            timestampString = "483422297.064981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-signinWithUserID:successBlock:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
