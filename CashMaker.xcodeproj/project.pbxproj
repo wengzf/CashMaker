@@ -269,6 +269,7 @@
 		21890B321C7B081300E09CA4 /* UIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMacros.h; sourceTree = "<group>"; };
 		21890B431C7B0A9C00E09CA4 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		21890B441C7B0A9C00E09CA4 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AD10716E1CDAE4BB00683FD4 /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Task.h; path = CashMaker/Task.h; sourceTree = "<group>"; };
 		AD1188761CBB8ADC00EFB378 /* ExchangeRecordsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeRecordsTableViewCell.xib; sourceTree = "<group>"; };
 		AD1188781CBB8D3600EFB378 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		AD1188791CBB8D3600EFB378 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
@@ -489,6 +490,7 @@
 		211520031C745DC400CE11DD = {
 			isa = PBXGroup;
 			children = (
+				AD10716E1CDAE4BB00683FD4 /* Task.h */,
 				2115200E1C745DC400CE11DD /* CashMaker */,
 				2115200D1C745DC400CE11DD /* Products */,
 				9387EC714961520CE21D8F86 /* Pods */,
