@@ -9,9 +9,7 @@
 #import "TaskViewController.h"
 #import "TaskTableViewCell.h"
 
-#import <ShareSDK/ShareSDK.h>          // 分享
-#import "WXApi.h"
-#import <TencentOpenAPI/QQApi.h>
+
 
 #import "TaskWallViewController.h"
 
@@ -34,6 +32,8 @@
     hxwGMWViewController *guoguoTree_vc;    // 果盟
     
     CoolAdWall * coolAdWall;        // 酷告
+    
+    BOOL today_signinFlag;
 }
 
 @property(nonatomic,strong)QumiOperationApp *qumiViewController;        // 趣米
@@ -54,8 +54,11 @@
         [self.view showLoading];
         [FSNetworkManagerDefaultInstance taskListWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
             [self.view hideLoading];
+    
             
-            NSArray *arr = (NSArray *)dic;
+            today_signinFlag = [dic[@"today_signinFlag"] boolValue];
+            
+            NSArray *arr = dic[@"list"];
             taskArr = [NSMutableArray array];
     
             for (NSDictionary *tmpDic in arr) {
@@ -145,6 +148,12 @@
     TaskModel *model = taskArr[indexPath.row];
     [cell updateCellWithModel:model];
     
+    if ([model.taskNameStr isEqualToString:@"signin"] && today_signinFlag) {
+        
+        cell.titleImageView.image = [self imageBlackToTransparent:[self getGrayImage:[UIImage imageNamed:@"icon_checkin"]]];
+    }
+    
+
     return cell;
 }
 
@@ -160,35 +169,29 @@
     TaskModel *model = taskArr[indexPath.row];
     
     if ([model.taskNameStr isEqualToString:@"signin"]) {
-        [self.view showLoading];
-        [FSNetworkManagerDefaultInstance signinWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
-            [self.view hideLoading];
-//            [self.view showLoadingWithMessage:@"成功签到，获得10个金币" hideAfter:2.0];
-            UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"签到" message:@"成功签到，获得10个金币" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
-            [alv show];
-            
-            // 对应签到条变成灰色
-            model.isSignIn = @"1";
-            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        }];
+        
+        if (!today_signinFlag) {
+            [self.view showLoading];
+            [FSNetworkManagerDefaultInstance signinWithUserID:Global.userID successBlock:^(long status, NSDictionary *dic) {
+                [self.view hideLoading];
+                //            [self.view showLoadingWithMessage:@"成功签到，获得10个金币" hideAfter:2.0];
+                
+                today_signinFlag = YES;
+                
+                UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"签到" message:@"成功签到，获得10个金币" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+                [alv show];
+                
+                // 对应签到条变成灰色
+                model.isSignIn = @"1";
+                [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }];
+        }
         
     }else if ([model.taskNameStr isEqualToString:@"share"]) {
         // 弹出分享菜单
         // 分享内容
-        id<ISSContent> publishContent = [ShareSDK content:@"CashMaker Test "
-                                           defaultContent:@" "
-                                                    image:nil
-                                                    title:@""
-                                                      url:@""
-                                              description:@""
-                                                mediaType:SSPublishContentMediaTypeNews];
+
         
-        
-        // 分享方式
-        
-        [ShareSDK showShareActionSheet:nil shareList:nil content:publishContent statusBarTips:NO authOptions:nil shareOptions:nil result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-            
-        }];
 
         
     }else if ([model.taskNameStr isEqualToString:@"qumi"]){
@@ -544,6 +547,79 @@
     NSLog(@"%@",error.domain);
 }
 
+#pragma mark - 图片处理为灰色
+
+-(UIImage*)getGrayImage:(UIImage*)sourceImage
+{
+    int width = sourceImage.size.width;
+    int height = sourceImage.size.height;
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+    CGContextRef context = CGBitmapContextCreate (nil,width,height,8,0,colorSpace,kCGImageAlphaNone);
+    CGColorSpaceRelease(colorSpace);
+    
+    if (context == NULL) {
+        return nil;
+    }
+    
+    CGContextDrawImage(context,CGRectMake(0, 0, width, height), sourceImage.CGImage);
+    UIImage *grayImage = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+    CGContextRelease(context);
+    
+    return grayImage;
+}
+
+- (UIImage*) imageBlackToTransparent:(UIImage*) image
+{
+    // 分配内存
+    const int imageWidth = image.size.width;
+    const int imageHeight = image.size.height;
+    size_t      bytesPerRow = imageWidth * 4;
+    uint32_t* rgbImageBuf = (uint32_t*)malloc(bytesPerRow * imageHeight);
+    
+    // 创建context
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(rgbImageBuf, imageWidth, imageHeight, 8, bytesPerRow, colorSpace,
+                                                 kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
+    CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), image.CGImage);
+    
+    // 遍历像素
+    int pixelNum = imageWidth * imageHeight;
+    uint32_t* pCurPtr = rgbImageBuf;
+    for (int i = 0; i < pixelNum; i++, pCurPtr++)
+    {
+        if ((*pCurPtr & 0xFFFFFF00) == 0)    // 将黑色变成透明
+        {
+            uint8_t* ptr = (uint8_t*)pCurPtr;
+            ptr[0] = 0;
+        }
+        
+        // 改成下面的代码，会将图片转成灰度
+        /*uint8_t* ptr = (uint8_t*)pCurPtr;
+         // gray = red * 0.11 + green * 0.59 + blue * 0.30
+         uint8_t gray = ptr[3] * 0.11 + ptr[2] * 0.59 + ptr[1] * 0.30;
+         ptr[3] = gray;
+         ptr[2] = gray;
+         ptr[1] = gray;*/
+    }
+    
+    // 将内存转成image
+    CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, rgbImageBuf, bytesPerRow * imageHeight, NULL);
+    CGImageRef imageRef = CGImageCreate(imageWidth, imageHeight, 8, 32, bytesPerRow, colorSpace,
+                                        kCGImageAlphaLast | kCGBitmapByteOrder32Little, dataProvider,
+                                        NULL, true, kCGRenderingIntentDefault);
+    CGDataProviderRelease(dataProvider);
+    
+    UIImage* resultUIImage = [UIImage imageWithCGImage:imageRef];
+    
+    // 释放
+    CGImageRelease(imageRef);
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    // free(rgbImageBuf) 创建dataProvider时已提供释放函数，这里不用free
+    
+    return resultUIImage;
+}
 
 
 
