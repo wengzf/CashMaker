@@ -689,6 +689,27 @@
                                                                      cancelButtonTitle:@"确定"
                                                                      otherButtonTitles:nil];
                            [alertView show];
+                           
+                           
+                           NSString *platformStr = @"1";
+                           switch (platformType) {
+                               case SSDKPlatformTypeSinaWeibo:
+                                   platformStr = @"1";
+                                   break;
+                               case SSDKPlatformTypeWechat:
+                                   platformStr = @"2";
+                                   break;
+                               case SSDKPlatformTypeQQ:
+                                   platformStr = @"3";
+                                   break;
+                                   
+                               default:
+                                   break;
+                           }
+                           
+                           [FSNetworkManagerDefaultInstance shareWithUserID:Global.userID platform:platformStr successBlock:^(long status, NSDictionary *dic) {
+                               
+                           }];
                            break;
                        }
                        case SSDKResponseStateFail:

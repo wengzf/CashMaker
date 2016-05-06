@@ -41,6 +41,7 @@
 //libsqlite3.dylib
 //AdSupport.framework
 
+#import "JPUSHService.h"
 
 @interface AppDelegate ()
 
@@ -65,6 +66,37 @@
         [SMSSDK registerApp:appKey withSecret:appSecret];
     }
 
+    // 极光推送初始化
+    {
+//        4f799571372f6159811e14ed      AppKey
+//        6c00573908916d017b399d52      MasterSecret
+        
+        NSString *advertisingId = nil;
+        
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+            //可以添加自定义categories
+            [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+                                                              UIUserNotificationTypeSound |
+                                                              UIUserNotificationTypeAlert)
+                                                  categories:nil];
+        } else {
+            //categories 必须为nil
+            [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                              UIRemoteNotificationTypeSound |
+                                                              UIRemoteNotificationTypeAlert)
+                                                  categories:nil];
+        }
+        
+        //如不需要使用IDFA，advertisingIdentifier 可为nil
+        [JPUSHService setupWithOption:launchOptions appKey:appKey
+                              channel:channel
+                     apsForProduction:isProduction
+                advertisingIdentifier:advertisingId];
+        
+        
+        
+    }
+    
     // 对应广告平台初始化
     {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -259,6 +291,9 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [application setApplicationIconBadgeNumber:0];
+    [application cancelAllLocalNotifications];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -269,6 +304,37 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void)application:(UIApplication *)application
+        didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+    NSLog(@"%@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+- (void)application:(UIApplication *)application
+        didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [JPUSHService handleRemoteNotification:userInfo];
+    NSLog(@"收到通知:%@", userInfo);
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:
+(void (^)(UIBackgroundFetchResult))completionHandler {
+    [JPUSHService handleRemoteNotification:userInfo];
+    NSLog(@"收到通知:%@", userInfo);
+    
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)application:(UIApplication *)application
+didReceiveLocalNotification:(UILocalNotification *)notification {
+    [JPUSHService showLocalNotificationAtFront:notification identifierKey:nil];
+}
 #pragma mark - 广告平台集成
 
 

@@ -31,9 +31,14 @@
 
 - (void)updateCellWithModel:(ExchangeRecordsModel *)model
 {
-    self.valueLabel.text = model.exchange_account;
-    
-    self.unitLabel.text = model.exchange_account;
+    self.valueLabel.text = model.exchange_amount;
+ 
+    NSString *unitStr = @"RMB";
+    if ([model.exchange_type intValue] == 2) {
+        // Q币
+        unitStr = @"个";
+    }
+    self.unitLabel.text = unitStr;
     
     
     
@@ -47,14 +52,17 @@
     {
         case 0:
             self.stateLabel.text = @"审核中";
+            self.stateLabel.textColor = UIColorWithHex(0xc5c6c8);
             break;
             
         case 1:
             self.stateLabel.text = @"已发放";
+            self.stateLabel.textColor = UIColorWithHex(0x68b448);
             break;
             
         case 2:
             self.stateLabel.text = @"审核失败";
+            self.stateLabel.textColor = UIColorWithHex(0xff6000);
             break;
     }
     

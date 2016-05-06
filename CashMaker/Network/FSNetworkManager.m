@@ -279,7 +279,7 @@
 {
     NSString *url = [FSNetworkManager packingURL:@"task/myrecords"];
     NSDictionary *parameterDic  = @{@"userid" : userID,
-                                    @"last_coins_record_id" : last_coins_record_id
+                                    @"last_id" : last_coins_record_id
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -483,7 +483,7 @@
 {
     NSString *url = [FSNetworkManager packingURL:@"exchange/myrecords"];
     NSDictionary *parameterDic  = @{@"userid" : userID,
-                                    @"exchange_record_id" : exchange_record_id
+                                    @"last_id" : exchange_record_id
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

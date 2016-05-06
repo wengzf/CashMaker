@@ -22,6 +22,8 @@
 		2115203C1C74661200CE11DD /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211520351C74661200CE11DD /* SettingViewController.m */; };
 		2115203D1C74661200CE11DD /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211520381C74661200CE11DD /* TaskViewController.m */; };
 		211520421C747A4300CE11DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211520411C747A4300CE11DD /* ViewController.m */; };
+		21308CBD1CDC94C8003DD987 /* jpush-ios-2.1.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21308CBB1CDC94C8003DD987 /* jpush-ios-2.1.6.a */; };
+		21308CBF1CDC95D0003DD987 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21308CBE1CDC95D0003DD987 /* CFNetwork.framework */; };
 		2151D7961CD46CB100D6B51B /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151D7631CD46CB100D6B51B /* ShareSDK.framework */; };
 		2151D7971CD46CB100D6B51B /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151D7661CD46CB100D6B51B /* ShareSDKExtension.framework */; };
 		2151D7981CD46CB100D6B51B /* ShareSDKInterfaceAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151D7671CD46CB100D6B51B /* ShareSDKInterfaceAdapter.framework */; };
@@ -197,6 +199,9 @@
 		2115203E1C74670000CE11DD /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		211520401C747A4300CE11DD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		211520411C747A4300CE11DD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		21308CBB1CDC94C8003DD987 /* jpush-ios-2.1.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.6.a"; sourceTree = "<group>"; };
+		21308CBC1CDC94C8003DD987 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		21308CBE1CDC95D0003DD987 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2151D7631CD46CB100D6B51B /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		2151D7661CD46CB100D6B51B /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
 		2151D7671CD46CB100D6B51B /* ShareSDKInterfaceAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKInterfaceAdapter.framework; sourceTree = "<group>"; };
@@ -448,14 +453,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8DD5411CAD482000160B70 /* libz.tbd in Frameworks */,
+				AD678E901CBF7A05000429BB /* Security.framework in Frameworks */,
+				AD678E761CBF49A2000429BB /* Foundation.framework in Frameworks */,
+				21308CBF1CDC95D0003DD987 /* CFNetwork.framework in Frameworks */,
 				AD8DD5451CAD484300160B70 /* MessageUI.framework in Frameworks */,
 				ADAE61611CC3945200612A47 /* libsqlite3.tbd in Frameworks */,
 				2151D7A51CD46CB100D6B51B /* libWeChatSDK.a in Frameworks */,
+				21308CBD1CDC94C8003DD987 /* jpush-ios-2.1.6.a in Frameworks */,
 				2151D7AA1CD46CB100D6B51B /* ShareSDKConnector.framework in Frameworks */,
 				AD8DD5471CAD485400160B70 /* JavaScriptCore.framework in Frameworks */,
 				2151D79A1CD46CB100D6B51B /* ShareSDKUI.framework in Frameworks */,
 				2151D79D1CD46CB100D6B51B /* FBSDKMessengerShareKit.framework in Frameworks */,
-				AD8DD5411CAD482000160B70 /* libz.tbd in Frameworks */,
 				AD8DD5431CAD482F00160B70 /* libicucore.tbd in Frameworks */,
 				ADC924881CC0C2C500AC765B /* AVFoundation.framework in Frameworks */,
 				ADC924861CC0C2B600AC765B /* AudioToolbox.framework in Frameworks */,
@@ -471,13 +480,11 @@
 				210744431CBFEC0C0028646F /* libhxwGMW.a in Frameworks */,
 				AD678E7C1CBF49BE000429BB /* CoreGraphics.framework in Frameworks */,
 				ADC924C21CC0C36E00AC765B /* libCoolAdWall.a in Frameworks */,
-				AD678E761CBF49A2000429BB /* Foundation.framework in Frameworks */,
 				AD8DD53E1CAD479700160B70 /* MOBFoundation.framework in Frameworks */,
 				AD678E7A1CBF49B5000429BB /* QuartzCore.framework in Frameworks */,
 				AD8DD53F1CAD479700160B70 /* SMS_SDK.framework in Frameworks */,
 				2151D7A21CD46CB100D6B51B /* RennSDK.framework in Frameworks */,
 				AD678E921CBF7A10000429BB /* StoreKit.framework in Frameworks */,
-				AD678E901CBF7A05000429BB /* Security.framework in Frameworks */,
 				2151D7A81CD46CB100D6B51B /* MOBFoundation.framework in Frameworks */,
 				AD678E801CBF49CF000429BB /* SystemConfiguration.framework in Frameworks */,
 				2151D79F1CD46CB100D6B51B /* TencentOpenAPI.framework in Frameworks */,
@@ -611,6 +618,15 @@
 				AD678E881CBF4BD8000429BB /* TaskWallViewController.xib */,
 			);
 			path = Task;
+			sourceTree = "<group>";
+		};
+		21308CBA1CDC94C8003DD987 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				21308CBB1CDC94C8003DD987 /* jpush-ios-2.1.6.a */,
+				21308CBC1CDC94C8003DD987 /* JPUSHService.h */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		2151D7621CD46CB100D6B51B /* ShareSDK */ = {
@@ -1022,6 +1038,7 @@
 		AD8DD53A1CAD479700160B70 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				21308CBA1CDC94C8003DD987 /* lib */,
 				2151D7621CD46CB100D6B51B /* ShareSDK */,
 				AD8DD53B1CAD479700160B70 /* SMS_SDK */,
 			);
@@ -1183,6 +1200,7 @@
 		DACCB020F2BB4A33A91FEDB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21308CBE1CDC95D0003DD987 /* CFNetwork.framework */,
 				ADAE61601CC3945200612A47 /* libsqlite3.tbd */,
 				ADC924871CC0C2C500AC765B /* AVFoundation.framework */,
 				ADC924851CC0C2B600AC765B /* AudioToolbox.framework */,
@@ -1595,6 +1613,7 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Support/PlatformSDK/YiXinSDK",
+					"$(PROJECT_DIR)/CashMaker/ThirdParty/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadowTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1645,6 +1664,7 @@
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/CashMaker/ThirdParty/ShareSDK/Support/PlatformSDK/YiXinSDK",
+					"$(PROJECT_DIR)/CashMaker/ThirdParty/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadowTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
