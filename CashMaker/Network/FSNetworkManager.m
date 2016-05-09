@@ -40,7 +40,7 @@
 + (NSString *)packingURL:(NSString *) url
 {
 
-    NSString *baseURL = @"http://qiguai.wang:8081/";
+    NSString *baseURL = @"http://www.shoujizhuan.com.cn/";
     
     return [baseURL stringByAppendingString:url];
 }
