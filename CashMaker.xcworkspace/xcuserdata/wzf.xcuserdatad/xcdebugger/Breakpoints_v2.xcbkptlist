@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashMaker/Setting/SettingViewController.m"
-            timestampString = "479446983.11465"
+            timestampString = "484652976.744898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashMaker/Setting/SettingViewController.m"
-            timestampString = "479446983.11465"
+            timestampString = "484652976.744898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-viewDidAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,7 +228,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wzf/Desktop/CashMaker/CashMaker/Network/FSNetworkManager.m"
-                  timestampString = "484640777.85091"
+                  timestampString = "484653288.358426"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "518"
@@ -243,7 +243,7 @@
                   moduleName = "CashMaker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wzf/Desktop/CashMaker/CashMaker/Network/FSNetworkManager.m"
-                  timestampString = "484640777.851059"
+                  timestampString = "484653288.358575"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "518"
@@ -277,6 +277,22 @@
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CashMaker/Setting/SettingViewController.m"
+            timestampString = "484652976.744898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
