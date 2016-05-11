@@ -120,22 +120,37 @@
         [alv setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
         
         accountTextField1 = [alv textFieldAtIndex:0];
-        accountTextField1.placeholder = @"请输入您的账号";
         
         accountTextField2 = [alv textFieldAtIndex:1];
         [accountTextField2 setSecureTextEntry:NO];
-        accountTextField2.placeholder = @"再次确认您的账号";
+        [accountTextField2 becomeFirstResponder];
         
-        if (Global.account && ![Global.account isEqualToString:@""]) {
-            accountTextField1.text = Global.account;
-            accountTextField2.text = Global.account;
+        NSString *account;
+        switch ([model.reward_type intValue]) {
+            case 1:     // 支付宝
+                account = Global.zhifubaoAccount;
+                accountTextField1.placeholder = @"请输入您的支付宝账号";
+                accountTextField2.placeholder = @"再次确认您的支付宝账号";
+                break;
+            case 2:     // Q币
+                account = Global.qqAccount;
+                accountTextField1.placeholder = @"请输入您的QQ账号";
+                accountTextField2.placeholder = @"再次确认您的QQ账号";
+                break;
+            case 3:     // 话费
+                account = Global.huafeiAccount;
+                accountTextField1.placeholder = @"请输入您的手机号";
+                accountTextField2.placeholder = @"再次确认您的手机号";
+                break;
+                
+            default:
+                break;
         }
-        
-        
+        if (account) {
+            accountTextField1 = [alv textFieldAtIndex:0];
+            accountTextField1.text = account;
+        }
         [alv show];
-
-        
-
     };
     
     ExchangeModel *model = exchangeArr[indexPath.row];
@@ -163,7 +178,21 @@
         // 调用兑换接口
         if ([accountTextField1.text isEqualToString:accountTextField2.text]) {
             
-            Global.account = accountTextField1.text;
+            NSString *account = accountTextField1.text;
+            switch ([curModel.reward_type intValue]) {
+                case 1:     // 支付宝
+                    Global.zhifubaoAccount = account;
+                    break;
+                case 2:     // Q币
+                    Global.qqAccount = account ;
+                    break;
+                case 3:     // 话费
+                    Global.huafeiAccount = account;
+                    break;
+                    
+                default:
+                    break;
+            }
             [Global saveUserInfo];
             
             [self.view showLoading];

@@ -20,7 +20,9 @@
             
             instance.networkingManager = [AFHTTPRequestOperationManager manager];
 
-            instance.networkingManager.responseSerializer = [AFJSONResponseSerializer serializer];
+//            instance.networkingManager.responseSerializer = [AFJSONResponseSerializer serializer];
+            instance.networkingManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+
         
             instance.networkingManager.requestSerializer.timeoutInterval = 10;
         
@@ -70,6 +72,10 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -98,6 +104,10 @@
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -130,6 +140,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -154,6 +167,9 @@
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -181,6 +197,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -206,6 +225,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -229,6 +251,9 @@
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -257,6 +282,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -284,6 +312,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -309,6 +340,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
 
         sBlock([dic[@"code"] integerValue],dic);
@@ -332,6 +366,9 @@
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -359,6 +396,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -384,6 +424,9 @@
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -411,6 +454,9 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
             // 成功
@@ -435,10 +481,13 @@
     
     NSString *url = [FSNetworkManager packingURL:@"exchange/getlist"];
     NSDictionary *parameterDic  = @{@"userid" : userID,
-                                    @"last_exchange_id" : last_exchange_id
+                                    @"last_id" : last_exchange_id
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -468,6 +517,11 @@
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+//        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         sBlock(0,responseObject);
     
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
@@ -487,6 +541,9 @@
                                     };
     
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {

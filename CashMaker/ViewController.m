@@ -171,7 +171,7 @@ static ViewController *sObj;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     ExchangeRecordsModel *model = exchangeArr[indexPath.row];
-    [cell updateCellWithModel:model];
+    [cell homePageUpdateCellWithModel:model];
     
     return cell;
 }

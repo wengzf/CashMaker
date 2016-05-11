@@ -31,7 +31,7 @@
     
     // 页面初始化
     {
-        self.userIDLabel.text = Global.userID;
+        self.userIDLabel.text = [NSString stringWithFormat:@"%06d", [Global.userID intValue]];
         self.phoneLabel.text = Global.phone;
     }
 }
@@ -56,7 +56,7 @@
     static NSInteger count = 0;
     NSLog(@"%ld",count++);
     
-    return 10;
+    return 9;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -65,7 +65,7 @@
     
     NSInteger row = indexPath.row;
     if (row==3) return 10;
-    if (row==8) return 30;
+    if (row==7) return 30;
     return 50;
 }
 
@@ -94,52 +94,65 @@
             
         } break;
         case 4:{        // 发送邮件
-            
             if ([MFMailComposeViewController canSendMail])
             {
+                NSMutableString *msgContent = [NSMutableString new];
+                
+            UserID:
+                User Name:
+            Nation:
+                App Version:
+                Build Version:
+                OS Name:
+                OS Version: 
+                Device Model:
+                Device Resolution:  750 * 1334
+                [msgContent appen];
+                
                 MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
                 controller.mailComposeDelegate = self;
                 [controller setSubject:@"改进手机赚"];
+                [controller setMessageBody:msgContent isHTML:NO];
                 [controller setToRecipients:@[@"shoujizhuan8888@163.com"]];
                 [self presentViewController:controller animated:YES completion:NULL];
             }else{
                 [self.view showLoadingWithMessage:@"您尚未配置系统邮件账号" hideAfter:2.0];
             }
 
-            
         } break;
         case 5:{
-            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.shoujizhuan.com.cn"]];
         } break;
         case 6:{
             
         } break;
         case 7:{
+
             
         } break;
-        case 8:{
-            
-        } break;
-        case 9:{    // 退出登录
+        case 8:{   // 退出登录
             
             [Global clearUserInfo];
             [self dismissViewControllerAnimated:NO completion:NULL];
             [HomeVC showLogin];
             
-        
-//            [self.view showLoading];
-//            [FSNetworkManagerDefaultInstance logoutWithPhoneStr:Global.phone successBlock:^(long status, NSDictionary *dic) {
-//                [self.view hideLoading];
-//                
-//                if (status == 911) {
-//                    [self.view showLoadingWithMessage:@"退出失败" hideAfter:2.0];
-//                    
-//                }else{
-//                    [Global clearUserInfo];
-//                    
-//                    [HomeVC showLogin];
-//                }
-//            }];
+            
+            //            [self.view showLoading];
+            //            [FSNetworkManagerDefaultInstance logoutWithPhoneStr:Global.phone successBlock:^(long status, NSDictionary *dic) {
+            //                [self.view hideLoading];
+            //
+            //                if (status == 911) {
+            //                    [self.view showLoadingWithMessage:@"退出失败" hideAfter:2.0];
+            //
+            //                }else{
+            //                    [Global clearUserInfo];
+            //                    
+            //                    [HomeVC showLogin];
+            //                }
+            //            }];
+            
+        } break;
+        case 9:{
         } break;
         case 10:{   // 删除账户
             

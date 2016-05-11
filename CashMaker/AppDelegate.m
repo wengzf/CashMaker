@@ -235,22 +235,18 @@
 // 米迪
 - (void)initMidi
 {
-    
 }
 // 指间互娱(微信转发)
 - (void)initZhijianhuyu
 {
-    
 }
 // 易积分
 - (void)initYijifen
 {
-    
 }
 // 万普
 - (void)initWanpu
 {
-    
 }
 
 #pragma -导航栏风格初始化
@@ -266,11 +262,11 @@
                                                           NSForegroundColorAttributeName:[UIColor whiteColor]
                                                           }];
     
-    [[UIBarButtonItem appearance]setTitleTextAttributes:@{
-                                                          NSFontAttributeName:HelveticaNeueFont(14),
-                                                          NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0 alpha:0.8]
-                                                          }
-                                               forState:UIControlStateNormal];
+//    [[UIBarButtonItem appearance]setTitleTextAttributes:@{
+//                                                          NSFontAttributeName:HelveticaNeueFont(14),
+//                                                          NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0 alpha:0.8]
+//                                                          }
+//                                               forState:UIControlStateNormal];
     
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)

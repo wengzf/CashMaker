@@ -65,9 +65,27 @@
             self.stateLabel.textColor = UIColorWithHex(0xff6000);
             break;
     }
-    
+}
 
+
+- (void)homePageUpdateCellWithModel:(ExchangeRecordsModel *)model
+{
+    self.valueLabel.text = model.exchange_amount;
     
+    NSString *unitStr = @"RMB";
+    if ([model.exchange_type intValue] == 2) {
+        // Q币
+        unitStr = @"个";
+    }
+    self.unitLabel.text = unitStr;
+
+    self.titleLabel.text = model.exchange_title;
+    
+    self.accountLabel.text = [NSString stringWithFormat:@"ID%06d", [model.exchangeID intValue]];
+    
+    self.timeLabel.text = model.created_at;
+    
+    self.stateLabel.hidden = YES;
 }
 
 @end

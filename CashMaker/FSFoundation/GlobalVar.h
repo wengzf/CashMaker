@@ -12,7 +12,9 @@
 #define kGlobalIsLogin        @"kGlobalIsLogin"
 #define kGlobalDeviceToken    @"kGlobalDeviceToken"
 #define kGlobalUserID         @"kGlobalUserID"
-#define kGlobalAccount         @"kGlobalAccount"
+#define kGlobalZhifubaoAccount   @"kGlobalZhifubaoAccount"
+#define kGlobalQQAccount         @"kGlobalQQAccount"
+#define kGlobalHuafeiAccount     @"kGlobalHuafeiAccount"
 
 #define kGlobalName             @"kGlobalName"
 #define kGlobalMail             @"kGlobalMail"
@@ -49,7 +51,9 @@
 @property (nonatomic, strong) NSString *deviceToken; // 用于推送和设备识别
 @property (strong, nonatomic) NSString *userID;//用户id;
 
-@property (strong, nonatomic) NSString *account; // 兑换账号
+@property (strong, nonatomic) NSString *zhifubaoAccount; // 支付宝账号
+@property (strong, nonatomic) NSString *qqAccount;      // QQ兑换账号
+@property (strong, nonatomic) NSString *huafeiAccount;  // 话费兑换账号
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *mail;

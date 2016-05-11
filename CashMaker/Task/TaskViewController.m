@@ -160,6 +160,7 @@
     if ([model.taskNameStr isEqualToString:@"signin"] && today_signinFlag) {
         
         cell.titleImageView.image = [UIImage imageNamed:@"icon_checkin_gray"];
+        cell.titleLabel.text = @"已签到";
     }
     
 
@@ -194,6 +195,8 @@
                 model.isSignIn = @"1";
                 [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             }];
+        }else{
+            [self.view showLoadingWithMessage:@"今日已签到" hideAfter:2];
         }
         
     }else if ([model.taskNameStr isEqualToString:@"share"]) {
@@ -624,6 +627,7 @@
 
 #pragma mark 显示分享菜单
 
+
 /**
  *  显示分享菜单
  *
@@ -638,7 +642,7 @@
     //1、创建分享参数（必要）
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     
-    NSArray* imageArray = @[[UIImage imageNamed:@"icon_app"]];
+    NSArray* imageArray = @[[UIImage imageNamed:@"icon_40"]];
     [shareParams SSDKSetupShareParamsByText:@"天天赚钱"
                                      images:imageArray
                                         url:[NSURL URLWithString:@"http://www.shoujizhuan.com.cn"]
