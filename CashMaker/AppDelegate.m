@@ -43,6 +43,12 @@
 
 #import "JPUSHService.h"
 
+#import "DevelopSwitch.h"       // 点入
+
+#import "JOJOWangSDK.h"                 // 点乐
+#import "JOJOWangDiamondConstants.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -195,6 +201,13 @@
     [self initYijifen];
     
     [self initWanpu];
+    
+    // 点入
+    DR_INIT(@"0000C33A2600005B", NO, Global.userID)
+    
+    // 点乐
+    [JOJOWangSDK requestJOJOWangSession:@"a3d33dfd498bc365cb8878c700c6ea99" withUserID:Global.userID];
+//    [JOJOWangSDK requestJOJOWangSession:@"4a958508fe43f9cc4d16709d813ea178" withUserID:Global.userID];
 }
 //趣米广告初始化连接成功
 - (void)qumiConnectSuccess

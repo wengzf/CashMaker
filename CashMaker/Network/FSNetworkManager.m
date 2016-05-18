@@ -110,16 +110,13 @@
         
         
         NSDictionary *dic = responseObject;
-        if ([dic[@"code"] integerValue] == 1000) {
-            // 成功
+        
             
-            sBlock(1000,dic[@"data"]);
-        }else{
-            // 显示错误信息
-            [[UIApplication sharedApplication].keyWindow showLoadingWithMessage:dic[@"message"] hideAfter:1.8];
-        }
+        sBlock([dic[@"code"] integerValue],dic);
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+        sBlock(911,nil);
         
     }];
 }

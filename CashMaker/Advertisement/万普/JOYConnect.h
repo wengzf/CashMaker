@@ -4,19 +4,21 @@
 @protocol JOYConnectDelegate;
 
 
-#define E_SIZE_320X50                           @"oLLvS6qXmuU="
+#define E_SIZE_320X50                           @"I/2rUlqZUek="
 
-#define E_SIZE_375x65                           @"7VU0vYPFKW4="
+#define E_SIZE_375x60                           @"v8Q0S5HZ9oc="
 
-#define E_SIZE_414x70                           @"CI9Z0Orr+0w="
+#define E_SIZE_375x65                           @"pGUMvgNzCRE="
 
-#define E_SIZE_480X75                           @"/rTc0lZLjPg="
+#define E_SIZE_414x70                           @"cYqFnyhc2U4="
 
-#define E_SIZE_640X100                          @"Ervq16eV0Tw="
+#define E_SIZE_480X75                           @"N711wthZ4XA="
 
-#define E_SIZE_768X90                           @"QzPIbzCO4Zs="
+#define E_SIZE_640X100                          @"yr2WWhOyC+E="
 
-#define E_SIZE_768X100                          @"8q37sGZK1B8="
+#define E_SIZE_768X90                           @"0K4g4USLOR4="
+
+#define E_SIZE_768X100                          @"cQo4fIM59zg="
 
 @interface JOYConnect : NSObject
 
@@ -68,6 +70,14 @@
 + (void)awardPoints:(int)points;
 
 @end
+
+
+
+
+
+
+
+
 
 
 @protocol JOYConnectDelegate <NSObject>

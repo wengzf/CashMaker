@@ -53,7 +53,7 @@
 - (void)requestData
 {
     //
-    if (selectedIndex == 0) {
+    if (selectedIndex == 1) {
         // 兑换记录
         
         [FSNetworkManagerDefaultInstance myrecordsWithUserID:Global.userID exchange_record_id:@"0" successBlock:^(long status, NSDictionary *dic) {
@@ -70,7 +70,7 @@
             [self.contentTableView.mj_footer endRefreshing];
         }];
     }else{
-        // 我的任务获取金币记录
+        // 收益记录
 
         [FSNetworkManagerDefaultInstance myrecordsWithUserID:Global.userID last_coins_record_id:@"0" successBlock:^(long status, NSDictionary *dic) {
             
@@ -90,7 +90,7 @@
 }
 - (void)requestIncrementData
 {
-    if (selectedIndex == 0) {
+    if (selectedIndex == 1) {
         // 兑换记录
         ExchangeRecordsModel *model = [exchangeRecordsArr lastObject];
         [FSNetworkManagerDefaultInstance myrecordsWithUserID:Global.userID exchange_record_id:model.exchangeID successBlock:^(long status, NSDictionary *dic) {
@@ -136,7 +136,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSInteger res = exchangeRecordsArr.count;
-    if (selectedIndex == 1) {
+    if (selectedIndex == 0) {
         res = taskRecordsArr.count;
     }
     return res;
@@ -144,15 +144,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (selectedIndex == 0) {
-        return 88;
+        return 65;
     }
-    return 65;
+    return 88;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *resCell;
-    if (selectedIndex == 0) {
+    if (selectedIndex == 1) {
         
         ExchangeRecordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExchangeRecordsTableViewCell" forIndexPath:indexPath];
         
@@ -183,7 +183,7 @@
     
     [self.contentTableView reloadData];
     
-    if (selectedIndex == 0) {
+    if (selectedIndex == 1) {
         if ([exchangeRecordsArr count] == 0) {
             // 开始刷新数据
             [self.contentTableView.mj_header beginRefreshing];

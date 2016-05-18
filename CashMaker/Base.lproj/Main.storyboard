@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g8L-xd-RPO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g8L-xd-RPO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -166,7 +166,7 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_exchange_unsel" translatesAutoresizingMaskIntoConstraints="NO" id="ale-JZ-jHj">
                                                         <rect key="frame" x="27" y="15" width="38" height="38"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="兑换" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-zj-e5N">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-zj-e5N">
                                                         <rect key="frame" x="32" y="61" width="28" height="20"/>
                                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="14"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -341,7 +341,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机赚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-qQ-m99">
-                                                <rect key="frame" x="162" y="17" width="51" height="24"/>
+                                                <rect key="frame" x="162" y="26" width="51" height="24"/>
                                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -356,9 +356,9 @@
                                                 <rect key="frame" x="20" y="180" width="52" height="52"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOO-fd-uZa">
-                                                <rect key="frame" x="53" y="67" width="121" height="20"/>
+                                                <rect key="frame" x="53" y="67" width="117.5" height="20"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="今日赚取 Coins">
+                                                    <fragment content="今日赚取  积分">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <font key="NSFont" size="14" name="PingFangSC-Light"/>
@@ -379,10 +379,10 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzp-Ry-F7P">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzp-Ry-F7P">
                                                 <rect key="frame" x="80" y="180" width="133" height="20"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="账户剩余 Coins">
+                                                    <fragment content="账户剩余 积分">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <font key="NSFont" size="14" name="PingFangSC-Light"/>
@@ -399,10 +399,10 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL7-GE-Qrl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL7-GE-Qrl">
                                                 <rect key="frame" x="80" y="208" width="121" height="20"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="总共获取 Coins">
+                                                    <fragment content="总共获取 积分">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <font key="NSFont" size="14" name="PingFangSC-Light"/>
@@ -437,13 +437,13 @@
                                                     <action selector="viewAccountBtnClked:" destination="g8L-xd-RPO" eventType="touchUpInside" id="3ha-ju-vEw"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7B-pV-FQ9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7B-pV-FQ9">
                                                 <rect key="frame" x="221" y="180" width="10" height="23"/>
                                                 <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZA-Fa-vao">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZA-Fa-vao">
                                                 <rect key="frame" x="221" y="208" width="10" height="23"/>
                                                 <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -451,7 +451,10 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HS6-fN-NAr">
                                                 <rect key="frame" x="20" y="156" width="355" height="94"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="highlighted">
+                                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="7BY-Mk-Mxk" kind="show" id="fSW-OS-iYg"/>
                                                 </connections>
@@ -474,7 +477,7 @@
                                             <constraint firstAttribute="bottom" secondItem="HS6-fN-NAr" secondAttribute="bottom" id="QSL-Jw-Ufg"/>
                                             <constraint firstAttribute="trailing" secondItem="3e1-s9-qJF" secondAttribute="trailing" constant="16" id="Qyf-aX-WQu"/>
                                             <constraint firstItem="0QI-qQ-m99" firstAttribute="centerX" secondItem="Pu9-Dg-8Ep" secondAttribute="centerX" id="RLE-Lk-Jve"/>
-                                            <constraint firstItem="0QI-qQ-m99" firstAttribute="top" secondItem="Pu9-Dg-8Ep" secondAttribute="top" constant="17" id="Rcl-Lr-5ZS"/>
+                                            <constraint firstItem="0QI-qQ-m99" firstAttribute="top" secondItem="Pu9-Dg-8Ep" secondAttribute="top" constant="26" id="Rcl-Lr-5ZS"/>
                                             <constraint firstItem="3e1-s9-qJF" firstAttribute="leading" secondItem="bDp-67-dRY" secondAttribute="trailing" constant="8" id="T2u-bJ-eWM"/>
                                             <constraint firstItem="HS6-fN-NAr" firstAttribute="top" secondItem="oiB-kL-j0U" secondAttribute="bottom" id="VZf-WJ-ZgU"/>
                                             <constraint firstItem="oiB-kL-j0U" firstAttribute="leading" secondItem="Y8p-rx-8X0" secondAttribute="leading" id="Y78-Y1-rof"/>
@@ -927,8 +930,8 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RUZ-x4-iVT">
                                         <rect key="frame" x="121" y="18" width="133" height="29"/>
                                         <segments>
+                                            <segment title="收益记录"/>
                                             <segment title="兑换记录"/>
-                                            <segment title="我的任务"/>
                                         </segments>
                                         <color key="tintColor" red="0.0" green="0.57254901960000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -943,7 +946,7 @@
                                     <constraint firstAttribute="height" constant="64" id="mgC-Nx-syo"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-qw-Zbg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-qw-Zbg">
                                 <rect key="frame" x="0.0" y="128" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -1133,7 +1136,7 @@
                             <constraint firstItem="XhI-m3-YgQ" firstAttribute="top" secondItem="SdV-Ib-3hS" secondAttribute="top" id="iaf-AF-ujW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="兑换" id="fcT-pA-XIj">
+                    <navigationItem key="navigationItem" title="提现" id="fcT-pA-XIj">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="AMZ-rH-FAd">
                             <view key="customView" contentMode="scaleToFill" id="liM-za-3o9">
                                 <rect key="frame" x="264" y="5" width="95" height="33"/>

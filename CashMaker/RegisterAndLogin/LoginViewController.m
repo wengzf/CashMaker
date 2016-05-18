@@ -71,14 +71,23 @@
     [FSNetworkManagerDefaultInstance loginWithPhoneStr:self.accountTextField.text password:self.pwdTextField.text successBlock:^(long status, NSDictionary *dic) {
         
         [self.view hideLoading];
-        Global.isLogin = YES;
-        Global.userID = [dic[@"userid"] stringValue];
-        Global.token = dic[@"token"];
         
-        [Global saveUserInfo];
-        
-        // 登录成功，跳到首页
-        [self dismissViewControllerAnimated:YES completion:NULL];
+        if (status == 1000){
+            
+            dic = dic[@"data"];
+            Global.isLogin = YES;
+            Global.userID = [dic[@"userid"] stringValue];
+            Global.token = dic[@"token"];
+            
+            [Global saveUserInfo];
+            
+            // 登录成功，跳到首页
+            [self dismissViewControllerAnimated:YES completion:NULL];
+        }else if (status == 911){
+            [self.view showLoadingWithMessage:@"网络连接错误" hideAfter:2];
+        }else{
+            [self.view showLoadingWithMessage:dic[@"message"] hideAfter:2];
+        }
     }];
 }
 

@@ -31,6 +31,13 @@
 #import "CoolAdOnlineConfig.h"      // 酷告
 #import "CoolAdWall.h"
 
+#import "DevelopSwitch.h"            // 点入
+
+#import "JOJOWangSDK.h"                 // 点乐
+#import "JOJOWangDiamondConstants.h"
+
+#import "NSData+Base64AES128CBC.h"      // 有米加密
+
 @interface TaskViewController()<JOYConnectDelegate, QMRecommendAppDelegate, hxwGMWDelegate, MyOfferAPIDelegate
 ,CoolAdOnlineConfigDelegate,CoolAdWallDelegate>
 {
@@ -73,8 +80,28 @@
                 
                 [taskArr addObject:model];
             }
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"dianru";
+                model.titleStr = @"点入";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"dianle";
+                model.titleStr = @"点乐";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
+            {
+                TaskModel *model = [TaskModel new];
+                model.taskNameStr = @"youmi";
+                model.titleStr = @"有米";
+                model.hintStr = @"免费获取积分";
+                [taskArr addObject:model];
+            }
 
-            
             [self.taskTableView reloadData];
         }];
     }
@@ -113,8 +140,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -122,7 +147,6 @@
 //    self.navigationController.navigationBar.translucent = YES;
 //    self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
 //    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-    
     
     UIImage *img = [UIImage imageNamed:@"nav_bg"];
     img = [img stretchableImageWithLeftCapWidth:2 topCapHeight:2];
@@ -203,9 +227,6 @@
         // 弹出分享菜单
         // 分享内容
         [self showShareActionSheet:self.view];
-
-        
-
         
     }else if ([model.taskNameStr isEqualToString:@"qumi"]){
         
@@ -259,15 +280,60 @@
     }else if ([controlStr isEqualToString:@"kugao"]) {
         
         [coolAdWall showCoolAdWallWithController:self];
+    }else if ([controlStr isEqualToString:@"dianru"]) {
+        
+        DR_SHOW(DR_OFFERWALL, self, self)
+    }else if ([controlStr isEqualToString:@"dianle"]) {
+        
+        [JOJOWangSDK showJOJOWangDiamondWithViewController:self];
+    }else if ([controlStr isEqualToString:@"youmi"]) {
+        
+        [self openYoumi];
     }
-    
 }
 
+- (void)openYoumi
+{
+    
+    NSString *userid = Global.userID;        // 对应网站用户标识 UserID
+    NSString *feedback = @"";      // 预留参数,若不需要请留空
+    
+    NSString *useridBaseEncode = [[userid dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+    NSString *feedbackBsEnc = [[feedback dataUsingEncoding:NSUTF8StringEncoding]
+                               base64EncodedString];
+    
+    // 重要:需要拼接 16 位随机字符 XXXXXXXXXXXXXXXX
+    //             16 位随机字符只作加密处理,最终 UserID 和 feedback 不变
+    NSString *encryStri=[NSString stringWithFormat:@"XXXXXXXXXXXXXXXX%@&%@",useridBaseEncode,feedbackBsEnc];
+    //    NSString *appid = @"20bc607d983a540c";          // 在有米官网获取的应用 ID
+    //    NSString *appSecret = @"f27c36e5ab7ef02d";      // 在有米官网获取的应用密钥
+    NSString *appid = @"fa6798a520656d95";          // 在有米官网获取的应用 ID
+    NSString *appSecret = @"b32f99f95e13b03e";      // 在有米官网获取的应用密钥
+    
+    NSString *encryString = [[[encryStri dataUsingEncoding:NSUTF8StringEncoding] AES128EncryptWithKey:appSecret] base64EncodedString];
+    
+    NSString *r=[appid stringByAppendingString:encryString];
+    r = [self urlencode:r];
+    
+    NSString *finalString = [NSString
+                             stringWithFormat:@"http://w.ymapp.com/wx/ios/lists.html?mt=1&ht=0&r=%@",r];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: finalString]];
+}
+-(NSString*)urlencode:(NSString*)OPSString {
+    NSString* escapedUrlString=
+    (NSString*) CFBridgingRelease(
+                                  CFURLCreateStringByAddingPercentEscapes(
+                                                                          NULL,
+                                                                          (CFStringRef)OPSString,
+                                                                          NULL,
+                                                                          (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                          kCFStringEncodingUTF8 ));
+    return escapedUrlString;
+}
 #pragma mark - 广告初始化
 - (void)initAD
 {
-    
-    
     [self kugao];
     
     [self wanpu];
@@ -642,11 +708,12 @@
     //1、创建分享参数（必要）
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     
+    NSString *content = @"试玩最新应用，日入几十，月入上千，让轻松赚钱变成习惯。";
     NSArray* imageArray = @[[UIImage imageNamed:@"icon_40"]];
-    [shareParams SSDKSetupShareParamsByText:@"天天赚钱"
+    [shareParams SSDKSetupShareParamsByText:content
                                      images:imageArray
                                         url:[NSURL URLWithString:@"http://www.shoujizhuan.com.cn"]
-                                      title:@"手机赚"
+                                      title:@"有手机 随时赚外快"
                                        type:SSDKContentTypeAuto];
     
     //1.2、自定义分享平台（非必要）

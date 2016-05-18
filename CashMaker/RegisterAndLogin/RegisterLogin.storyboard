@@ -322,6 +322,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hVB-dT-yup"/>
+                    <connections>
+                        <outlet property="experienceNowBtn" destination="3Rk-KV-HDB" id="oxK-p4-C9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qa1-te-vH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

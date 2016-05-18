@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon Gift Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-kt-b0Q">
-                        <rect key="frame" x="88" y="16" width="100" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获得" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwB-fA-dwK">
+                        <rect key="frame" x="16" y="14.5" width="24" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -39,13 +39,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-WO-Zjw">
-                        <rect key="frame" x="16" y="10" width="28.5" height="20.5"/>
+                        <rect key="frame" x="44" y="10" width="28.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.99215686270000003" green="0.3921568627" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGz-jp-Om6">
-                        <rect key="frame" x="50" y="14" width="27.5" height="16"/>
+                        <rect key="frame" x="75" y="14" width="27.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.99215686270000003" green="0.3921568627" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -57,24 +57,42 @@
                             <constraint firstAttribute="height" constant="1" id="5li-7J-zFK"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon Gift Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-kt-b0Q">
+                        <rect key="frame" x="109" y="15" width="100" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Etl-Kb-gLN" firstAttribute="centerY" secondItem="SMK-0E-2EQ" secondAttribute="centerY" id="1Ne-X4-4OE"/>
-                    <constraint firstItem="5zB-kt-b0Q" firstAttribute="leading" secondItem="yGz-jp-Om6" secondAttribute="trailing" constant="10" id="IdO-1C-674"/>
-                    <constraint firstItem="5zB-kt-b0Q" firstAttribute="bottom" secondItem="yGz-jp-Om6" secondAttribute="bottom" id="LEm-v1-1a3"/>
+                    <constraint firstItem="5zB-kt-b0Q" firstAttribute="baseline" secondItem="yGz-jp-Om6" secondAttribute="baseline" id="BjA-EI-qde"/>
+                    <constraint firstItem="5zB-kt-b0Q" firstAttribute="leading" secondItem="yGz-jp-Om6" secondAttribute="trailing" constant="6" id="IdO-1C-674"/>
+                    <constraint firstItem="hwB-fA-dwK" firstAttribute="leading" secondItem="SMK-0E-2EQ" secondAttribute="leading" constant="16" id="KG4-Rl-OR6"/>
+                    <constraint firstItem="5zB-kt-b0Q" firstAttribute="bottom" secondItem="yGz-jp-Om6" secondAttribute="bottom" constant="-1" id="LEm-v1-1a3"/>
+                    <constraint firstItem="4B5-QD-STa" firstAttribute="leading" secondItem="hwB-fA-dwK" secondAttribute="leading" id="MYW-og-bBc"/>
                     <constraint firstAttribute="bottom" secondItem="J8z-JW-ndo" secondAttribute="bottom" id="RXK-Gk-lBb"/>
                     <constraint firstItem="X0O-Pa-Ui9" firstAttribute="leading" secondItem="4B5-QD-STa" secondAttribute="leading" id="TkQ-AK-MD3"/>
-                    <constraint firstItem="4B5-QD-STa" firstAttribute="leading" secondItem="gbC-WO-Zjw" secondAttribute="leading" id="UWX-En-tKZ"/>
                     <constraint firstItem="X0O-Pa-Ui9" firstAttribute="top" secondItem="4B5-QD-STa" secondAttribute="bottom" constant="8" id="VBa-9a-FRe"/>
-                    <constraint firstItem="gbC-WO-Zjw" firstAttribute="leading" secondItem="SMK-0E-2EQ" secondAttribute="leading" constant="16" id="gzk-el-NrQ"/>
+                    <constraint firstItem="hwB-fA-dwK" firstAttribute="centerY" secondItem="5zB-kt-b0Q" secondAttribute="centerY" constant="-1" id="hAl-qj-Q8T"/>
                     <constraint firstAttribute="trailing" secondItem="Etl-Kb-gLN" secondAttribute="trailing" constant="16" id="hOT-OP-SsW"/>
                     <constraint firstItem="J8z-JW-ndo" firstAttribute="leading" secondItem="SMK-0E-2EQ" secondAttribute="leading" constant="16" id="hiV-Bd-Zlv"/>
+                    <constraint firstItem="hwB-fA-dwK" firstAttribute="baseline" secondItem="gbC-WO-Zjw" secondAttribute="baseline" id="jbq-96-faO"/>
                     <constraint firstItem="4B5-QD-STa" firstAttribute="top" secondItem="5zB-kt-b0Q" secondAttribute="bottom" constant="10" id="n4D-hE-LxY"/>
+                    <constraint firstItem="gbC-WO-Zjw" firstAttribute="leading" secondItem="hwB-fA-dwK" secondAttribute="trailing" constant="4" id="oLv-Rt-aNu"/>
+                    <constraint firstItem="yGz-jp-Om6" firstAttribute="baseline" secondItem="gbC-WO-Zjw" secondAttribute="baseline" id="oyg-0d-Beo"/>
                     <constraint firstItem="yGz-jp-Om6" firstAttribute="bottom" secondItem="gbC-WO-Zjw" secondAttribute="bottom" id="sVb-Lm-LS6"/>
                     <constraint firstItem="gbC-WO-Zjw" firstAttribute="top" secondItem="SMK-0E-2EQ" secondAttribute="top" constant="10" id="vsj-Cg-eWC"/>
-                    <constraint firstItem="yGz-jp-Om6" firstAttribute="leading" secondItem="gbC-WO-Zjw" secondAttribute="trailing" constant="6" id="xyC-3V-3qA"/>
+                    <constraint firstItem="yGz-jp-Om6" firstAttribute="leading" secondItem="gbC-WO-Zjw" secondAttribute="trailing" constant="3" id="xyC-3V-3qA"/>
                     <constraint firstAttribute="trailing" secondItem="J8z-JW-ndo" secondAttribute="trailing" id="yNu-UQ-FCU"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="hAl-qj-Q8T"/>
+                        <exclude reference="sVb-Lm-LS6"/>
+                        <exclude reference="LEm-v1-1a3"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>

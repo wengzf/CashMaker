@@ -55,11 +55,11 @@
     // 添加呱呱卡底片
     {
         contentLabel = [[UILabel alloc] initWithFrame:self.scratchContentView.bounds];
-        contentLabel.font = [UIFont systemFontOfSize:20];
+        contentLabel.font = [UIFont systemFontOfSize:16];
         contentLabel.textAlignment = NSTextAlignmentCenter;
         contentLabel.textColor = [UIColor whiteColor];
         contentLabel.backgroundColor = [UIColor clearColor];
-        contentLabel. text = @"较低的贷款的";
+        contentLabel. text = @" ";
         [self.scratchContentView addSubview:contentLabel];
         
     }
@@ -80,9 +80,15 @@
     self.scratchCardView = [[STScratchView alloc] initWithFrame:self.scratchContentView.bounds];
     [self.scratchContentView addSubview:self.scratchCardView];
     
-    UIView *bgView = [[UIView alloc] initWithFrame:self.scratchContentView.bounds];
-    bgView.backgroundColor = RGB(255, 255, 187);
-    [self.scratchCardView setHideView: bgView];
+//    UIView *bgView = [[UIView alloc] initWithFrame:self.scratchContentView.bounds];
+//    bgView.backgroundColor = RGB(255, 255, 187);
+    
+    UILabel *label = [[UILabel alloc] initWithFont:HelveticaNeueFont(15) color:UIColorWithHex(0x1495ff) title:@"点 击 刮 奖"];
+    label.frame = self.scratchContentView.bounds;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = RGB(255, 255, 187);;
+    
+    [self.scratchCardView setHideView: label];
     
     [self.scratchContentView bringSubviewToFront:self.scratchCardView];
 }
@@ -111,7 +117,7 @@
 
                 [lotteryBtn removeFromSuperview];
                 
-                contentLabel.text = [NSString stringWithFormat:@"奖励%@coins", dic[@"data"][@"reward_coins"] ];
+                contentLabel.text = [NSString stringWithFormat:@"恭喜您获得%@积分", dic[@"data"][@"reward_coins"] ];
                 
                 [self initScratchCardView];
                 
@@ -130,7 +136,7 @@
 
 - (void)scratchCardViewTaped
 {
-    UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"刮刮卡" message:@"确定花费10 coins来抽奖" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"刮刮卡" message:@"确定花费10积分来抽奖" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alv show];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

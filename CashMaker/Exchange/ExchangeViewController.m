@@ -112,7 +112,7 @@
         
         curModel = model;
         // 弹出确认兑换信息
-        NSString *msg = [NSString stringWithFormat:@"确认使用%@个coins兑换%@%@%@",model.cost_coins,model.title,model.reward_amount, [model.reward_type intValue]==2 ?@"个":@"元"];
+        NSString *msg = [NSString stringWithFormat:@"确认兑换 %@ %@%@，错误充值无法撤回。",model.reward_amount, [model.reward_type intValue]==2 ?@"个":@"元",model.title];
         
         UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"兑换" message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         
@@ -171,7 +171,11 @@
 }
 
 #pragma mark - UIAlertView Delegate
-
+- (void)didPresentAlertView:(UIAlertView *)alertView
+{
+    [accountTextField1 resignFirstResponder];
+    [accountTextField2 becomeFirstResponder];
+}
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
