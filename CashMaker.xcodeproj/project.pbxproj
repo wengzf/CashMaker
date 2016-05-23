@@ -28,6 +28,14 @@
 		21384CD41CE9B42400C9F106 /* StartWithPiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21384CD31CE9B42400C9F106 /* StartWithPiano.a */; };
 		2151CFCD1CEC52470002DE96 /* libDianJoySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151CFCC1CEC52470002DE96 /* libDianJoySDK.a */; };
 		2151CFD51CEC69CA0002DE96 /* NSData+Base64AES128CBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFD41CEC69CA0002DE96 /* NSData+Base64AES128CBC.m */; };
+		2151CFE11CF18C9A0002DE96 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFD91CF18C9A0002DE96 /* CocoaSecurity.m */; };
+		2151CFE21CF18C9A0002DE96 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2151CFDA1CF18C9A0002DE96 /* LICENSE */; };
+		2151CFE31CF18C9A0002DE96 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFDB1CF18C9A0002DE96 /* README.md */; };
+		2151CFE41CF18C9A0002DE96 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFE01CF18C9A0002DE96 /* Base64.m */; };
+		2151CFEF1CF18CBD0002DE96 /* EncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFE71CF18CBD0002DE96 /* EncryptUtil.m */; };
+		2151CFF01CF18CBD0002DE96 /* ER3DESEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFE91CF18CBD0002DE96 /* ER3DESEncrypt.m */; };
+		2151CFF11CF18CBD0002DE96 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFEB1CF18CBD0002DE96 /* GTMBase64.m */; };
+		2151CFF21CF18CBD0002DE96 /* NSString+Encrypt3DESandBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2151CFEE1CF18CBD0002DE96 /* NSString+Encrypt3DESandBase64.m */; };
 		216820B11CE2DD9E00A3218B /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2168207E1CE2DD9E00A3218B /* ShareSDK.framework */; };
 		216820B21CE2DD9E00A3218B /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216820811CE2DD9E00A3218B /* ShareSDKExtension.framework */; };
 		216820B31CE2DD9E00A3218B /* ShareSDKInterfaceAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216820821CE2DD9E00A3218B /* ShareSDKInterfaceAdapter.framework */; };
@@ -215,6 +223,21 @@
 		2151CFCC1CEC52470002DE96 /* libDianJoySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDianJoySDK.a; sourceTree = "<group>"; };
 		2151CFD31CEC69CA0002DE96 /* NSData+Base64AES128CBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64AES128CBC.h"; sourceTree = "<group>"; };
 		2151CFD41CEC69CA0002DE96 /* NSData+Base64AES128CBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64AES128CBC.m"; sourceTree = "<group>"; };
+		2151CFD81CF18C9A0002DE96 /* CocoaSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaSecurity.h; sourceTree = "<group>"; };
+		2151CFD91CF18C9A0002DE96 /* CocoaSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity.m; sourceTree = "<group>"; };
+		2151CFDA1CF18C9A0002DE96 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2151CFDB1CF18C9A0002DE96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2151CFDF1CF18C9A0002DE96 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		2151CFE01CF18C9A0002DE96 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		2151CFE61CF18CBD0002DE96 /* EncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptUtil.h; sourceTree = "<group>"; };
+		2151CFE71CF18CBD0002DE96 /* EncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptUtil.m; sourceTree = "<group>"; };
+		2151CFE81CF18CBD0002DE96 /* ER3DESEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ER3DESEncrypt.h; sourceTree = "<group>"; };
+		2151CFE91CF18CBD0002DE96 /* ER3DESEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ER3DESEncrypt.m; sourceTree = "<group>"; };
+		2151CFEA1CF18CBD0002DE96 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		2151CFEB1CF18CBD0002DE96 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		2151CFEC1CF18CBD0002DE96 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		2151CFED1CF18CBD0002DE96 /* NSString+Encrypt3DESandBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encrypt3DESandBase64.h"; sourceTree = "<group>"; };
+		2151CFEE1CF18CBD0002DE96 /* NSString+Encrypt3DESandBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encrypt3DESandBase64.m"; sourceTree = "<group>"; };
 		2168207E1CE2DD9E00A3218B /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		216820811CE2DD9E00A3218B /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
 		216820821CE2DD9E00A3218B /* ShareSDKInterfaceAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKInterfaceAdapter.framework; sourceTree = "<group>"; };
@@ -670,6 +693,67 @@
 			path = "有米";
 			sourceTree = "<group>";
 		};
+		2151CFD61CF18C9A0002DE96 /* CocoaSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				2151CFD71CF18C9A0002DE96 /* CocoaSecurity */,
+				2151CFDA1CF18C9A0002DE96 /* LICENSE */,
+				2151CFDB1CF18C9A0002DE96 /* README.md */,
+				2151CFDC1CF18C9A0002DE96 /* submodules */,
+			);
+			path = CocoaSecurity;
+			sourceTree = "<group>";
+		};
+		2151CFD71CF18C9A0002DE96 /* CocoaSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				2151CFD81CF18C9A0002DE96 /* CocoaSecurity.h */,
+				2151CFD91CF18C9A0002DE96 /* CocoaSecurity.m */,
+			);
+			path = CocoaSecurity;
+			sourceTree = "<group>";
+		};
+		2151CFDC1CF18C9A0002DE96 /* submodules */ = {
+			isa = PBXGroup;
+			children = (
+				2151CFDD1CF18C9A0002DE96 /* Base64 */,
+			);
+			path = submodules;
+			sourceTree = "<group>";
+		};
+		2151CFDD1CF18C9A0002DE96 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				2151CFDE1CF18C9A0002DE96 /* Base64 */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
+		2151CFDE1CF18C9A0002DE96 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				2151CFDF1CF18C9A0002DE96 /* Base64.h */,
+				2151CFE01CF18C9A0002DE96 /* Base64.m */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
+		2151CFE51CF18CBD0002DE96 /* Encrypt */ = {
+			isa = PBXGroup;
+			children = (
+				2151CFE61CF18CBD0002DE96 /* EncryptUtil.h */,
+				2151CFE71CF18CBD0002DE96 /* EncryptUtil.m */,
+				2151CFE81CF18CBD0002DE96 /* ER3DESEncrypt.h */,
+				2151CFE91CF18CBD0002DE96 /* ER3DESEncrypt.m */,
+				2151CFEA1CF18CBD0002DE96 /* GTMBase64.h */,
+				2151CFEB1CF18CBD0002DE96 /* GTMBase64.m */,
+				2151CFEC1CF18CBD0002DE96 /* GTMDefines.h */,
+				2151CFED1CF18CBD0002DE96 /* NSString+Encrypt3DESandBase64.h */,
+				2151CFEE1CF18CBD0002DE96 /* NSString+Encrypt3DESandBase64.m */,
+			);
+			path = Encrypt;
+			sourceTree = "<group>";
+		};
 		2168207D1CE2DD9E00A3218B /* ShareSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -1082,6 +1166,8 @@
 		AD8DD53A1CAD479700160B70 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				2151CFE51CF18CBD0002DE96 /* Encrypt */,
+				2151CFD61CF18C9A0002DE96 /* CocoaSecurity */,
 				2168207D1CE2DD9E00A3218B /* ShareSDK */,
 				21308CBA1CDC94C8003DD987 /* lib */,
 				AD8DD53B1CAD479700160B70 /* SMS_SDK */,
@@ -1303,7 +1389,7 @@
 				TargetAttributes = {
 					2115200B1C745DC400CE11DD = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 3HUUWY9C4G;
+						DevelopmentTeam = H99Y8CFJYM;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -1375,6 +1461,7 @@
 				ADC9247F1CC098F700AC765B /* MiiReturnButtonDw@2x.png in Resources */,
 				ADC9247E1CC098F700AC765B /* MiiReturnButtonDw.png in Resources */,
 				216820C11CE2DD9E00A3218B /* read_me.txt in Resources */,
+				2151CFE21CF18C9A0002DE96 /* LICENSE in Resources */,
 				ADC924D01CC0C36E00AC765B /* CoolAdWall_dotted_line.png in Resources */,
 				ADC924D21CC0C36E00AC765B /* CoolAdWall_download_white.png in Resources */,
 				ADC924D41CC0C36E00AC765B /* CoolAdWall_icon_wait.png in Resources */,
@@ -1456,6 +1543,7 @@
 				2151CFD51CEC69CA0002DE96 /* NSData+Base64AES128CBC.m in Sources */,
 				21890B401C7B081300E09CA4 /* UIView+Extension.m in Sources */,
 				218138BB1C8FCAA400D75DBA /* AFURLConnectionOperation.m in Sources */,
+				2151CFF11CF18CBD0002DE96 /* GTMBase64.m in Sources */,
 				21890B361C7B081300E09CA4 /* GlobalVar.m in Sources */,
 				2115203B1C74661200CE11DD /* ScratchCardViewController.m in Sources */,
 				ADC924CA1CC0C36E00AC765B /* CJSONDeserializer.m in Sources */,
@@ -1469,6 +1557,7 @@
 				218138B91C8FCAA400D75DBA /* AFNetworkReachabilityManager.m in Sources */,
 				ADB28B9B1CB8E0E100601215 /* HYScratchCardView.m in Sources */,
 				211520421C747A4300CE11DD /* ViewController.m in Sources */,
+				2151CFE41CF18C9A0002DE96 /* Base64.m in Sources */,
 				218138A11C8FC5DD00D75DBA /* FSNetworkManager.m in Sources */,
 				ADB28B931CB89BE800601215 /* UIBaseTableViewController.m in Sources */,
 				218138BE1C8FCAA400D75DBA /* AFURLSessionManager.m in Sources */,
@@ -1482,6 +1571,8 @@
 				211520391C74661200CE11DD /* ExchangeViewController.m in Sources */,
 				21890B331C7B081300E09CA4 /* NSDate+ToString.m in Sources */,
 				21890B341C7B081300E09CA4 /* NSObject+NSJSONSerialization.m in Sources */,
+				2151CFE11CF18C9A0002DE96 /* CocoaSecurity.m in Sources */,
+				2151CFF01CF18CBD0002DE96 /* ER3DESEncrypt.m in Sources */,
 				AD11887D1CBB8E6000EFB378 /* UIBaseTableViewCell.m in Sources */,
 				ADB28B941CB89BE800601215 /* UIBaseViewController.m in Sources */,
 				AD8C057E1CABF78C00BC1D9A /* CALayer+Extension.m in Sources */,
@@ -1490,6 +1581,7 @@
 				218024D71C9427FC000F4EC1 /* ExchangeRecordsModel.m in Sources */,
 				21890B391C7B081300E09CA4 /* UIImage+ImageEffects.m in Sources */,
 				218138DA1C93D72B00D75DBA /* ExchangeModel.m in Sources */,
+				2151CFF21CF18CBD0002DE96 /* NSString+Encrypt3DESandBase64.m in Sources */,
 				ADC924CC1CC0C36E00AC765B /* CJSONSerializer.m in Sources */,
 				AD59CB281CACC78200EFA1F3 /* ChangePasswordThirdViewController.m in Sources */,
 				218024D41C94270B000F4EC1 /* ExchangeRecordsTableViewCell.m in Sources */,
@@ -1500,6 +1592,8 @@
 				218138B71C8FCAA400D75DBA /* AFHTTPRequestOperationManager.m in Sources */,
 				ADC924C31CC0C36E00AC765B /* CDataScanner.m in Sources */,
 				218024D11C942217000F4EC1 /* ExchangeRecordsTableViewController.m in Sources */,
+				2151CFE31CF18C9A0002DE96 /* README.md in Sources */,
+				2151CFEF1CF18CBD0002DE96 /* EncryptUtil.m in Sources */,
 				218138B81C8FCAA400D75DBA /* AFHTTPSessionManager.m in Sources */,
 				211520111C745DC400CE11DD /* main.m in Sources */,
 				ADC924C51CC0C36E00AC765B /* CJSONDeserializer_BlocksExtensions.m in Sources */,
@@ -1556,7 +1650,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhifang weng (RP7DY4RR4G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1579,7 +1673,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "7fc2b5a1-d270-45ad-8b7d-a22c92fc4f9c";
+				PROVISIONING_PROFILE = "a36eeeb2-0d2f-4419-aa7b-af5b560b4f68";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1601,7 +1695,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志方 翁 (55YKDC482F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhifang weng (RP7DY4RR4G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志方 翁 (55YKDC482F)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1617,7 +1711,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "7fc2b5a1-d270-45ad-8b7d-a22c92fc4f9c";
+				PROVISIONING_PROFILE = "a36eeeb2-0d2f-4419-aa7b-af5b560b4f68";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

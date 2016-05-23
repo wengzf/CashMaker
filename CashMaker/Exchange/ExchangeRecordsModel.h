@@ -36,7 +36,7 @@
 
 @property (strong, nonatomic) NSString *created_at;
 
-
+@property (nonatomic, assign) NSTimeInterval createTimeInterval;
 
 
 @end

@@ -80,27 +80,6 @@
                 
                 [taskArr addObject:model];
             }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"dianru";
-                model.titleStr = @"点入";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"dianle";
-                model.titleStr = @"点乐";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
-            {
-                TaskModel *model = [TaskModel new];
-                model.taskNameStr = @"youmi";
-                model.titleStr = @"有米";
-                model.hintStr = @"免费获取积分";
-                [taskArr addObject:model];
-            }
 
             [self.taskTableView reloadData];
         }];

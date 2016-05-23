@@ -45,7 +45,7 @@
                                             <constraint firstAttribute="height" constant="44" id="YvN-4S-pnv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="YvN-4S-pnv"/>
@@ -394,7 +394,7 @@
                                             <constraint firstAttribute="height" constant="44" id="teU-jL-VIo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="teU-jL-VIo"/>
@@ -552,7 +552,7 @@
                                             <constraint firstAttribute="height" constant="44" id="mIl-de-O7z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="mIl-de-O7z"/>
@@ -721,7 +721,7 @@
                                             <constraint firstAttribute="height" constant="44" id="SOC-8l-gcv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="SOC-8l-gcv"/>
@@ -878,7 +878,7 @@
                                             <constraint firstAttribute="height" constant="44" id="3VJ-gD-d9W"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="3VJ-gD-d9W"/>
@@ -1270,7 +1270,7 @@
                                             <constraint firstAttribute="height" constant="44" id="Uv2-3u-DPb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Uv2-3u-DPb"/>

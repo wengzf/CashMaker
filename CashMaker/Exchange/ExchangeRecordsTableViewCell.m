@@ -33,7 +33,7 @@
 {
     self.valueLabel.text = model.exchange_amount;
  
-    NSString *unitStr = @"RMB";
+    NSString *unitStr = @"元";
     if ([model.exchange_type intValue] == 2) {
         // Q币
         unitStr = @"个";
@@ -72,7 +72,7 @@
 {
     self.valueLabel.text = model.exchange_amount;
     
-    NSString *unitStr = @"RMB";
+    NSString *unitStr = @"元";
     if ([model.exchange_type intValue] == 2) {
         // Q币
         unitStr = @"个";
@@ -82,10 +82,30 @@
     self.titleLabel.text = model.exchange_title;
     
     self.accountLabel.text = [NSString stringWithFormat:@"ID%06d", [model.exchangeID intValue]];
-    
-    self.timeLabel.text = model.created_at;
+
+    if (model.createTimeInterval == 0) {
+        self.timeLabel.text = model.created_at;
+    }else{
+        self.timeLabel.text = [self timeStrWithTimeInterval:model.createTimeInterval];
+    }
     
     self.stateLabel.hidden = YES;
 }
+
+- (NSString *)timeStrWithTimeInterval:(NSTimeInterval)timeInterval
+{
+    int difference = [[NSDate date] timeIntervalSince1970] - timeInterval;
+    if (difference < 60) {
+        return [NSString stringWithFormat:@"%d秒前",difference];
+    }
+    if (difference < 3600) {
+        return [NSString stringWithFormat:@"%d分钟前",difference/60];
+    }
+    if (difference < 86400) {
+        return [NSString stringWithFormat:@"%d小时%d分钟前",difference/86400, difference%3600/60];
+    }
+    return [NSString stringWithFormat:@"%d天前",difference/86400];
+}
+
 
 @end
