@@ -141,7 +141,7 @@
 
         } break;
         case 5:{
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.shoujizhuan.com.cn"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://shoujizhuan.me/"]];
         } break;
         case 6:{
             

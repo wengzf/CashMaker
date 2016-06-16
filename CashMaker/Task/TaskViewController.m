@@ -691,7 +691,7 @@
     NSArray* imageArray = @[[UIImage imageNamed:@"icon_40"]];
     [shareParams SSDKSetupShareParamsByText:content
                                      images:imageArray
-                                        url:[NSURL URLWithString:@"http://www.shoujizhuan.com.cn"]
+                                        url:[NSURL URLWithString:@"http://shoujizhuan.me/"]
                                       title:@"有手机 随时赚外快"
                                        type:SSDKContentTypeAuto];
     

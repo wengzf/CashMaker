@@ -204,7 +204,7 @@ static ViewController *sObj;
     
     ExchangeRecordsModel *model = [ExchangeRecordsModel new];
     // 用户ID
-    model.exchangeID = [NSString stringWithFormat:@"%d",arc4random()%1000000];
+    model.exchangeID = [NSString stringWithFormat:@"%d",arc4random()%10000];
     
     int kind = arc4random()%8;
     switch (kind) {
