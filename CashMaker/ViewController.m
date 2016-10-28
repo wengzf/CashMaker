@@ -10,7 +10,7 @@
 #import "ExchangeRecordsModel.h"
 #import "ExchangeRecordsTableViewCell.h"
 
-@interface ViewController()
+@interface ViewController()<UIScrollViewDelegate>
 {
     NSMutableArray *exchangeArr;
 }
@@ -43,6 +43,7 @@ static ViewController *sObj;
     
     [self.exchangeTableView registerNib:[UINib nibWithNibName:@"ExchangeRecordsTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExchangeRecordsTableViewCell"];
     
+
     if (ScreenWidth <= 320) {
         self.vieweAccountBtn.hidden = YES;
     }
@@ -103,13 +104,15 @@ static ViewController *sObj;
             
             
             // 最上面5条兑换记录
-            exchangeArr = [NSMutableArray array];
-            for (NSDictionary *tmpDic in dic[@"exchanges"]) {
-                ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
-                [exchangeArr addObject:model];
-            }
-            [self.exchangeTableView reloadData];
+        
+            [self initRandomData];
             
+//            for (NSDictionary *tmpDic in dic[@"exchanges"]) {
+//                ExchangeRecordsModel *model = [[ExchangeRecordsModel alloc] initWithDic:tmpDic];
+//                [exchangeArr addObject:model];
+//            }
+//            [self.exchangeTableView reloadData];
+
             
             // 设置对应UI
             self.todayCoinsLabel.text = [dic[@"today_coins"] stringValue];
@@ -153,6 +156,108 @@ static ViewController *sObj;
 - (IBAction)settingBtnClked:(id)sender {
 }
 
+#pragma mark - 随机数据生成
+- (void)initRandomData
+{
+    exchangeArr = [NSMutableArray array];
+    
+    NSTimeInterval cur = [[NSDate date] timeIntervalSince1970];
+    for (int i=0; i<8; ++i) {
+        
+        ExchangeRecordsModel *model = [self subGenerateRandomData];
+        // 时间伪造
+        model.createTimeInterval = cur - (8-i)*12 + arc4random()%8;
+        [exchangeArr insertObject:model atIndex:0];
+    }
+    [self.exchangeTableView reloadData];
+    
+    [self performSelector:@selector(generateRandomData) withObject:nil afterDelay:arc4random()%6+2];
+    
+}
+- (void)generateRandomData
+{
+    // 首先生成8条假数据，然后在以8秒为均值的随机时间后插入加入一条假数据
+    // 兑换内容   支付宝 1元 2元 5元 10元   Q币5个 10个 话费10元 20元   随机生成这些项目权重上有没有要求
+    // 用户ID 随机，有没其它要求
+//    [self.exchangeTableView reloadData];
+    
+    [exchangeArr insertObject:[self subGenerateRandomData]
+                      atIndex:0];
+    
+    [self.exchangeTableView beginUpdates];
+    [self.exchangeTableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
+                                  withRowAnimation:UITableViewRowAnimationTop];
+    
+    [self.exchangeTableView endUpdates];
+    
+    int afterTime = arc4random()%8 + 4;
+    double popTime = dispatch_time(DISPATCH_TIME_NOW, afterTime * NSEC_PER_SEC );
+    dispatch_after(popTime-0.5, dispatch_get_main_queue(), ^{
+        [self.exchangeTableView reloadData];
+    });
+    dispatch_after(popTime, dispatch_get_main_queue(), ^{
+        [self generateRandomData];
+    });
+}
+- (ExchangeRecordsModel *)subGenerateRandomData
+{
+    
+    ExchangeRecordsModel *model = [ExchangeRecordsModel new];
+    // 用户ID
+    model.exchangeID = [NSString stringWithFormat:@"%d",arc4random()%10000];
+    
+    int kind = arc4random()%8;
+    switch (kind) {
+        case 0:
+            model.exchange_type = @"1";
+            model.exchange_title = @"支付宝";
+            model.exchange_amount = @"1";
+            break;
+        case 1:
+            model.exchange_type = @"1";
+            model.exchange_title = @"支付宝";
+            model.exchange_amount = @"2";
+            break;
+        case 2:
+            model.exchange_type = @"1";
+            model.exchange_title = @"支付宝";
+            model.exchange_amount = @"5";
+            break;
+        case 3:
+            model.exchange_type = @"1";
+            model.exchange_title = @"支付宝";
+            model.exchange_amount = @"10";
+            break;
+        case 4:
+            model.exchange_type = @"2";
+            model.exchange_title = @"Q币";
+            model.exchange_amount = @"5";
+            break;
+        case 5:
+            model.exchange_type = @"2";
+            model.exchange_title = @"Q币";
+            model.exchange_amount = @"5";
+            break;
+        case 6:
+            model.exchange_type = @"3";
+            model.exchange_title = @"话费";
+            model.exchange_amount = @"10";
+            break;
+        case 7:
+            model.exchange_type = @"3";
+            model.exchange_title = @"话费";
+            model.exchange_amount = @"20";
+            break;
+        default:
+            break;
+    }
+    // 时间
+    model.createTimeInterval = [[NSDate date] timeIntervalSince1970]-arc4random()%3-1;
+
+    return model;
+}
+
+
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -171,7 +276,7 @@ static ViewController *sObj;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     ExchangeRecordsModel *model = exchangeArr[indexPath.row];
-    [cell updateCellWithModel:model];
+    [cell homePageUpdateCellWithModel:model];
     
     return cell;
 }
@@ -184,8 +289,16 @@ static ViewController *sObj;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
+}
+
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self.exchangeTableView reloadData];
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self.exchangeTableView reloadData];
 }
 #pragma mark - Navigation
 

@@ -76,7 +76,9 @@ static GlobalVar *obj;
     self.isLogin = [[[NSUserDefaults standardUserDefaults] valueForKey:kGlobalIsLogin] boolValue];
     self.deviceToken = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalDeviceToken];
     self.userID = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalUserID];
-    self.account = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalAccount];
+    self.zhifubaoAccount = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalZhifubaoAccount];
+    self.qqAccount = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalQQAccount];
+    self.huafeiAccount = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalHuafeiAccount];
     
     self.name     = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalName];
     self.mail     = [[NSUserDefaults standardUserDefaults] objectForKey:kGlobalMail];
@@ -97,7 +99,10 @@ static GlobalVar *obj;
     [[NSUserDefaults standardUserDefaults] setBool:self.isLogin forKey:kGlobalIsLogin];
     [[NSUserDefaults standardUserDefaults] setObject:self.deviceToken forKey:kGlobalDeviceToken];
     [[NSUserDefaults standardUserDefaults] setObject:self.userID forKey:kGlobalUserID];
-    [[NSUserDefaults standardUserDefaults] setObject:self.account forKey:kGlobalAccount];
+    [[NSUserDefaults standardUserDefaults] setObject:self.zhifubaoAccount forKey:kGlobalZhifubaoAccount];
+    [[NSUserDefaults standardUserDefaults] setObject:self.qqAccount forKey:kGlobalQQAccount];
+    [[NSUserDefaults standardUserDefaults] setObject:self.huafeiAccount forKey:kGlobalHuafeiAccount];
+
     
     [[NSUserDefaults standardUserDefaults] setObject:self.name forKey:kGlobalName];
     [[NSUserDefaults standardUserDefaults] setObject:self.mail forKey:kGlobalMail];
@@ -121,7 +126,9 @@ static GlobalVar *obj;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalIsLogin];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalDeviceToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalUserID];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalAccount];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalZhifubaoAccount];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalQQAccount];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalHuafeiAccount];
 
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalName];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGlobalMail];

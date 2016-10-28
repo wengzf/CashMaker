@@ -41,6 +41,13 @@
 //libsqlite3.dylib
 //AdSupport.framework
 
+#import "JPUSHService.h"
+
+#import "DevelopSwitch.h"       // 点入
+
+#import "JOJOWangSDK.h"                 // 点乐
+#import "JOJOWangDiamondConstants.h"
+
 
 @interface AppDelegate ()
 
@@ -65,6 +72,37 @@
         [SMSSDK registerApp:appKey withSecret:appSecret];
     }
 
+    // 极光推送初始化
+    {
+//        4f799571372f6159811e14ed      AppKey
+//        6c00573908916d017b399d52      MasterSecret
+        
+        NSString *advertisingId = nil;
+        
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+            //可以添加自定义categories
+            [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+                                                              UIUserNotificationTypeSound |
+                                                              UIUserNotificationTypeAlert)
+                                                  categories:nil];
+        } else {
+            //categories 必须为nil
+            [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                              UIRemoteNotificationTypeSound |
+                                                              UIRemoteNotificationTypeAlert)
+                                                  categories:nil];
+        }
+        
+        //如不需要使用IDFA，advertisingIdentifier 可为nil
+        [JPUSHService setupWithOption:launchOptions appKey:appKey
+                              channel:channel
+                     apsForProduction:isProduction
+                advertisingIdentifier:advertisingId];
+        
+        
+        
+    }
+    
     // 对应广告平台初始化
     {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -163,6 +201,13 @@
     [self initYijifen];
     
     [self initWanpu];
+    
+    // 点入
+    DR_INIT(@"0000C33A2600005B", NO, Global.userID)
+    
+    // 点乐
+    [JOJOWangSDK requestJOJOWangSession:@"a3d33dfd498bc365cb8878c700c6ea99" withUserID:Global.userID];
+//    [JOJOWangSDK requestJOJOWangSession:@"4a958508fe43f9cc4d16709d813ea178" withUserID:Global.userID];
 }
 //趣米广告初始化连接成功
 - (void)qumiConnectSuccess
@@ -203,22 +248,18 @@
 // 米迪
 - (void)initMidi
 {
-    
 }
 // 指间互娱(微信转发)
 - (void)initZhijianhuyu
 {
-    
 }
 // 易积分
 - (void)initYijifen
 {
-    
 }
 // 万普
 - (void)initWanpu
 {
-    
 }
 
 #pragma -导航栏风格初始化
@@ -234,11 +275,11 @@
                                                           NSForegroundColorAttributeName:[UIColor whiteColor]
                                                           }];
     
-    [[UIBarButtonItem appearance]setTitleTextAttributes:@{
-                                                          NSFontAttributeName:HelveticaNeueFont(14),
-                                                          NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0 alpha:0.8]
-                                                          }
-                                               forState:UIControlStateNormal];
+//    [[UIBarButtonItem appearance]setTitleTextAttributes:@{
+//                                                          NSFontAttributeName:HelveticaNeueFont(14),
+//                                                          NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0 alpha:0.8]
+//                                                          }
+//                                               forState:UIControlStateNormal];
     
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
@@ -259,6 +300,9 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [application setApplicationIconBadgeNumber:0];
+    [application cancelAllLocalNotifications];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -269,6 +313,37 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void)application:(UIApplication *)application
+        didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+    NSLog(@"%@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+- (void)application:(UIApplication *)application
+        didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [JPUSHService handleRemoteNotification:userInfo];
+    NSLog(@"收到通知:%@", userInfo);
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:
+(void (^)(UIBackgroundFetchResult))completionHandler {
+    [JPUSHService handleRemoteNotification:userInfo];
+    NSLog(@"收到通知:%@", userInfo);
+    
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)application:(UIApplication *)application
+didReceiveLocalNotification:(UILocalNotification *)notification {
+    [JPUSHService showLocalNotificationAtFront:notification identifierKey:nil];
+}
 #pragma mark - 广告平台集成
 
 

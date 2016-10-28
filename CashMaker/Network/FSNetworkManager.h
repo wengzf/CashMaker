@@ -31,8 +31,6 @@ typedef void(^SuccessWithErrorBlock)(long status, NSString *err, NSDictionary *d
 
 + (FSNetworkManager *)instance;
 
-+ (NSString *)encryptStringWithParameters:(id)params;
-
 
 
 

@@ -10,4 +10,7 @@
 
 @interface RegisterLoginViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *experienceNowBtn;
+
+
 @end

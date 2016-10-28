@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 #define HomeVC [ViewController shareInstance]
 
 

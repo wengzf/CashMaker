@@ -24,7 +24,7 @@
 - (void)updateCellWithModel:(TaskRecordsModel *)model;
 {
     self.titleLabel.text = model.source_title;
-    self.coninsLabel.text = model.change_coins;
+    self.coninsLabel.text = [model.change_coins stringByAppendingString:@" 积分"];
     self.timeLabel.text = model.created_at;
     
 }

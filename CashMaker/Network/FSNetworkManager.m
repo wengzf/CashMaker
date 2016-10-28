@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 Yonglibao. All rights reserved.
 //
 #import "FSNetworkManager.h"
+#import "CocoaSecurity.h"
+#import "EncryptUtil.h"
 
 @implementation FSNetworkManager
 
@@ -20,20 +22,15 @@
             
             instance.networkingManager = [AFHTTPRequestOperationManager manager];
 
-            instance.networkingManager.responseSerializer = [AFJSONResponseSerializer serializer];
+//            instance.networkingManager.responseSerializer = [AFJSONResponseSerializer serializer];
+            instance.networkingManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+
         
             instance.networkingManager.requestSerializer.timeoutInterval = 10;
         
         }
     }
     return instance;
-}
-
-#pragma mark - 加密
-
-+ (NSDictionary *)packingWithDictionaryParameters:(NSDictionary *)params
-{
-    return @{@"i": [FSNetworkManager encryptStringWithParameters:params]};
 }
 
 
@@ -68,7 +65,13 @@
                                     @"platform" : platform
                                     };
     
+    parameterDic = [self encryptDictionaryWithParameters:parameterDic];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -97,19 +100,22 @@
                                     @"password" : password
                                     };
     
+    parameterDic = [self encryptDictionaryWithParameters:parameterDic];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
+        
+        
         NSDictionary *dic = responseObject;
-        if ([dic[@"code"] integerValue] == 1000) {
-            // 成功
+        
             
-            sBlock(1000,dic[@"data"]);
-        }else{
-            // 显示错误信息
-            [[UIApplication sharedApplication].keyWindow showLoadingWithMessage:dic[@"message"] hideAfter:1.8];
-        }
+        sBlock([dic[@"code"] integerValue],dic);
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+        sBlock(911,nil);
         
     }];
 }
@@ -122,13 +128,19 @@
                   new_password:(NSString *)new_password
               successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"user/changepasswd"];
+    NSString *path = @"user/changepasswd";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" :userid,
                                     @"old_password":old_password,
                                     @"new_password":new_password
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -153,7 +165,12 @@
     NSDictionary *parameterDic  = @{@"phone" :phoneStr
                                     };
     
+    parameterDic = [self encryptDictionaryWithParameters:parameterDic];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -175,11 +192,17 @@
 - (void)userInfoDetailWithUserID:(NSString *)userID
               successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"user/info"];
+    NSString *path = @"user/info";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -200,11 +223,17 @@
 - (void)taskListWithUserID:(NSString *)userID
               successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"task/getlist"];
+    NSString *path = @"task/getlist";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -224,11 +253,17 @@
 - (void)signinWithUserID:(NSString *)userID
             successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"task/signin"];
+    NSString *path = @"task/signin";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -250,12 +285,18 @@
                platform:(NSString *)platform                // 分享渠道 | 1微信 2微博
            successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"task/share"];
+    NSString *path = @"task/share";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
                                     @"platform" : platform
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -277,12 +318,18 @@
        last_coins_record_id:(NSString *)last_coins_record_id
                successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"task/myrecords"];
+    NSString *path = @"task/myrecords";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
-                                    @"last_coins_record_id" : last_coins_record_id
+                                    @"last_id" : last_coins_record_id
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -303,11 +350,17 @@
 - (void)dopostWithUserID:(NSString *)userID
             successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"scratchcard/dopost"];
+    NSString *path = @"scratchcard/dopost";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
 
@@ -326,12 +379,18 @@
                    activityid:(NSString *)activityid
                  successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"activity/lotterylist"];
+    NSString *path = @"activity/lotterylist";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
                                     @"activityid" : activityid
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -352,12 +411,18 @@
                    activityid:(NSString *)activityid
                  successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"activity/lotteryinfo"];
+    NSString *path = @"activity/lotteryinfo";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
                                     @"activityid" : activityid
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -378,12 +443,18 @@
                  activityid:(NSString *)activityid
                successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"activity/dolottery"];
+    NSString *path = @"activity/dolottery";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
                                     @"activityid" : activityid
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -404,12 +475,18 @@
          activity_record_id:(NSString *)activity_record_id
                successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"activity/myrecords"];
+    NSString *path = @"activity/myrecords";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
                                     @"activity_record_id" : activity_record_id
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -432,13 +509,18 @@
        last_exchange_id:(NSString *)last_exchange_id
            successBlock:(SuccessBlock)sBlock
 {
-    
-    NSString *url = [FSNetworkManager packingURL:@"exchange/getlist"];
+    NSString *path = @"exchange/getlist";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
-                                    @"last_exchange_id" : last_exchange_id
+                                    @"last_id" : last_exchange_id
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -460,13 +542,21 @@
         exchange_account:(NSString *)exchange_account
             successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"exchange/dopost"];
+    NSString *path = @"exchange/dopost";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
                                     @"exchangeid" : exchangeid,
                                     @"exchange_account": exchange_account
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+//        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         sBlock(0,responseObject);
     
@@ -481,12 +571,18 @@
          exchange_record_id:(NSString *)exchange_record_id
                successBlock:(SuccessBlock)sBlock
 {
-    NSString *url = [FSNetworkManager packingURL:@"exchange/myrecords"];
+    NSString *path = @"exchange/myrecords";
+    NSString *url = [FSNetworkManager packingURL:path];
     NSDictionary *parameterDic  = @{@"userid" : userID,
-                                    @"exchange_record_id" : exchange_record_id
+                                    @"last_id" : exchange_record_id
                                     };
     
+    parameterDic = [self packHmacAndThreeDesWithDic:parameterDic withURL:path];
+    
     [networkingManager POST:url parameters:parameterDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSError *err;
+        responseObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];
         
         NSDictionary *dic = responseObject;
         if ([dic[@"code"] integerValue] == 1000) {
@@ -502,7 +598,102 @@
 }
 
 
+#pragma mark - 加密和token验证
 
+- (NSDictionary *)packHmacAndThreeDesWithDic:(NSDictionary *)params withURL:(NSString *)url
+{
+    //    POST
+    //    /sendmessage
+    //    auth_key=token&auth_timestamp=1448522850&auth_version=1.0.0&msg=hello 2222&to=2
+    
+    NSString *tokenStr = @"";
+    if (Global.token == nil || [Global.token isEqualToString:@""]) {
+        tokenStr = @"";
+    }
+    else
+    {
+        tokenStr = Global.token;
+    }
+    
+    // 设置http请求头
+    NSString *author = [NSString stringWithFormat:@"Bearer %@", tokenStr];
+    [networkingManager.requestSerializer setValue:author forHTTPHeaderField:@"Authorization"];
+    
+    
+    NSDate *date = [NSDate date];
+    NSTimeInterval timeinterval = [date timeIntervalSince1970];
+    NSString *timeStr = [NSString stringWithFormat:@"%.0lf",timeinterval];
+    
+    
+    //    NSMutableString *tmpStr = [NSMutableString stringWithFormat:@"POST\n/%@\n",url];
+    NSMutableString *tmpStr = [NSMutableString stringWithFormat:@"POST&/%@&",url];
+    
+    NSString *devicetoken = Global.deviceToken;
+    
+    if (Global.deviceToken == nil || [Global.deviceToken isEqualToString:@""]) {
+        devicetoken = @"dddddd";
+    }
+    
+    NSMutableDictionary * newDic = [[NSMutableDictionary alloc]initWithDictionary:params];
+    
+    [newDic setObject:tokenStr forKey:@"auth_key"];
+    [newDic setObject:[NSString stringWithFormat:@"%.0lf",timeinterval] forKey:@"auth_timestamp"];
+    [newDic setObject:@"1.1.1" forKey:@"auth_version"];
+    [newDic setObject:@"ios" forKey:@"client"];
+    [newDic setObject:devicetoken forKey:@"uuid"];
+    
+    
+    NSArray * array = newDic.allKeys;
+    NSArray * newArray = [array sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
+        return [obj1 compare:obj2];
+    }];
+    
+    NSMutableString * Str1 = [[NSMutableString alloc] init];
+    
+    for (int i = 0 ; i < newArray.count; i++) {
+        [Str1 appendString:[NSString stringWithFormat:@"&%@=%@", newArray[i], newDic[newArray[i]]]];
+        
+    }
+    [Str1 deleteCharactersInRange:NSMakeRange(0, 1)];
+    [tmpStr appendString:Str1];
+    
+    CocoaSecurityResult *signature = [CocoaSecurity hmacSha256:tmpStr hmacKey:tokenStr];
+    // 字典
+    NSMutableDictionary *dic;
+    if (params == nil) {
+        dic = [NSMutableDictionary new];
+    }else{
+        dic = [params mutableCopy];
+    }
+    NSString * newSign = [signature.hex lowercaseString];
+    
+    [dic addEntriesFromDictionary:@{
+                                    @"auth_key": tokenStr,
+                                    @"auth_timestamp": timeStr,
+                                    @"auth_version": @"1.1.1",
+                                    @"auth_signature": newSign,
+                                    @"client" : @"ios",
+                                    @"uuid" : devicetoken
+                                    }];
+    
+    return [self encryptDictionaryWithParameters:dic];
+}
+- (NSDictionary *)encryptDictionaryWithParameters:(NSDictionary *)params
+{
+    NSError *error = nil;
+    NSString *jsonString;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (!jsonData) {
+        NSLog(@"[net]GotParams: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    NSString *encValues = [EncryptUtil encryptWithText:jsonString];
+    
+    return @{@"i":encValues};
+}
 
 
 @end

@@ -26,13 +26,17 @@
 
 @property (strong, nonatomic) NSString *exchange_account;
 
+@property (nonatomic, strong) NSString *exchange_amount;
+
+@property (nonatomic, strong) NSString *exchange_type;
+
 @property (strong, nonatomic) NSString *send_status;
 
 @property (strong, nonatomic) NSString *note;
 
 @property (strong, nonatomic) NSString *created_at;
 
-
+@property (nonatomic, assign) NSTimeInterval createTimeInterval;
 
 
 @end

@@ -15,8 +15,6 @@
     
     NSString *accountStr;
     
-    // state
-    int state;                  // 1=确认兑换   2=输入账号  3= 调用接口
     ExchangeModel *curModel;
     
     UITextField *accountTextField1;
@@ -114,13 +112,45 @@
         
         curModel = model;
         // 弹出确认兑换信息
-        NSString *msg = [NSString stringWithFormat:@"确认使用%@个coins兑换%@%@%@",model.cost_coins,model.title,model.reward_amount, [model.reward_type intValue]==2 ?@"个":@"元"];
+        NSString *msg = [NSString stringWithFormat:@"确认兑换 %@ %@%@，错误充值无法撤回。",model.reward_amount, [model.reward_type intValue]==2 ?@"个":@"元",model.title];
         
         UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"兑换" message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        [alv show];
-        state = 1;
         
-
+        
+        [alv setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
+        
+        accountTextField1 = [alv textFieldAtIndex:0];
+        
+        accountTextField2 = [alv textFieldAtIndex:1];
+        [accountTextField2 setSecureTextEntry:NO];
+        [accountTextField2 becomeFirstResponder];
+        
+        NSString *account;
+        switch ([model.reward_type intValue]) {
+            case 1:     // 支付宝
+                account = Global.zhifubaoAccount;
+                accountTextField1.placeholder = @"请输入您的支付宝账号";
+                accountTextField2.placeholder = @"再次确认您的支付宝账号";
+                break;
+            case 2:     // Q币
+                account = Global.qqAccount;
+                accountTextField1.placeholder = @"请输入您的QQ账号";
+                accountTextField2.placeholder = @"再次确认您的QQ账号";
+                break;
+            case 3:     // 话费
+                account = Global.huafeiAccount;
+                accountTextField1.placeholder = @"请输入您的手机号";
+                accountTextField2.placeholder = @"再次确认您的手机号";
+                break;
+                
+            default:
+                break;
+        }
+        if (account) {
+            accountTextField1 = [alv textFieldAtIndex:0];
+            accountTextField1.text = account;
+        }
+        [alv show];
     };
     
     ExchangeModel *model = exchangeArr[indexPath.row];
@@ -141,64 +171,55 @@
 }
 
 #pragma mark - UIAlertView Delegate
-
+- (void)didPresentAlertView:(UIAlertView *)alertView
+{
+    [accountTextField1 resignFirstResponder];
+    [accountTextField2 becomeFirstResponder];
+}
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        // 请输入您的账号
-        if (state == 1) {
-            state = 2;
+        // 调用兑换接口
+        if ([accountTextField1.text isEqualToString:accountTextField2.text]) {
             
-            UIAlertView *alv = [[UIAlertView alloc] initWithTitle:@"您的账号" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    
-            [alv setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
-            
-            accountTextField1 = [alv textFieldAtIndex:0];
-            accountTextField1.placeholder = @"请输入您的账号";
-            
-            accountTextField2 = [alv textFieldAtIndex:1];
-            [accountTextField2 setSecureTextEntry:NO];
-            accountTextField2.placeholder = @"再次确认您的账号";
-            
-            if (Global.account && ![Global.account isEqualToString:@""]) {
-                accountTextField1.text = Global.account;
-                accountTextField2.text = Global.account;
-            }
-            
-            [alv show];
-            
-        }else if (state == 2) {
-
-            // 调用兑换接口
-            if ([accountTextField1.text isEqualToString:accountTextField2.text]) {
-                
-                Global.account = accountTextField1.text;
-                [Global saveUserInfo];
-                
-                [self.view showLoading];
-                [FSNetworkManagerDefaultInstance dopostWithUserID:Global.userID exchangeid:curModel.exchangeID exchange_account:accountTextField1.text successBlock:^(long status, NSDictionary *dic) {
+            NSString *account = accountTextField1.text;
+            switch ([curModel.reward_type intValue]) {
+                case 1:     // 支付宝
+                    Global.zhifubaoAccount = account;
+                    break;
+                case 2:     // Q币
+                    Global.qqAccount = account ;
+                    break;
+                case 3:     // 话费
+                    Global.huafeiAccount = account;
+                    break;
                     
-                    [self.view hideLoading];
+                default:
+                    break;
+            }
+            [Global saveUserInfo];
+            
+            [self.view showLoading];
+            [FSNetworkManagerDefaultInstance dopostWithUserID:Global.userID exchangeid:curModel.exchangeID exchange_account:accountTextField1.text successBlock:^(long status, NSDictionary *dic) {
                 
-                    if (status == 911) {
-                        [self.view showLoadingWithMessage:@"网络异常" hideAfter:2];
-                        
+                [self.view hideLoading];
+                
+                if (status == 911) {
+                    [self.view showLoadingWithMessage:@"网络异常" hideAfter:2];
+                    
+                }else{
+                    status = [dic[@"code"] intValue];
+                    if (status == 1000) {
+                        [self.view showLoadingWithMessage:@"兑换申请已提交" hideAfter:2];
                     }else{
-                        status = [dic[@"code"] intValue];
-                        if (status == 1000) {
-                            [self.view showLoadingWithMessage:@"兑换申请已提交" hideAfter:2];
-                        }else{
-                            [self.view showLoadingWithMessage:dic[@"message"] hideAfter:2];
-                        }
+                        [self.view showLoadingWithMessage:dic[@"message"] hideAfter:2];
                     }
-                    
-
-                }];
-            }else{
-                [self.view showLoadingWithMessage:@"您的账号前后输入不匹配" hideAfter:2];
-            }
-
-            
+                }
+                
+                
+            }];
+        }else{
+            [self.view showLoadingWithMessage:@"您的账号前后输入不匹配" hideAfter:2];
         }
     }
 }

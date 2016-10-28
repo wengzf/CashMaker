@@ -12,7 +12,15 @@
 
 
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"experienceNow"]) {
+        
+        self.experienceNowBtn.hidden = YES;
+    }else{
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"experienceNow"];
+    }
+}
 
 #pragma mark - Event
 
@@ -27,8 +35,7 @@
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
-    
-    
+
 }
 
 

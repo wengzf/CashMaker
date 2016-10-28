@@ -21,4 +21,8 @@
 
 - (void)updateCellWithModel:(ExchangeRecordsModel *)model;
 
+- (void)homePageUpdateCellWithModel:(ExchangeRecordsModel *)model;
+
+
+
 @end
