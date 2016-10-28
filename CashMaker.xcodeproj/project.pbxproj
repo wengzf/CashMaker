@@ -1600,7 +1600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadowTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7fc2b5a1-d270-45ad-8b7d-a22c92fc4f9c";
+				PROVISIONING_PROFILE = "60230705-1de0-419a-82a3-a2b47d379a82";
 			};
 			name = Debug;
 		};
@@ -1650,7 +1650,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yonglibao.FireShadowTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7fc2b5a1-d270-45ad-8b7d-a22c92fc4f9c";
+				PROVISIONING_PROFILE = "60230705-1de0-419a-82a3-a2b47d379a82";
 			};
 			name = Release;
 		};

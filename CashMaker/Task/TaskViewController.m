@@ -203,7 +203,6 @@
 
         
 
-        
     }else if ([model.taskNameStr isEqualToString:@"qumi"]){
         
         //创建积分墙广告 pointUserId可选，根据需要 开发者自己设置，设置PointUserId可以
